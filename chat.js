@@ -8,6 +8,41 @@ function sendText() {
     var clientMessage = createClientMessage(inputText.value)
     chatHistory.appendChild(clientMessage)
     inputText.value = ''
+
+    // Get Chatbot response
+    var chatBotMessage = createBotMessage("Yo c'est Chatbrerie")
+    chatHistory.appendChild(chatBotMessage)
+}
+
+function createBotMessage(text) {
+    var rootDiv = document.createElement("div")
+    rootDiv.classList.add("d-flex", "align-items-center")
+
+    var avatarDiv = document.createElement("div")
+    avatarDiv.classList.add("text-left", "pr-1")
+    var avatarImg = document.createElement("img")
+    avatarImg.src = "https://img.icons8.com/color/40/000000/guest-female.png"
+    avatarImg.width = "30"
+    avatarImg.classList.add("img1")
+    avatarDiv.appendChild(avatarImg)
+
+    var textDiv = document.createElement("div")
+    textDiv.classList.add("pr-2", "pl-1")
+
+    var clientName = document.createElement("span")
+    clientName.classList.add("name")
+    clientName.innerText = "Chatbrerie" // i18n?
+
+    var paragraph = document.createElement("p")
+    paragraph.classList.add("msg")
+    paragraph.innerText = text
+
+    textDiv.appendChild(clientName)
+    textDiv.appendChild(paragraph)
+
+    rootDiv.appendChild(avatarDiv)
+    rootDiv.appendChild(textDiv)
+    return rootDiv
 }
 
 function createClientMessage(text) {
