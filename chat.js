@@ -19,6 +19,8 @@ function sendText() {
     // Get Chatbot response
     var chatBotMessage = createBotMessage("Yo c'est Chatbrerie")
     chatHistory.appendChild(chatBotMessage)
+
+    chatHistory.scrollTop = chatHistory.scrollHeight
 }
 
 function createBotMessage(text) {

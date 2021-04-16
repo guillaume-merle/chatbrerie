@@ -16,6 +16,7 @@
     <script src="https://kit.fontawesome.com/7fe6e176b1.js" crossorigin="anonymous"></script>
     <script src='chat.js'></script>
 
+    <input type="checkbox" id="check"> <label class="chat-btn" for="check"> <i class="fa fa-commenting-o comment"></i> <i class="fa fa-close close"></i> </label>
     <div class="wrapper">
         <div class="main">
             <div class="px-2 scroll" id='chat-history'>
@@ -30,12 +31,12 @@
               <input type="text number" onkeypress='sendKeyPress(event)' name="text" class="form-control" id='chat-input' placeholder="Type a message..."></input>
               <div class="icondiv d-flex justify-content-end align-content-center text-center ml-2">
                 <button onclick='sendText()' class='btn' id='chat-send-text'>
-                  </i><i class="fa fa-arrow-circle-right icon2"></i>
+                 <i class="fa fa-arrow-circle-right icon2"></i>
                 </button>
               </div>
-              </form>
             </nav>
         </div>
+
     </div>
   </body>
 </html>

@@ -18,14 +18,6 @@ body {
     background: #555
 }
 
-.wrapper {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #651FFF
-}
-
 .main {
     background-color: #eee;
     width: 320px;
@@ -89,17 +81,11 @@ form-control: focus {
     box-shadow: none !important
 }
 
-.icon1 {
-    color: #7C4DFF !important;
-    font-size: 18px !important;
-    cursor: pointer
-}
-
 .icon2 {
-    color: #512DA8 !important;
+    color: #f59503 !important;
     font-size: 18px !important;
     position: relative;
-    left: 8px;
+    bottom: 0.5em;
     padding: 0px;
 }
 
@@ -110,4 +96,95 @@ form-control: focus {
     padding: 2px;
     position: relative;
     bottom: 1px
+}
+
+
+
+
+.chat-btn {
+    position: absolute;
+    right: 14px;
+    bottom: 30px;
+    cursor: pointer
+}
+
+.chat-btn .close {
+    display: none
+}
+
+.chat-btn i {
+    transition: all 0.9s ease
+}
+
+#check:checked~.chat-btn i {
+    display: block;
+    pointer-events: auto;
+    transform: rotate(180deg)
+}
+
+#check:checked~.chat-btn .comment {
+    display: none
+}
+
+.chat-btn i {
+    font-size: 22px;
+    color: #fff !important
+}
+
+.chat-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #f59503;
+    color: #fff;
+    font-size: 22px;
+    border: none
+}
+
+.wrapper {
+    position: absolute;
+    right: 1.5em;
+    bottom: 6em;
+    background-color: #fff;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 0.4s
+}
+
+#check:checked~.wrapper {
+    opacity: 1
+}
+
+.header {
+    padding: 13px;
+    background-color: blue;
+    border-radius: 5px 5px 0px 0px;
+    margin-bottom: 10px;
+    color: #fff
+}
+
+.chat-form {
+    padding: 15px
+}
+
+.chat-form input,
+textarea,
+button {
+    margin-bottom: 10px
+}
+
+.chat-form textarea {
+    resize: none
+}
+
+.form-control:focus,
+.btn:focus {
+    box-shadow: none
+}
+
+#check {
+    display: none !important
 }
