@@ -1,3 +1,10 @@
+function sendKeyPress(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    sendText()
+  }
+}
+
 function sendText() {
     var inputText = document.getElementById('chat-input');
     if (inputText.value === '') {
