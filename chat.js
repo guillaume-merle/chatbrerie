@@ -32,7 +32,7 @@ function createBotMessage(text) {
     var avatarImg = document.createElement("img")
     avatarImg.src = "https://img.icons8.com/color/40/000000/guest-female.png"
     avatarImg.width = "30"
-    avatarImg.classList.add("img1")
+    avatarImg.classList.add("img-chat")
     avatarDiv.appendChild(avatarImg)
 
     var textDiv = document.createElement("div")
@@ -76,7 +76,7 @@ function createClientMessage(text) {
     var avatarImg = document.createElement("img")
     avatarImg.src = "https://i.imgur.com/HpF4BFG.jpg"
     avatarImg.width = "30"
-    avatarImg.classList.add("img1")
+    avatarImg.classList.add("img-chat")
     avatarDiv.appendChild(avatarImg)
 
     rootDiv.appendChild(textDiv)

@@ -33,7 +33,7 @@ body {
     height: 325px
 }
 
-.img1 {
+.img-chat {
     border-radius: 50%;
     background-color: #66BB6A
 }
@@ -81,7 +81,7 @@ form-control: focus {
     box-shadow: none !important
 }
 
-.icon2 {
+.icon-send {
     color: #f59503 !important;
     font-size: 18px !important;
     position: relative;
@@ -98,13 +98,10 @@ form-control: focus {
     bottom: 1px
 }
 
-
-
-
 .chat-btn {
     position: absolute;
-    right: 14px;
-    bottom: 30px;
+    right: 2em;
+    bottom: 1.5em;
     cursor: pointer
 }
 
@@ -164,25 +161,6 @@ form-control: focus {
     border-radius: 5px 5px 0px 0px;
     margin-bottom: 10px;
     color: #fff
-}
-
-.chat-form {
-    padding: 15px
-}
-
-.chat-form input,
-textarea,
-button {
-    margin-bottom: 10px
-}
-
-.chat-form textarea {
-    resize: none
-}
-
-.form-control:focus,
-.btn:focus {
-    box-shadow: none
 }
 
 #check {
