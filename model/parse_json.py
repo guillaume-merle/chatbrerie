@@ -1,6 +1,7 @@
 import spacy
 import re
 import json
+import unidecode
 
 from spacy_lefff import LefffLemmatizer, POSTagger
 from spacy.language import Language
@@ -41,7 +42,7 @@ def parse_json(path):
         for pattern in intent['patterns']:
             # take each word and tokenize it
             w = re.split('\.|,|;|\'|\-|!|\?| ', pattern)
-            w = [word.lemma_.lower() for word in nlp(' '.join(w)) if len(word.lemma_) > 2]
+            w = [unidecode.unidecode(word.lemma_.lower()) for word in nlp(' '.join(w)) if len(word.lemma_) > 2]
             print(w)
             words.extend(w)
             # adding documents

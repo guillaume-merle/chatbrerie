@@ -35,7 +35,7 @@ def train_model(train_x, train_y, epochs):
 
 
 def save_model_js(model):
-    tfjs.converters.save_keras_model(model, "../data/model")
+    tfjs.converters.save_keras_model(model, "../data/js-model")
 
 
 def prepare_training(path):
