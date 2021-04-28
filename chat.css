@@ -1,0 +1,168 @@
+body {
+    background-color: #fff
+}
+
+::-webkit-scrollbar {
+    width: 10px
+}
+
+::-webkit-scrollbar-track {
+    background: #eee
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555
+}
+
+.main {
+    background-color: #eee;
+    width: 320px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 6px 0px 0px 0px
+}
+
+.scroll {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 325px
+}
+
+.img-chat {
+    border-radius: 50%;
+    background-color: #66BB6A
+}
+
+.name {
+    font-size: 8px
+}
+
+.msg {
+    background-color: #fff;
+    font-size: 11px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #3e3c3c
+}
+
+.between {
+    font-size: 8px;
+    font-weight: 500;
+    color: #a09e9e
+}
+
+.navbar {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.form-control {
+    font-size: 12px;
+    font-weight: 400;
+    width: 230px;
+    height: 30px;
+    border: none
+}
+
+form-control: focus {
+    box-shadow: none;
+    overflow: hidden;
+    border: none
+}
+
+.form-control:focus {
+    box-shadow: none !important
+}
+
+.icon-send {
+    color: #f59503 !important;
+    font-size: 18px !important;
+    position: relative;
+    bottom: 0.5em;
+    padding: 0px;
+}
+
+.icondiv {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    padding: 2px;
+    position: relative;
+    bottom: 1px
+}
+
+.chat-btn {
+    position: absolute;
+    right: 2em;
+    bottom: 1.5em;
+    cursor: pointer
+}
+
+.chat-btn .close {
+    display: none
+}
+
+.chat-btn i {
+    transition: all 0.9s ease
+}
+
+#check:checked~.chat-btn i {
+    display: block;
+    pointer-events: auto;
+    transform: rotate(180deg)
+}
+
+#check:checked~.chat-btn .comment {
+    display: none
+}
+
+.chat-btn i {
+    font-size: 22px;
+    color: #fff !important
+}
+
+.chat-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #f59503;
+    color: #fff;
+    font-size: 22px;
+    border: none
+}
+
+.wrapper {
+    position: absolute;
+    right: 1.5em;
+    bottom: 6em;
+    background-color: #fff;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 0.4s
+}
+
+#check:checked~.wrapper {
+    opacity: 1
+}
+
+.header {
+    padding: 13px;
+    background-color: blue;
+    border-radius: 5px 5px 0px 0px;
+    margin-bottom: 10px;
+    color: #fff
+}
+
+#check {
+    display: none !important
+}
