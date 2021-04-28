@@ -1,35 +1,14 @@
 import tensorflowjs as tfjs
-import json
 import numpy as np
 import random
-import spacy
-import re
 
-from spacy_lefff import LefffLemmatizer, POSTagger
-from spacy.language import Language
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout
 from keras.optimizers import SGD
-
-@Language.factory('french_lemmatizer')
-def create_french_lemmatizer(nlp, name):
-    return LefffLemmatizer(after_melt=True, default=True)
+from parse_json import parse_json
 
 
-@Language.factory('melt_tagger')
-def create_melt_tagger(nlp, name):
-    return POSTagger()
-
-
-def init_lemmatizer():
-    nlp = spacy.load('fr_core_news_sm')
-    nlp.add_pipe('melt_tagger', after='parser')
-    nlp.add_pipe('french_lemmatizer', after='melt_tagger')
-
-    return nlp
-
-
-def create_model():
+def create_model(train_x, train_y):
     """
     Create model and return it
     """
@@ -47,8 +26,8 @@ def create_model():
     return model
 
 
-def train_model(epochs=200):
-    model = create_model()
+def train_model(train_x, train_y, epochs):
+    model = create_model(train_x, train_y)
     hist = model.fit(np.array(train_x), np.array(train_y), epochs=epochs, batch_size=5, verbose=1)
     model.save('chatbot_model.h5', hist)
 
@@ -59,35 +38,43 @@ def save_model_js(model):
     tfjs.converters.save_keras_model(model, "../data/model")
 
 
-def parse_json(path):
-    words=[]
-    classes = []
-    documents = []
-    ignore_words = ['?', '!', '.', ',', ';', '\'']
-    data_file = open(path).read()
-    intents = json.loads(data_file)
+def prepare_training(path):
+    documents, classes, words = parse_json(path)
 
-    for intent in intents['intents']:
-        for pattern in intent['patterns']:
-            # take each word and tokenize it
-            w = re.split('\.|,|;|\'|\-|!|\?', pattern)
-            words.extend(w)
-            # adding documents
-            documents.append((w, intent['tag']))
-            # adding classes to our class list
-            if intent['tag'] not in classes:
-                classes.append(intent['tag'])
+    # initializing training data
+    training = []
+    output_empty = [0] * len(classes)
 
-    nlp = init_lemmatizer()
-    words = [w.lemma_ for w in nlp(' '.join(words)) if w.lemma_ not in ignore_words and len(w.lemma_) > 2]
-    words = sorted(list(set(words)))
+    for doc in documents:
+        # initializing bag of words
+        bag = []
+        # list of tokenized words for the pattern
+        pattern_words = doc[0]
+        # create our bag of words array with 1, if word match found in current pattern
+        for w in words:
+            bag.append(1) if w in pattern_words else bag.append(0)
 
-    classes = sorted(list(set(classes)))
+        # output is a '0' for each tag and '1' for current tag (for each pattern)
+        output_row = list(output_empty)
+        output_row[classes.index(doc[1])] = 1
 
-    print (len(documents), "documents")
+        training.append([bag, output_row])
 
-    print (len(classes), "classes", classes)
+    # shuffle our features and turn into np.array
+    random.shuffle(training)
+    training = np.array(training)
+    # create train and test lists. X - patterns, Y - intents
+    train_x = list(training[:,0])
+    train_y = list(training[:,1])
+    print("Training data created")
 
-    print (len(words), "unique lemmatized words", words)
+    return train_x, train_y
 
-parse_json("../data/simple.json")
+
+def train(path, epochs=200):
+    train_x, train_y = prepare_training(path)
+    model = train_model(train_x, train_y, epochs)
+
+    save_model_js(model)
+
+train("../data/simple.json")
