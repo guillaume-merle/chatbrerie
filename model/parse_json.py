@@ -24,6 +24,11 @@ def init_lemmatizer():
     return nlp
 
 
+def save_words_list(words):
+    f = open("../data/word-lists.txt", "w")
+    f.write('\n'.join(words))
+
+
 def parse_json(path):
     words= []
     classes = []
@@ -46,6 +51,7 @@ def parse_json(path):
                 classes.append(intent['tag'])
 
     words = sorted(list(set(words)))
+    save_words_list(words)
 
     classes = sorted(list(set(classes)))
 
@@ -56,5 +62,3 @@ def parse_json(path):
     print (len(words), "unique lemmatized words", words)
 
     return documents, classes, words
-
-parse_json("../data/simple.json")
