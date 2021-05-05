@@ -87,6 +87,12 @@ const addChatbot = async(path) => {
   document.body.innerHTML += await(await fetch(path)).text()
 }
 
+var stringToHTML = function (str) {
+	var parser = new DOMParser();
+	var doc = parser.parseFromString(str, 'text/html');
+	return doc.body;
+};
+
 window.onload = () => {
   addChatbot("https://www.doctolib.fr").then(() => {
     document.getElementById("chat-send-text").onclick = sendText
