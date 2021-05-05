@@ -19,7 +19,6 @@
     "type": "git",
     "url": "git+ssh://git@gitlab.com/guillaume.merle-epita/chatbrerie.git"
   },
-  "type": "module",
   "author": "",
   "license": "ISC",
   "bugs": {
