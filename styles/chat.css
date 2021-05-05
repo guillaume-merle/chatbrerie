@@ -18,7 +18,7 @@ body {
     background: #555
 }
 
-.main {
+.chatbot-main {
     background-color: #eee;
     width: 320px;
     position: relative;
@@ -38,11 +38,11 @@ body {
     background-color: #66BB6A
 }
 
-.name {
+.chatbot-name {
     font-size: 8px
 }
 
-.msg {
+.chatbot-msg {
     background-color: #fff;
     font-size: 11px;
     padding: 5px;
@@ -141,7 +141,7 @@ form-control: focus {
     border: none
 }
 
-.wrapper {
+.chatbot-wrapper {
     position: absolute;
     right: 1.5em;
     bottom: 6em;

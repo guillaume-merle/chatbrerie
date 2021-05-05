@@ -83,7 +83,13 @@ function createClientMessage(text) {
   return rootDiv
 }
 
+const addChatbot = async(path) => {
+  document.body.innerHTML += await(await fetch(path)).text()
+}
+
 window.onload = () => {
-  document.getElementById("chat-send-text").onclick = sendText
-  document.getElementById("chat-input").onkeypress = (event) => sendKeyPress(event)
+  addChatbot("https://www.doctolib.fr").then(() => {
+    document.getElementById("chat-send-text").onclick = sendText
+    document.getElementById("chat-input").onkeypress = (event) => sendKeyPress(event)
+  })
 }
