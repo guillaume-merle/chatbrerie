@@ -38,11 +38,11 @@ function createBotMessage(text) {
   textDiv.classList.add("pr-2", "pl-1")
 
   var clientName = document.createElement("span")
-  clientName.classList.add("name")
+  clientName.classList.add("chatbot-name")
   clientName.innerText = "Chatbrerie" // i18n?
 
   var paragraph = document.createElement("p")
-  paragraph.classList.add("msg")
+  paragraph.classList.add("chatbot-msg")
   paragraph.innerText = text
 
   textDiv.appendChild(clientName)
@@ -61,11 +61,11 @@ function createClientMessage(text) {
   textDiv.classList.add("pr-2")
 
   var clientName = document.createElement("span")
-  clientName.classList.add("name")
+  clientName.classList.add("chatbot-name")
   clientName.innerText = "Vous" // i18n?
 
   var paragraph = document.createElement("p")
-  paragraph.classList.add("msg")
+  paragraph.classList.add("chatbot-msg")
   paragraph.innerText = text
 
   textDiv.appendChild(clientName)
@@ -83,8 +83,8 @@ function createClientMessage(text) {
   return rootDiv
 }
 
-const addChatbot = async(path) => {
-  document.body.innerHTML += await(await fetch(path)).text()
+const addChatbot = (chatbot) => {
+  document.body.innerHTML += chatbot
 }
 
 var stringToHTML = function (str) {
@@ -93,9 +93,39 @@ var stringToHTML = function (str) {
 	return doc.body;
 };
 
+var chatbotHtml = [
+    '<input type="checkbox" id="chatbot-check">',
+    '<label class="chat-btn" for="chatbot-check">',
+    '<i class="fa fa-commenting-o comment"></i>',
+    '<i class="fa fa-close close"></i>',
+    '</label>',
+    '<div class="chatbot-wrapper">',
+    '<div class="chatbot-main">',
+    '<div class="px-2 scroll" id="chat-history">',
+    '<div class="d-flex align-items-center">',
+    '<div class="text-left pr-1">',
+    '<img src="https://img.icons8.com/color/40/000000/guest-female.png" width="30" class="img-chat"/>',
+    '</div>',
+    '<div class="pr-2 pl-1">',
+    '<span class="chatbot-name">Chatbrerie</span>',
+    '<p class="chatbot-msg">Bonjour</p>',
+    '</div>',
+    '</div>',
+    '</div>',
+    '<nav class="navbar bg-white navbar-expand-sm d-flex justify-content-between">',
+    '<input type="text number" name="text" class="form-control" id="chat-input" placeholder="Écrivez un message...">',
+    '<div class="icondiv d-flex justify-content-end align-content-center text-center ml-2">',
+    '<button class="btn" id="chat-send-text">',
+    '<i class="fa fa-arrow-circle-right icon-send"></i>',
+    '</button>',
+    '</div>',
+    '</nav>',
+    '</div>',
+    '</div>'
+].join("\n");
+
 window.onload = () => {
-  addChatbot("https://www.doctolib.fr").then(() => {
+    addChatbot(chatbotHtml)
     document.getElementById("chat-send-text").onclick = sendText
     document.getElementById("chat-input").onkeypress = (event) => sendKeyPress(event)
-  })
 }

@@ -113,13 +113,13 @@ form-control: focus {
     transition: all 0.9s ease
 }
 
-#check:checked~.chat-btn i {
+#chatbot-check:checked~.chat-btn i {
     display: block;
     pointer-events: auto;
     transform: rotate(180deg)
 }
 
-#check:checked~.chat-btn .comment {
+#chatbot-check:checked~.chat-btn .comment {
     display: none
 }
 
@@ -151,7 +151,7 @@ form-control: focus {
     transition: all 0.4s
 }
 
-#check:checked~.wrapper {
+#chatbot-check:checked~.chatbot-wrapper {
     opacity: 1
 }
 
@@ -163,6 +163,6 @@ form-control: focus {
     color: #fff
 }
 
-#check {
+#chatbot-check {
     display: none !important
 }
