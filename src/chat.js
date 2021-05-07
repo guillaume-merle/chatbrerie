@@ -6,7 +6,7 @@ function sendKeyPress(event) {
 }
 
 function sendText() {
-  var inputText = document.getElementById('chat-input');
+  var inputText = document.getElementById('chatbot-input');
   if (inputText.value === '') {
     return;
   }
@@ -27,7 +27,7 @@ function createBotMessage(text) {
   rootDiv.classList.add("d-flex", "align-items-center")
 
   var avatarDiv = document.createElement("div")
-  avatarDiv.classList.add("text-left", "pr-1")
+  avatarDiv.classList.add("text-left", "pr-1", "align-self-start")
   var avatarImg = document.createElement("img")
   avatarImg.src = "https://img.icons8.com/color/40/000000/guest-female.png"
   avatarImg.width = "30"
@@ -76,6 +76,7 @@ function createClientMessage(text) {
   avatarImg.src = "https://i.imgur.com/HpF4BFG.jpg"
   avatarImg.width = "30"
   avatarImg.classList.add("img-chat")
+  avatarDiv.classList.add("align-self-start")
   avatarDiv.appendChild(avatarImg)
 
   rootDiv.appendChild(textDiv)
@@ -100,32 +101,32 @@ var chatbotHtml = [
     '<i class="fa fa-close close"></i>',
     '</label>',
     '<div class="chatbot-wrapper">',
-    '<div class="chatbot-main">',
-    '<div class="px-2 scroll" id="chat-history">',
-    '<div class="d-flex align-items-center">',
-    '<div class="text-left pr-1">',
-    '<img src="https://img.icons8.com/color/40/000000/guest-female.png" width="30" class="img-chat"/>',
-    '</div>',
-    '<div class="pr-2 pl-1">',
-    '<span class="chatbot-name">Chatbrerie</span>',
-    '<p class="chatbot-msg">Bonjour</p>',
-    '</div>',
-    '</div>',
-    '</div>',
-    '<nav class="navbar bg-white navbar-expand-sm d-flex justify-content-between">',
-    '<input type="text number" name="text" class="form-control" id="chat-input" placeholder="Écrivez un message...">',
-    '<div class="icondiv d-flex justify-content-end align-content-center text-center ml-2">',
-    '<button class="btn" id="chat-send-text">',
-    '<i class="fa fa-arrow-circle-right icon-send"></i>',
-    '</button>',
-    '</div>',
-    '</nav>',
-    '</div>',
+      '<div class="chatbot-main">',
+        '<div class="px-2 scroll" id="chat-history">',
+          '<div class="d-flex align-items-center">',
+            '<div class="text-left pr-1 align-self-start">',
+              '<img src="https://img.icons8.com/color/40/000000/guest-female.png" width="30" class="img-chat"/>',
+            '</div>',
+            '<div class="pr-2 pl-1">',
+              '<span class="chatbot-name">Chatbrerie</span>',
+              '<p class="chatbot-msg">Bonjour</p>',
+            '</div>',
+          '</div>',
+      '</div>',
+      '<nav class="navbar bg-white navbar-expand-sm d-flex justify-content-start">',
+        '<input type="text number" name="text" class="form-control" id="chatbot-input" placeholder="Écrivez un message...">',
+        '<div class="icondiv d-flex justify-content-end align-content-center text-center ml-2">',
+          '<button class="btn" id="chat-send-text">',
+            '<i class="fa fa-arrow-circle-right icon-send"></i>',
+          '</button>',
+        '</div>',
+      '</nav>',
+      '</div>',
     '</div>'
 ].join("\n");
 
 window.onload = () => {
     addChatbot(chatbotHtml)
     document.getElementById("chat-send-text").onclick = sendText
-    document.getElementById("chat-input").onkeypress = (event) => sendKeyPress(event)
+    document.getElementById("chatbot-input").onkeypress = (event) => sendKeyPress(event)
 }
