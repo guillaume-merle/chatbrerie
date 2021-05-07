@@ -1,0 +1,13 @@
+{
+  "name": "Doctolib Chatbot",
+  "version": "1.0",
+  "description": "Chatbrerie",
+  "manifest_version": 2,
+  "content_scripts": [
+   {
+     "matches": ["https://www.doctolib.fr/"],
+     "css": ["styles/chat.css", "node_modules/bootstrap/dist/css/bootstrap.min.css"],
+     "js": ["dist/bundle.js"]
+   }
+ ]
+}

@@ -71,7 +71,7 @@ body {
     border: none
 }
 
-form-control: focus {
+.form-control: focus {
     box-shadow: none;
     overflow: hidden;
     border: none
@@ -99,7 +99,7 @@ form-control: focus {
 }
 
 .chat-btn {
-    position: absolute;
+    position: fixed;
     right: 2em;
     bottom: 1.5em;
     cursor: pointer
@@ -142,7 +142,7 @@ form-control: focus {
 }
 
 .chatbot-wrapper {
-    position: absolute;
+    position: fixed;
     right: 1.5em;
     bottom: 6em;
     background-color: #fff;
