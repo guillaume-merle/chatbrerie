@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@tensorflow/tfjs-node": "^3.6.1"
+    "@tensorflow/tfjs-node": "^3.6.1",
+    "nlp-js-tools-french": "^1.0.9"
   }
 }
