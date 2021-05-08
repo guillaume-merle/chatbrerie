@@ -1,0 +1,5 @@
+tensorflowjs
+keras
+numpy
+spacy_lefff
+unidecode
