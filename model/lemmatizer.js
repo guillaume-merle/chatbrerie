@@ -11,7 +11,14 @@ var config = {
 
 test = "Bonjour, comment allez-vous ?";
 
-// TODO: Convert the output in a list of word
-// If there is multiple same ids, we only take the first one
+
+// TODO: If there is multiple same ids, we only take the first one
 var nlpToolsFr = new NlpjsTFr(test, config);
+var output_list = [];
+var dict = Array.from(nlpToolsFr.lemmatizer())
 console.log(Array.from(nlpToolsFr.lemmatizer()))
+
+for (var i = 0, len = dict.length; i < len; i++){
+       output_list.push(dict[i].lemma)
+    }
+console.log(output_list)
