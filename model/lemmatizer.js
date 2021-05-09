@@ -9,16 +9,21 @@ var config = {
     debug: false
 };
 
-test = "Bonjour, comment allez-vous ?";
+test = "Bonjour, des comment allez-vous ?";
 
-
-// TODO: If there is multiple same ids, we only take the first one
 var nlpToolsFr = new NlpjsTFr(test, config);
 var output_list = [];
-var dict = Array.from(nlpToolsFr.lemmatizer())
-console.log(Array.from(nlpToolsFr.lemmatizer()))
 
+var dict = Array.from(nlpToolsFr.lemmatizer())
+
+// Fill the output_list with the first occurence of each lemmatize word
+var last_id = -1;
 for (var i = 0, len = dict.length; i < len; i++){
-       output_list.push(dict[i].lemma)
+        if (last_id == dict[i].id)
+            continue;
+
+        output_list.push(dict[i].lemma);
+        last_id = dict[i].id
     }
+
 console.log(output_list)
