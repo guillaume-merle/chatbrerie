@@ -1,7 +1,3 @@
-body {
-    background-color: #fff
-}
-
 ::-webkit-scrollbar {
     width: 10px
 }
@@ -18,34 +14,29 @@ body {
     background: #555
 }
 
-.main {
-    background-color: #eee;
-    width: 320px;
-    position: relative;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 6px 0px 0px 0px
-}
-
 .scroll {
     overflow-y: scroll;
     scroll-behavior: smooth;
-    height: 325px
+    height: 35em;
 }
 
 .img-chat {
     border-radius: 50%;
+    width: 3.5em;
     background-color: #66BB6A
 }
 
-.name {
-    font-size: 8px
+.chatbot-name {
+    font-size: 1em
 }
 
-.msg {
+.chatbot-msg {
+    max-width: 20em;
+    word-wrap: break-word;
+    text-align: left;
     background-color: #fff;
-    font-size: 11px;
-    padding: 5px;
+    font-size: 1.2em;
+    padding: 0.5em;
     border-radius: 5px;
     font-weight: 500;
     color: #3e3c3c
@@ -60,30 +51,33 @@ body {
 .navbar {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)*/
 }
 
-.form-control {
-    font-size: 12px;
+#chatbot-input {
+    font-size: 1.2em;
     font-weight: 400;
-    width: 230px;
-    height: 30px;
-    border: none
+    width: 20em;
+    height: 3em;
+    border: none;
+    margin-right: 2em;
 }
 
-form-control: focus {
-    box-shadow: none;
+#chatbot-input:focus {
+    box-shadow: none !important;
     overflow: hidden;
-    border: none
+    border: none !important
 }
 
-.form-control:focus {
-    box-shadow: none !important
+#chat-send-text:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: white;
 }
 
 .icon-send {
     color: #f59503 !important;
-    font-size: 18px !important;
+    font-size: 2.5em !important;
     position: relative;
     bottom: 0.5em;
     padding: 0px;
@@ -99,10 +93,11 @@ form-control: focus {
 }
 
 .chat-btn {
-    position: absolute;
+    position: fixed;
     right: 2em;
     bottom: 1.5em;
-    cursor: pointer
+    cursor: pointer;
+    z-index: 10;
 }
 
 .chat-btn .close {
@@ -113,24 +108,24 @@ form-control: focus {
     transition: all 0.9s ease
 }
 
-#check:checked~.chat-btn i {
+#chatbot-check:checked~.chat-btn i {
     display: block;
     pointer-events: auto;
     transform: rotate(180deg)
 }
 
-#check:checked~.chat-btn .comment {
+#chatbot-check:checked~.chat-btn .comment {
     display: none
 }
 
 .chat-btn i {
-    font-size: 22px;
+    font-size: 1.5em;
     color: #fff !important
 }
 
 .chat-btn {
-    width: 50px;
-    height: 50px;
+    width: 3em;
+    height: 3em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,17 +136,27 @@ form-control: focus {
     border: none
 }
 
-.wrapper {
-    position: absolute;
-    right: 1.5em;
-    bottom: 6em;
-    background-color: #fff;
-    border-radius: 5px;
-    opacity: 0;
-    transition: all 0.4s
+.chatbot-main {
+    background-color: #eee;
+    width: 30em;
+    height: 40em;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 6px 0px 0px 0px
 }
 
-#check:checked~.wrapper {
+.chatbot-wrapper {
+    position: fixed;
+    right: 1.5em;
+    bottom: 10em;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 0.4s;
+    z-index: 10;
+}
+
+#chatbot-check:checked~.chatbot-wrapper {
     opacity: 1
 }
 
@@ -163,6 +168,6 @@ form-control: focus {
     color: #fff
 }
 
-#check {
+#chatbot-check {
     display: none !important
 }
