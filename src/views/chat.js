@@ -1,3 +1,6 @@
+import {loadWordBag} from '../models/load.js';
+import {callModel} from '../models/lemmatizer.js';
+
 function sendKeyPress(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
@@ -10,16 +13,20 @@ function sendText() {
   if (inputText.value === '') {
     return;
   }
+  var input = inputText.value;
   var chatHistory = document.getElementById('chat-history')
   var clientMessage = createClientMessage(inputText.value)
   chatHistory.appendChild(clientMessage)
   inputText.value = ''
 
   // Get Chatbot response
-  var chatBotMessage = createBotMessage("Yo c'est Chatbrerie")
-  chatHistory.appendChild(chatBotMessage)
+  // var chatBotMessage = createBotMessage("Yo c'est Chatbrerie")
+  callModel(input).then((answer) => {
+    var chatBotMessage = createBotMessage(answer)
+    chatHistory.appendChild(chatBotMessage)
 
-  chatHistory.scrollTop = chatHistory.scrollHeight
+    chatHistory.scrollTop = chatHistory.scrollHeight
+  })
 }
 
 function createBotMessage(text) {

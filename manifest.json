@@ -9,5 +9,7 @@
      "css": ["src/styles/chat.css", "node_modules/bootstrap/dist/css/bootstrap.min.css"],
      "js": ["dist/bundle.js"]
    }
- ]
+  ],
+  "permissions": ["storage", "unlimitedStorage"],
+  "web_accessible_resources": ["src/data/word-lists.txt", "src/data/simple.json", "src/data/js-model/model.json", "src/data/js-model/group1-shard1of1.bin"]
 }
