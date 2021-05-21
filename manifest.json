@@ -7,7 +7,7 @@
    {
      "matches": ["https://www.doctolib.fr/*"],
      "css": ["src/styles/chat.css", "node_modules/bootstrap/dist/css/bootstrap.min.css"],
-     "js": ["dist/bundle.js"]
+     "js": ["dist/bundle.js", "dist/524.bundle.js"]
    }
   ],
   "permissions": ["storage", "unlimitedStorage"],

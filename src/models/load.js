@@ -14,6 +14,7 @@ function loadFile(path) {
             }
         }
     }
+    xhr.send(null);
     return allText;
 }
 

@@ -1,12 +1,11 @@
 import { loadFile } from '../models/load.js';
 import * as tf from '@tensorflow/tfjs';
-import * as nlpfr from 'nlp-js-tools-french'
 
 const modelPath = 'src/data/js-model/model.json';
 const jsonFile = JSON.parse(loadFile('src/data/simple.json').toString());
-const wordListPath= 'src/data/word-lists.txt'
+const wordListPath = 'src/data/word-lists.txt'
 
-function lemmatizeInput(input) {
+async function lemmatizeInput(input) {
     var config = {
         tagTypes: ['adj', 'adv', 'art', 'con', 'nom', 'ono', 'pre', 'ver', 'pro'],
         strictness: false,
@@ -14,11 +13,12 @@ function lemmatizeInput(input) {
         debug: false
     };
 
-    var nlpToolsFr = new nlpfr(input, config);
-    var outputList = [];
+    const { default: nlpfr } = await import('nlp-js-tools-french')
 
+    var nlpToolsFr = new nlpfr(input, config);
     var dict = Array.from(nlpToolsFr.lemmatizer())
 
+    var outputList = [];
     // Fill the output_list with the first occurence of each lemmatize word
     var lastId = -1;
     for (var i = 0, len = dict.length; i < len; i++) {
@@ -34,8 +34,7 @@ function lemmatizeInput(input) {
 
 async function getModel(path) {
     const modelUrl = chrome.runtime.getURL(path);
-    const model = await tf.loadLayersModel(modelUrl);
-    return model
+    return await tf.loadLayersModel(modelUrl)
 }
 
 function getRandomInt(max) {
@@ -60,8 +59,8 @@ function indexOfMax(arr) {
     return maxIndex;
 }
 
-function prepareInput(input) {
-    var lemmatizeList = lemmatizeInput(input);
+async function prepareInput(input) {
+    var lemmatizeList = await lemmatizeInput(input)
     var wordList = loadFile(wordListPath).split('\n')
 
     var preparedInput = new Array(wordList.length).fill(0);
@@ -81,15 +80,19 @@ function prepareInput(input) {
     return preparedInput
 }
 
-const model = getModel(modelPath)
+// load the model when it's first used
+var model = null
 
+async function predict(input) {
+    if (model == null) {
+        model = await getModel(modelPath)
+    }
 
-function predict(input) {
-    preparedInput = prepareInput(input)
+    var preparedInput = await prepareInput(input)
     var prediction = indexOfMax(Array.from(model.predict(tf.tensor([preparedInput])).dataSync()))
 
-    var numberOfResponse = jsonFile['intents'][prediction]['responses'].length;
-    return jsonFile['intents'][prediction]['responses'][getRandomInt(numberOfResponse)];
+    var response = jsonFile['intents'][prediction]['responses'];
+    return response[getRandomInt(response.length)];
 }
 
 export { predict };
