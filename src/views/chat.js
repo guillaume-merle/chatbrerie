@@ -1,5 +1,4 @@
-import {loadWordBag} from '../models/load.js';
-import {callModel} from '../models/lemmatizer.js';
+import { predict } from '../models/lemmatizer.js';
 
 function sendKeyPress(event) {
   if (event.keyCode === 13) {
@@ -20,8 +19,7 @@ function sendText() {
   inputText.value = ''
 
   // Get Chatbot response
-  // var chatBotMessage = createBotMessage("Yo c'est Chatbrerie")
-  callModel(input).then((answer) => {
+  predict(input).then((answer) => {
     var chatBotMessage = createBotMessage(answer)
     chatHistory.appendChild(chatBotMessage)
 
