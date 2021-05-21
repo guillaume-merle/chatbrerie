@@ -54,8 +54,6 @@ def parse_json(path):
     words = sorted(list(set(words)))
     save_words_list(words)
 
-    classes = sorted(list(set(classes)))
-
     print (len(documents), "documents")
 
     print (len(classes), "classes", classes)
