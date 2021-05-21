@@ -26,7 +26,7 @@ def init_lemmatizer():
 
 
 def save_words_list(words):
-    f = open("../data/word-lists.txt", "w")
+    f = open("data/word-lists.txt", "w")
     f.write('\n'.join(words))
 
 
@@ -53,8 +53,6 @@ def parse_json(path):
 
     words = sorted(list(set(words)))
     save_words_list(words)
-
-    classes = sorted(list(set(classes)))
 
     print (len(documents), "documents")
 
