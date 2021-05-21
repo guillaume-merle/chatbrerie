@@ -29,13 +29,12 @@ def create_model(train_x, train_y):
 def train_model(train_x, train_y, epochs):
     model = create_model(train_x, train_y)
     hist = model.fit(np.array(train_x), np.array(train_y), epochs=epochs, batch_size=5, verbose=1)
-    model.save('chatbot_model.h5', hist)
 
     return model
 
 
 def save_model_js(model):
-    tfjs.converters.save_keras_model(model, "../data/js-model")
+    tfjs.converters.save_keras_model(model, "data/js-model")
 
 
 def prepare_training(path):
@@ -77,4 +76,5 @@ def train(path, epochs=200):
 
     save_model_js(model)
 
-train("../data/simple.json")
+if __name__ == "__main__":
+    train("data/simple.json")

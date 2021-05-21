@@ -26,7 +26,7 @@ def init_lemmatizer():
 
 
 def save_words_list(words):
-    f = open("../data/word-lists.txt", "w")
+    f = open("data/word-lists.txt", "w")
     f.write('\n'.join(words))
 
 
