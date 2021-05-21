@@ -3,7 +3,7 @@
         {
             "tag": "greeting",
             "patterns": ["Bonjour", "Bonsoir", "Hey","Hola", "Hello", "Est-ce qu'il y a quelqu'un", "Salutation",
-                         "Salut", "Coucou", "Hi"],
+                         "Salut", "Coucou"],
             "responses": ["Bonjour.", "Ravi de vous revoir !", "Bonjour, comment puis-je vous aider ?"]
         },
         {
@@ -15,6 +15,12 @@
             "tag": "thanks",
             "patterns": ["Merci", "Merci beaucoup", "Mille mercis pour votre aide"],
             "responses": ["De rien.", "Au plaisir !", "C'est un plaisir de vous aider."]
+        },
+        {
+            "tag": "not understand",
+            "patterns": [],
+            "responses": ["Désolé, je n'ai pas compris votre question.", "Désolé, je n'ai pas compris.",
+                          "Je n'ai pas compris votre requête, pouvez-vous reformuler votre demande ?"]
         }
     ]
 }

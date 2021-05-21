@@ -39,6 +39,12 @@ def parse_json(path):
     nlp = init_lemmatizer()
 
     for intent in intents['intents']:
+        # adding classes to our class list
+        if intent['tag'] not in classes:
+            classes.append(intent['tag'])
+            # category without patterns
+            if len(intent['patterns']) == 0:
+                documents.append(('', intent['tag']))
         for pattern in intent['patterns']:
             # take each word and tokenize it
             w = re.split('\.|,|;|\'|\-|!|\?| ', pattern)
@@ -47,9 +53,6 @@ def parse_json(path):
             words.extend(w)
             # adding documents
             documents.append((w, intent['tag']))
-            # adding classes to our class list
-            if intent['tag'] not in classes:
-                classes.append(intent['tag'])
 
     words = sorted(list(set(words)))
     save_words_list(words)
