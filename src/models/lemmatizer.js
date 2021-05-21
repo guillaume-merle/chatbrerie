@@ -32,7 +32,7 @@ function lemmatizeInput(input) {
     return outputList;
 }
 
-function getModel(path) {
+async function getModel(path) {
     const modelUrl = chrome.runtime.getURL(path);
     const model = await tf.loadLayersModel(modelUrl);
     return model
@@ -84,7 +84,7 @@ function prepareInput(input) {
 const model = getModel(modelPath)
 
 
-async function predict(input) {
+function predict(input) {
     preparedInput = prepareInput(input)
     var prediction = indexOfMax(Array.from(model.predict(tf.tensor([preparedInput])).dataSync()))
 
