@@ -1,6 +1,4 @@
-// console.log('test')
-
-function loadWordBag(path) {
+function loadFile(path) {
     const url = chrome.runtime.getURL(path);
     var allText;
     var xhr = new XMLHttpRequest();
@@ -8,7 +6,6 @@ function loadWordBag(path) {
     xhr.open("GET", url, false);
     xhr.onreadystatechange = function ()
     {
-        // alert("I am here");
         if(xhr.readyState === 4)
         {
             if(xhr.status === 200 || xhr.status == 0)
@@ -17,10 +14,7 @@ function loadWordBag(path) {
             }
         }
     }
-    xhr.send(null);
     return allText;
 }
 
-export { loadWordBag };
-
-// loadWordBag("word-lists.txt");
+export { loadFile };
