@@ -5,7 +5,7 @@
   "manifest_version": 2,
   "content_scripts": [
    {
-     "matches": ["https://www.doctolib.fr/"],
+     "matches": ["https://www.doctolib.fr/*"],
      "css": ["src/styles/chat.css", "node_modules/bootstrap/dist/css/bootstrap.min.css"],
      "js": ["dist/bundle.js"]
    }
