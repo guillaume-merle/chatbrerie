@@ -1,0 +1,44 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": ["Bonjour", "Bonsoir", "Hey","Hola", "Hello", "Est-ce qu'il y a quelqu'un", "Salutation",
+                         "Salut", "Coucou"],
+            "responses": ["Bonjour.", "Ravi de vous revoir !", "Bonjour, comment puis-je vous aider ?"]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": ["Au revoir", "Bye", "Ciao", "Hasta la vista", "Bonne journée", "Adieu"],
+            "responses": ["Au revoir.", "À la prochaine fois !", "Au revoir, prenez-soin de vous."]
+        },
+        {
+            "tag": "thanks",
+            "patterns": ["Merci", "Merci beaucoup", "Mille mercis pour votre aide"],
+            "responses": ["De rien.", "Au plaisir !", "C'est un plaisir de vous aider."]
+        },
+        {
+            "tag": "not understand",
+            "patterns": [],
+            "responses": ["Désolé, je n'ai pas compris votre question.", "Désolé, je n'ai pas compris.",
+                          "Je n'ai pas compris votre requête, pouvez-vous reformuler votre demande ?"]
+        },
+        {
+            "tag": "password",
+            "patterns": ["J'ai perdu mon mot de passe", "Je ne trouve plus mon mdp", "Je souhaite réinitialiser mon mot de passe", "Réinitialiser mot de passe", "À l'aide, je ne me souviens plus de mon mot de passe", "Je veux changer mon mot de passe", "Je veux modifier mon mot de passe", "mdp"],
+            "responses": ["Pour changer votre mot de passe, veuillez-suivre le lien suivant : https://www.doctolib.fr/account/passwords/new.",
+                          "Veuillez suivre les instructions du lien suivant : https://www.doctolib.fr/account/passwords/new pour changer votre mot de passe."]
+        },
+        {
+            "tag": "vaccine",
+            "patterns": ["Je veux me faire vacciner", "vaccin", "pfizer", "moderna", "astrazeneca", "johnson & johnson", "janssen", "Comment avoir ma dose", "Je veux ma deuxième injection", "Prendre rendez-vous vaccination", "Première injection", "Premier vaccin", "rdv vaccination"],
+            "responses": ["Pour prendre votre rendez-vous de vaccination, veuillez aller sur cette page : https://www.doctolib.fr/vaccination-covid-19.",
+                          "Pour prendre rendez-vous, veuillez vous rendre sur https://www.doctolib.fr/vaccination-covid-19"]
+        },
+        {
+            "tag": "connection",
+            "patterns": ["Comment créer un compte ?", "Je veux créer un compte Doctolib", "Comment me connecter à mon compte", "création de compte", "connexion"],
+            "responses": ["Pour créer un compte ou vous connecter, suivez ce lien : https://www.doctolib.fr/sessions/new",
+                          "La création de compte ou la connexion, c'est par ici : https://www.doctolib.fr/sessions/new"]
+        }
+    ]
+}
