@@ -1,8 +1,6 @@
 import { loadFile } from '../models/load.js';
 import * as tf from '@tensorflow/tfjs';
 
-const modelPath = 'src/data/js-model/model.json';
-const jsonFile = JSON.parse(loadFile('src/data/simple.json').toString());
 const wordListPath = 'src/data/word-lists.txt'
 
 async function lemmatizeInput(input) {
@@ -32,33 +30,6 @@ async function lemmatizeInput(input) {
     return outputList;
 }
 
-async function getModel(path) {
-    const modelUrl = chrome.runtime.getURL(path);
-    return await tf.loadLayersModel(modelUrl)
-}
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-
-function indexOfMax(arr) {
-    if (arr.length === 0) {
-        return -1;
-    }
-
-    var max = arr[0];
-    var maxIndex = 0;
-
-    for (var i = 1; i < arr.length; i++) {
-        if (arr[i] > max) {
-            maxIndex = i;
-            max = arr[i];
-        }
-    }
-
-    return maxIndex;
-}
-
 async function prepareInput(input) {
     var lemmatizeList = await lemmatizeInput(input)
     var wordList = loadFile(wordListPath).split('\n')
@@ -80,19 +51,4 @@ async function prepareInput(input) {
     return preparedInput
 }
 
-// load the model when it's first used
-var model = null
-
-async function predict(input) {
-    if (model == null) {
-        model = await getModel(modelPath)
-    }
-
-    var preparedInput = await prepareInput(input)
-    var prediction = indexOfMax(Array.from(model.predict(tf.tensor([preparedInput])).dataSync()))
-
-    var response = jsonFile['intents'][prediction]['responses'];
-    return response[getRandomInt(response.length)];
-}
-
-export { predict };
+export prepareInput
