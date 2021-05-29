@@ -1,4 +1,4 @@
-import { loadFile } from '../models/load.js'
+import { loadFile } from '../utils/utils.js'
 
 class Lemmatizer {
     constructor() {
