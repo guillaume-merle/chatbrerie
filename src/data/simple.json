@@ -13,7 +13,7 @@
         },
         {
             "tag": "thanks",
-            "patterns": ["Merci", "Merci beaucoup", "Mille mercis pour votre aide"],
+            "patterns": ["Merci", "Merci beaucoup", "Mille mercis pour votre aide", "Je vous remercie"],
             "responses": ["De rien.", "Au plaisir !", "C'est un plaisir de vous aider."]
         },
         {
@@ -51,5 +51,5 @@
             "responses": ["Prenez rendez-vous <a href=\"https://www.doctolib.fr\">ici</a>.",
                           "Pour réserver une consultation, rendez-vous sur cette <a href=\"https://www.doctolib.fr\">page</a>."]
         }
-
+    ]
 }
