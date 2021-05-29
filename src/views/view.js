@@ -132,3 +132,5 @@ class View {
         document.body.innerHTML += chatbot
     }
 }
+
+export { View }
