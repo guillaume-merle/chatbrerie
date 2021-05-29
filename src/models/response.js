@@ -1,4 +1,4 @@
-import { loadFile } from '../models/load.js'
+import { loadFile, randomInt } from '../utils/utils.js'
 
 class Response {
     constructor() {
@@ -7,10 +7,8 @@ class Response {
 
     getResponse(prediction) {
         var response = jsonFile['intents'][prediction]['responses'];
-        return response[getRandomInt(response.length)];
+        return response[randomInt(response.length)];
     }
 }
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+export { Response }
