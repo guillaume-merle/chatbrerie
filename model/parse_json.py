@@ -45,14 +45,21 @@ def parse_json(path):
             # category without patterns
             if len(intent['patterns']) == 0:
                 documents.append(('', intent['tag']))
+
         for pattern in intent['patterns']:
             # take each word and tokenize it
             w = re.split('\.|,|;|\'|\-|!|\?| ', pattern)
-            w = [unidecode.unidecode(word.lemma_.lower()) for word in nlp(' '.join(w)) if len(word.lemma_) > 2]
-            print(w)
-            words.extend(w)
+            lemmatize_words = []
+
+            for word in w:
+                lemma = nlp(word)
+                if len(lemma) != 0 and len(lemma[0].lemma_) > 2:
+                    lemmatize_words.append(unidecode.unidecode(lemma[0].lemma_.lower()))
+
+            print(lemmatize_words)
+            words.extend(lemmatize_words)
             # adding documents
-            documents.append((w, intent['tag']))
+            documents.append((lemmatize_words, intent['tag']))
 
     words = sorted(list(set(words)))
     save_words_list(words)
