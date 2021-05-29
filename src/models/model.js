@@ -1,10 +1,9 @@
 import * as tf from '@tensorflow/tfjs';
 
-const modelPath = 'src/data/js-model/model.json';
-
 class Model {
     constructor() {
         this.model = getModel(modelPath)
+        this.modelPath = '../data/js-model/model.json'
     }
 
     predict(preparedInput) {
