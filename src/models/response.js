@@ -1,13 +1,12 @@
 import { loadFile, randomInt } from '../utils/utils.js'
+import { Config } from '../config'
 
 class Response {
     constructor() {
-        this.data = JSON.parse(loadFile('src/data/simple.json').toString());
+        this.data = JSON.parse(loadFile(Config.answersPath).toString());
     }
 
     getResponse(prediction) {
-        console.log(prediction)
-        console.log(this.data['intents'])
         var response = this.data['intents'][prediction]['responses'];
         return response[randomInt(response.length)];
     }

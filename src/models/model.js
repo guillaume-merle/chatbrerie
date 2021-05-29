@@ -1,10 +1,10 @@
 import { indexOfMax } from '../utils/utils'
 import * as tf from '@tensorflow/tfjs';
+import { Config } from '../config'
 
 class Model {
     constructor() {
-        this.modelPath = 'src/data/js-model/model.json'
-        this.model = this.#getModel(this.modelPath)
+        this.model = this.#getModel(Config.modelPath)
     }
 
     async predict(preparedInput) {

@@ -1,9 +1,9 @@
 import { loadFile } from '../utils/utils.js'
+import { Config } from '../config'
 
 class Lemmatizer {
     constructor() {
-        this.wordListPath = 'src/data/word-lists.txt'
-        this.wordList = loadFile(this.wordListPath).split('\n')
+        this.wordList = loadFile(Config.wordListPath).split('\n')
     }
 
     async lemmatizeInput(input) {
@@ -13,30 +13,30 @@ class Lemmatizer {
             minimumLength: 3,
             debug: false
         };
-    
+
         const { default: nlpfr } = await import('nlp-js-tools-french')
-    
+
         var nlpToolsFr = new nlpfr(input, config);
         var dict = Array.from(nlpToolsFr.lemmatizer())
-    
+
         var outputList = [];
         // Fill the output_list with the first occurence of each lemmatize word
         var lastId = -1;
         for (var i = 0, len = dict.length; i < len; i++) {
             if (lastId == dict[i].id)
                 continue;
-    
+
             outputList.push(dict[i].lemma);
             lastId = dict[i].id
         }
-    
+
         return outputList;
     }
 
     async prepareInput(input) {
         var lemmatizeList = await this.lemmatizeInput(input)
         var preparedInput = new Array(this.wordList.length).fill(0);
-    
+
         // TODO: levenstein distance
         for (var i = 0; i < lemmatizeList.length; i++) {
             for (var j = 0; j < this.wordList.length; j++) {
@@ -45,7 +45,7 @@ class Lemmatizer {
                 }
             }
         }
-    
+
         return preparedInput
     }
 }
