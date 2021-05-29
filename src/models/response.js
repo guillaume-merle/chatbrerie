@@ -6,7 +6,9 @@ class Response {
     }
 
     getResponse(prediction) {
-        var response = jsonFile['intents'][prediction]['responses'];
+        console.log(prediction)
+        console.log(this.data['intents'])
+        var response = this.data['intents'][prediction]['responses'];
         return response[randomInt(response.length)];
     }
 }

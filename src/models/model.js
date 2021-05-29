@@ -1,40 +1,24 @@
+import { indexOfMax } from '../utils/utils'
 import * as tf from '@tensorflow/tfjs';
 
 class Model {
     constructor() {
-        this.model = getModel(modelPath)
-        this.modelPath = '../data/js-model/model.json'
+        this.modelPath = 'src/data/js-model/model.json'
+        this.model = this.#getModel(this.modelPath)
     }
 
-    predict(preparedInput) {
+    async predict(preparedInput) {
         return indexOfMax(
             Array.from(
-                model.predict(tf.tensor([preparedInput]))
-                .dataSync()
+                (await this.model).predict(tf.tensor([preparedInput])).dataSync()
             )
         )
     }
-}
 
-function indexOfMax(arr) {
-    if (arr.length === 0) {
-        return -1;
+    async #getModel(path) {
+        const modelUrl = chrome.runtime.getURL(path);
+        return await tf.loadLayersModel(modelUrl)
     }
-
-    var max = arr[0];
-    var maxIndex = 0;
-
-    for (var i = 1; i < arr.length; i++) {
-        if (arr[i] > max) {
-            maxIndex = i;
-            max = arr[i];
-        }
-    }
-
-    return maxIndex;
 }
 
-async function getModel(path) {
-    const modelUrl = chrome.runtime.getURL(path);
-    return await tf.loadLayersModel(modelUrl)
-}
+export { Model }

@@ -1,7 +1,7 @@
 class View {
     constructor(controller) {
         this.controller = controller
-        chatbot = [
+        var chatbot = [
             '<input type="checkbox" id="chatbot-check">',
             '<label class="chat-btn" for="chatbot-check">',
             '<i class="fa fa-commenting-o comment"></i>',
@@ -34,9 +34,40 @@ class View {
 
         window.onload = () => {
             this.insertChatbot(chatbot)
-            document.getElementById("chat-send-text").onclick = sendText
-            document.getElementById("chatbot-input").onkeypress = (event) => sendOnKeyPress(event)
+            document.getElementById("chat-send-text").onclick = this.sendText
+            document.getElementById("chatbot-input").onkeypress = (event) => this.sendOnKeyPress(event)
         }
+    }
+
+    createClientMessage(text) {
+        var rootDiv = document.createElement("div")
+        rootDiv.classList.add("d-flex", "align-items-center", "text-right", "justify-content-end")
+
+        var textDiv = document.createElement("div")
+        textDiv.classList.add("pr-2")
+
+        var clientName = document.createElement("span")
+        clientName.classList.add("chatbot-name")
+        clientName.innerText = "Vous" // i18n?
+
+        var paragraph = document.createElement("p")
+        paragraph.classList.add("chatbot-msg")
+        paragraph.innerText = text
+
+        textDiv.appendChild(clientName)
+        textDiv.appendChild(paragraph)
+
+        var avatarDiv = document.createElement("div")
+        var avatarImg = document.createElement("img")
+        avatarImg.src = "https://i.imgur.com/HpF4BFG.jpg"
+        avatarImg.width = "30"
+        avatarImg.classList.add("img-chat")
+        avatarDiv.classList.add("align-self-start")
+        avatarDiv.appendChild(avatarImg)
+
+        rootDiv.appendChild(textDiv)
+        rootDiv.appendChild(avatarDiv)
+        return rootDiv
     }
 
     sendText() {
@@ -52,11 +83,12 @@ class View {
         inputText.value = ''
 
         // Get Chatbot response
-        var answer = this.controller.botAnswer(input)
-        var chatBotMessage = this.createBotMessage(answer)
-        chatHistory.appendChild(chatBotMessage)
+        var answer = this.controller.botAnswer(input).then((answer) => {
+            var chatBotMessage = this.createBotMessage(answer)
+            chatHistory.appendChild(chatBotMessage)
 
-        chatHistory.scrollTop = chatHistory.scrollHeight
+            chatHistory.scrollTop = chatHistory.scrollHeight
+        })
     }
 
     sendOnKeyPress(event) {
@@ -94,37 +126,6 @@ class View {
 
         rootDiv.appendChild(avatarDiv)
         rootDiv.appendChild(textDiv)
-        return rootDiv
-    }
-
-    createClientMessage(text) {
-        var rootDiv = document.createElement("div")
-        rootDiv.classList.add("d-flex", "align-items-center", "text-right", "justify-content-end")
-
-        var textDiv = document.createElement("div")
-        textDiv.classList.add("pr-2")
-
-        var clientName = document.createElement("span")
-        clientName.classList.add("chatbot-name")
-        clientName.innerText = "Vous" // i18n?
-
-        var paragraph = document.createElement("p")
-        paragraph.classList.add("chatbot-msg")
-        paragraph.innerText = text
-
-        textDiv.appendChild(clientName)
-        textDiv.appendChild(paragraph)
-
-        var avatarDiv = document.createElement("div")
-        var avatarImg = document.createElement("img")
-        avatarImg.src = "https://i.imgur.com/HpF4BFG.jpg"
-        avatarImg.width = "30"
-        avatarImg.classList.add("img-chat")
-        avatarDiv.classList.add("align-self-start")
-        avatarDiv.appendChild(avatarImg)
-
-        rootDiv.appendChild(textDiv)
-        rootDiv.appendChild(avatarDiv)
         return rootDiv
     }
 

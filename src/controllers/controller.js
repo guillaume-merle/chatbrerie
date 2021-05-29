@@ -1,7 +1,7 @@
-import Lemmatizer from './lemmatizer.js'
-import Response from '../models/response.js'
-import Model from '../models/model.js'
-import View from '../views/view.js'
+import { Lemmatizer } from './lemmatizer.js'
+import { Response } from '../models/response.js'
+import { Model } from '../models/model.js'
+import { View } from '../views/view.js'
 
 class Controller {
     constructor(){
@@ -13,7 +13,7 @@ class Controller {
 
     async botAnswer(input) {
         var preparedInput = await this.lemmatizer.prepareInput(input)
-        var prediction = this.model.predict(preparedInput)
+        var prediction = await this.model.predict(preparedInput)
 
         return this.response.getResponse(prediction)
     }

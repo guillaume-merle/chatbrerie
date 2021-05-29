@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     mode: 'production',
-    entry: './src/views/chat.js',
+    entry: './src/application.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),

@@ -3,7 +3,7 @@ import { loadFile } from '../utils/utils.js'
 class Lemmatizer {
     constructor() {
         this.wordListPath = 'src/data/word-lists.txt'
-        this.wordList = loadFile(wordListPath).split('\n')
+        this.wordList = loadFile(this.wordListPath).split('\n')
     }
 
     async lemmatizeInput(input) {
@@ -34,13 +34,13 @@ class Lemmatizer {
     }
 
     async prepareInput(input) {
-        var lemmatizeList = await lemmatizeInput(input)
+        var lemmatizeList = await this.lemmatizeInput(input)
         var preparedInput = new Array(this.wordList.length).fill(0);
     
         // TODO: levenstein distance
         for (var i = 0; i < lemmatizeList.length; i++) {
             for (var j = 0; j < this.wordList.length; j++) {
-                if (lemmatizeList[i].localeCompare(wordList[j]) == 0) {
+                if (lemmatizeList[i].localeCompare(this.wordList[j]) == 0) {
                     preparedInput[j] = 1;
                 }
             }
