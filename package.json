@@ -8,7 +8,8 @@
     "@tensorflow/tfjs": "^3.6.0",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
-    "nlp-js-tools-french": "^1.0.9"
+    "nlp-js-tools-french": "^1.0.9",
+    "string-similarity": "^4.0.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
