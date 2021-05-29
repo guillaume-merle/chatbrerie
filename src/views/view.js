@@ -10,15 +10,6 @@ class View {
             '<div class="chatbot-wrapper">',
             '<div class="chatbot-main">',
             '<div class="px-2 scroll" id="chat-history">',
-            '<div class="d-flex align-items-center">',
-            '<div class="text-left pr-1 align-self-start">',
-            '<img src="https://img.icons8.com/color/40/000000/guest-female.png" width="30" class="img-chat"/>',
-            '</div>',
-            '<div class="pr-2 pl-1">',
-            '<span class="chatbot-name">Chatbrerie</span>',
-            '<p class="chatbot-msg">Bonjour</p>',
-            '</div>',
-            '</div>',
             '</div>',
             '<nav class="navbar bg-white navbar-expand-sm d-flex justify-content-start">',
             '<input type="text number" name="text" class="form-control" id="chatbot-input" placeholder="Écrivez un message...">',
@@ -34,9 +25,20 @@ class View {
 
         window.onload = () => {
             this.insertChatbot(chatbot)
+
             document.getElementById("chat-send-text").onclick = this.sendText
             document.getElementById("chatbot-input").onkeypress = (event) => this.sendOnKeyPress(event)
         }
+    }
+
+    init() {
+        this.controller.botAnswer('Bonjour').then((message) => {
+            var chatBotMessage = this.createBotMessage(message)
+            var chatHistory = document.getElementById('chat-history')
+            chatHistory.appendChild(chatBotMessage)
+
+            chatHistory.scrollTop = chatHistory.scrollHeight
+        })
     }
 
     createClientMessage(text) {

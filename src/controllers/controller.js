@@ -9,6 +9,7 @@ class Controller {
         this.response = new Response()
         this.lemmatizer = new Lemmatizer()
         this.view = new View(this)
+        this.view.init()
     }
 
     async botAnswer(input) {

@@ -1,6 +1,6 @@
 import { indexOfMax } from '../utils/utils'
 import * as tf from '@tensorflow/tfjs';
-import { Config } from '../config'
+import { Config } from '../config.js'
 
 class Model {
     constructor() {
