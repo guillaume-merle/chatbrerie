@@ -37,8 +37,8 @@ def save_model_js(model):
     tfjs.converters.save_keras_model(model, "data/js-model")
 
 
-def prepare_training(path):
-    documents, classes, words = parse_json(path)
+def prepare_training(folder):
+    documents, classes, words = parse_json(folder)
 
     # initializing training data
     training = []
@@ -70,11 +70,11 @@ def prepare_training(path):
     return train_x, train_y
 
 
-def train(path, epochs=200):
-    train_x, train_y = prepare_training(path)
+def train(folder, epochs=200):
+    train_x, train_y = prepare_training(folder)
     model = train_model(train_x, train_y, epochs)
 
     save_model_js(model)
 
 if __name__ == "__main__":
-    train("data/simple.json")
+    train("data/json-files")
