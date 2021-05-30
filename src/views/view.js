@@ -36,12 +36,12 @@ class View {
     }
 
     sendText() {
-        var inputText = document.getElementById('chatbot-input');
+        var inputText = document.getElementById('chatbot-input')
         if (inputText.value === '') {
-            return;
+            return
         }
 
-        var input = inputText.value;
+        var input = inputText.value
         this.insertMessage(inputText.value)
         inputText.value = ''
 
@@ -54,13 +54,15 @@ class View {
 
     sendOnKeyPress(event) {
         if (event.keyCode === 13) {
-            event.preventDefault();
+            event.preventDefault()
             this.sendText()
         }
     }
 
     insertChatbot(chatbot) {
-        document.body.innerHTML += chatbot
+        var el = document.createElement('div')
+        el.innerHTML = chatbot
+        document.body.appendChild(el)
     }
 }
 
