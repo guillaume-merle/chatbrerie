@@ -17,7 +17,7 @@
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "./build.sh",
     "build": "./build.sh"
   },
@@ -32,7 +32,9 @@
   },
   "homepage": "https://gitlab.com/guillaume.merle-epita/chatbrerie#readme",
   "devDependencies": {
+    "jest": "^27.0.3",
     "webpack": "^5.36.0",
     "webpack-cli": "^4.6.0"
   }
 }
+
