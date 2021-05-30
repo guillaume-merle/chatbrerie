@@ -27,17 +27,16 @@ def init_lemmatizer():
 
 
 def save_words_list(words):
-    f = open("data/word-lists.txt", "w")
+    f = open('data/word-lists.txt', 'w')
     f.write('\n'.join(words))
 
 
 def parse_json(folder):
-    files = glob.glob("{}/*.json".format(folder))
+    files = glob.glob('{}/*.json'.format(folder))
     print(files)
 
     words, classes, documents = [], [], []
-    output_json = {}
-    output_json["responses"] = []
+    output_json = []
 
     nlp = init_lemmatizer()
 
@@ -68,18 +67,18 @@ def parse_json(folder):
                 # adding documents
                 documents.append((lemmatize_words, intent['tag']))
 
-            output_json["responses"].append({intent['tag']: intent['responses']})
+            output_json.append({'tag': intent['tag'], 'responses': intent['responses']})
 
         words = sorted(list(set(words)))
         save_words_list(words)
 
-        print (len(documents), "documents")
+        print (len(documents), 'documents')
 
-        print (len(classes), "classes", classes)
+        print (len(classes), 'classes', classes)
 
-        print (len(words), "unique lemmatized words", words)
+        print (len(words), 'unique lemmatized words', words)
 
-    with open("data/output.json", 'w', encoding='utf8') as outfile:
+    with open('data/output.json', 'w', encoding='utf8') as outfile:
         json.dump(output_json, outfile, ensure_ascii=False, indent=4)
 
     return documents, classes, words
