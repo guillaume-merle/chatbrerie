@@ -22,8 +22,8 @@
                          "Je veux consulter un docteur",
                          "Je veux réserver un créneau de consultation"],
 
-            "responses": ["Prenez rendez-vous <a href=\"https://www.doctolib.fr\">ici</a>.",
-                          "Pour réserver une consultation, rendez-vous sur cette <a href=\"https://www.doctolib.fr\">page</a>."]
+            "responses": ["Prenez rendez-vous <a href=\"https://www.doctolib.fr\">ici</a>",
+                          "Pour réserver une consultation, rendez-vous sur cette <a href=\"https://www.doctolib.fr\">page</a>"]
         }
     ]
 }
