@@ -6,9 +6,9 @@ import { randomInt } from '../utils/utils.js'
 
 class Controller {
     constructor(){
+        this.lemmatizer = new Lemmatizer()
         this.model = new Model()
         this.response = new Response()
-        this.lemmatizer = new Lemmatizer()
         this.view = new View(this)
         this.view.init()
     }

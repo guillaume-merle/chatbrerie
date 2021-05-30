@@ -1,59 +1,38 @@
 import { loadFile } from '../utils/utils.js'
 import { Config } from '../config.js'
 
+var Mustache = require('mustache')
+
 class View {
     constructor(controller) {
         this.controller = controller
+        this.chatHistory = null
     }
 
     init() {
         window.onload = () => {
             loadFile(Config.chatbotViewPath).then((chatbot) => {
                 this.insertChatbot(chatbot)
+                this.chatHistory = document.getElementById('chat-history')
 
                 document.getElementById("chat-send-text").onclick = this.sendText
                 document.getElementById("chatbot-input").onkeypress = (event) => this.sendOnKeyPress(event)
 
                 this.controller.botAnswer('Bonjour').then((message) => {
-                    var chatBotMessage = this.createBotMessage(message)
-                    var chatHistory = document.getElementById('chat-history')
-                    chatHistory.appendChild(chatBotMessage)
-
-                    chatHistory.scrollTop = chatHistory.scrollHeight
+                    this.insertMessage(message, 'bot')
+                    this.chatHistory.scrollTop = this.chatHistory.scrollHeight
                 })
             })
         }
     }
 
-    createClientMessage(text) {
-        var rootDiv = document.createElement("div")
-        rootDiv.classList.add("d-flex", "align-items-center", "text-right", "justify-content-end")
+    insertMessage(message, type = 'client') {
+        var templatePath = (type.localeCompare('client') == 0 ? Config.clientMessageViewPath : Config.botMessageViewPath)
 
-        var textDiv = document.createElement("div")
-        textDiv.classList.add("pr-2")
-
-        var clientName = document.createElement("span")
-        clientName.classList.add("chatbot-name")
-        clientName.innerText = "Vous" // i18n?
-
-        var paragraph = document.createElement("p")
-        paragraph.classList.add("chatbot-msg")
-        paragraph.innerText = text
-
-        textDiv.appendChild(clientName)
-        textDiv.appendChild(paragraph)
-
-        var avatarDiv = document.createElement("div")
-        var avatarImg = document.createElement("img")
-        avatarImg.src = "https://i.imgur.com/HpF4BFG.jpg"
-        avatarImg.width = "30"
-        avatarImg.classList.add("img-chat")
-        avatarDiv.classList.add("align-self-start")
-        avatarDiv.appendChild(avatarImg)
-
-        rootDiv.appendChild(textDiv)
-        rootDiv.appendChild(avatarDiv)
-        return rootDiv
+        loadFile(templatePath).then((template) => {
+            var rendered = Mustache.render(template, {message: message})
+            this.chatHistory.innerHTML += rendered
+        })
     }
 
     sendText() {
@@ -63,17 +42,13 @@ class View {
         }
 
         var input = inputText.value;
-        var chatHistory = document.getElementById('chat-history')
-        var clientMessage = this.createClientMessage(inputText.value)
-        chatHistory.appendChild(clientMessage)
+        this.insertMessage(inputText.value)
         inputText.value = ''
 
         // Get Chatbot response
         var answer = this.controller.botAnswer(input).then((answer) => {
-            var chatBotMessage = this.createBotMessage(answer)
-            chatHistory.appendChild(chatBotMessage)
-
-            chatHistory.scrollTop = chatHistory.scrollHeight
+            this.insertMessage(answer, 'bot')
+            this.chatHistory.scrollTop = this.chatHistory.scrollHeight
         })
     }
 
@@ -82,37 +57,6 @@ class View {
             event.preventDefault();
             this.sendText()
         }
-    }
-
-    createBotMessage(text) {
-        var rootDiv = document.createElement("div")
-        rootDiv.classList.add("d-flex", "align-items-center")
-
-        var avatarDiv = document.createElement("div")
-        avatarDiv.classList.add("text-left", "pr-1", "align-self-start")
-        var avatarImg = document.createElement("img")
-        avatarImg.src = "https://img.icons8.com/color/40/000000/guest-female.png"
-        avatarImg.width = "30"
-        avatarImg.classList.add("img-chat")
-        avatarDiv.appendChild(avatarImg)
-
-        var textDiv = document.createElement("div")
-        textDiv.classList.add("pr-2", "pl-1")
-
-        var clientName = document.createElement("span")
-        clientName.classList.add("chatbot-name")
-        clientName.innerText = "Chatbrerie" // i18n?
-
-        var paragraph = document.createElement("p")
-        paragraph.classList.add("chatbot-msg")
-        paragraph.innerText = text
-
-        textDiv.appendChild(clientName)
-        textDiv.appendChild(paragraph)
-
-        rootDiv.appendChild(avatarDiv)
-        rootDiv.appendChild(textDiv)
-        return rootDiv
     }
 
     insertChatbot(chatbot) {
