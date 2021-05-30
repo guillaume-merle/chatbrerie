@@ -34,19 +34,19 @@ class Lemmatizer {
     }
 
     async prepareInput(input) {
-        var lemmatizeList = await this.lemmatizeInput(input)
+        var lemmatizeList = await this.lemmatizeInput(input);
         var preparedInput = new Array(this.wordList.length).fill(0);
 
-        // TODO: levenstein distance
+        var stringSimilarity = require("string-similarity");
+
         for (var i = 0; i < lemmatizeList.length; i++) {
-            for (var j = 0; j < this.wordList.length; j++) {
-                if (lemmatizeList[i].localeCompare(this.wordList[j]) == 0) {
-                    preparedInput[j] = 1;
-                }
+            var matches = stringSimilarity.findBestMatch(lemmatizeList[i], this.wordList)
+            if (matches.bestMatch.rating > 0.65) {
+                preparedInput[matches.bestMatchIndex] = 1;
             }
         }
 
-        return preparedInput
+        return preparedInput;
     }
 }
 
