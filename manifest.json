@@ -6,7 +6,7 @@
   "content_scripts": [
    {
      "matches": ["https://www.doctolib.fr/*"],
-     "css": ["src/styles/chat.css", "node_modules/bootstrap/dist/css/bootstrap.min.css"],
+     "css": ["src/assets/stylesheets/chatbot.css", "node_modules/bootstrap/dist/css/bootstrap.min.css"],
      "js": ["dist/bundle.js", "dist/524.bundle.js"]
    }
   ],
@@ -18,6 +18,11 @@
       "src/data/js-model/group1-shard1of1.bin",
       "src/views/chatbot.html",
       "src/views/client-message.mustache.html",
-      "src/views/bot-message.mustache.html"
+      "src/views/bot-message.mustache.html",
+      "src/views/image.mustache.html",
+      "src/assets/images/bye.gif",
+      "src/assets/images/dontknow.gif",
+      "src/assets/images/client-avatar.png",
+      "src/assets/images/bot-avatar.png"
   ]
 }

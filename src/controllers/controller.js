@@ -1,3 +1,4 @@
+import { Config } from '../config.js'
 import { Lemmatizer } from './lemmatizer.js'
 import { Response } from '../models/response.js'
 import { Model } from '../models/model.js'
@@ -17,8 +18,19 @@ class Controller {
         var preparedInput = await this.lemmatizer.prepareInput(input)
         var prediction = await this.model.predict(preparedInput)
 
-        var responses = this.response.getResponse(prediction)["responses"]
-        return responses[randomInt(responses.length)]
+        var responseBlock = this.response.getResponse(prediction)
+
+        var responses = responseBlock['responses']
+        var message = responses[randomInt(responses.length)]
+        this.view.insertMessage(message, 'bot')
+
+        var tag = responseBlock['tag']
+        if (tag.localeCompare('goodbye') == 0) {
+            this.view.insertImage(Config.imageGoodbye)
+        }
+        else if (tag.localeCompare('unknown') == 0) {
+            this.view.insertImage(Config.imageDontknow)
+        }
     }
 }
 
