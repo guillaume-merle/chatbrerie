@@ -5,9 +5,9 @@
   "private": "true",
   "dependencies": {
     "@babel/core": "^7.14.0",
+    "@tensorflow/tfjs": "^3.6.0",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
-    "@tensorflow/tfjs-node": "^3.6.1",
     "nlp-js-tools-french": "^1.0.9"
   },
   "scripts": {
