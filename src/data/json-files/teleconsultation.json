@@ -10,7 +10,7 @@
                          "Ça marche comment la consultation à distance ?",
                          "Comment se passe la consultation en ligne"],
 
-            "responses": ["Vous avez besoin d'une caméra, d'un micro, d'une connexion internet stable et de suffisamment de batterie. Installez-vous dans un endroit calme et discret. Vous pouvez utiliser soit l'application mobile ou un navigateur internet). Vous pourrez rejoindre la consultation vidéo en cliquant simplement sur le lien reçu par SMS."]
+            "responses": ["Vous avez besoin d'une caméra, d'un micro, d'une connexion internet stable et de suffisamment de batterie. Installez-vous dans un endroit calme et discret. Vous pouvez utiliser soit l'application mobile ou un navigateur internet). Vous pourrez rejoindre la consultation vidéo en cliquant simplement sur le lien reçu par SMS"]
         },
         {
             "tag": "Payment teleconsultation",
@@ -21,7 +21,7 @@
                          "Prix de la consultation vidéo ?",
                          "Ça coûte cher la consultation en ligne ?"],
 
-            "responses": ["Le tarif d'une consultation vidéo est de 25€ pour les médecins généralistes de secteur 1. Avant de démarrer la consultation, vos informations bancaires vous seront demandées afin de réaliser une pré-autorisation de paiement d'un montant égal au tarif de la consultation vidéo. Aucun prélèvement ne sera effectué avant la fin de la consultation vidéo."]
+            "responses": ["Le tarif d'une consultation vidéo est de 25€ pour les médecins généralistes de secteur 1. Avant de démarrer la consultation, vos informations bancaires vous seront demandées afin de réaliser une pré-autorisation de paiement d'un montant égal au tarif de la consultation vidéo. Aucun prélèvement ne sera effectué avant la fin de la consultation vidéo"]
         }
     ]
 }

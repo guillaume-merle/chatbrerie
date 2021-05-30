@@ -42,6 +42,19 @@
             "responses": ["De rien",
                           "Au plaisir !",
                           "C'est un plaisir de vous aider"]
+        },
+        {
+            "tag": "how are you",
+
+            "patterns": ["Comment allez-vous ?",
+                         "Comment vas-tu ?",
+                         "Comment tu vas ?",
+                         "Tu vas bien ?",
+                         "Ça va ?",
+                         "Comment se passe votre journée ?"],
+
+            "responses": ["Je vais bien, merci de demander !",
+                          "Tout va bien, je vous remercie"]
         }
     ]
 }
