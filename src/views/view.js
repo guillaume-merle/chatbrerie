@@ -18,19 +18,24 @@ class View {
                 document.getElementById("chat-send-text").onclick = this.sendText
                 document.getElementById("chatbot-input").onkeypress = (event) => this.sendOnKeyPress(event)
 
-                this.controller.botAnswer('Bonjour').then((message) => {
-                    this.insertMessage(message, 'bot')
-                    this.chatHistory.scrollTop = this.chatHistory.scrollHeight
-                })
+                this.controller.botAnswer('Bonjour')
             })
         }
     }
 
     insertMessage(message, type = 'client') {
         var templatePath = (type.localeCompare('client') == 0 ? Config.clientMessageViewPath : Config.botMessageViewPath)
+        this.insertBlock(templatePath, {message: message})
+    }
 
+    insertImage(imagePath) {
+        const imageUrl = chrome.runtime.getURL(imagePath)
+        this.insertBlock(Config.imageViewPath, {imageUrl: imageUrl})
+    }
+
+    insertBlock(templatePath, dict) {
         loadFile(templatePath).then((template) => {
-            var rendered = Mustache.render(template, {message: message})
+            var rendered = Mustache.render(template, dict)
             this.chatHistory.innerHTML += rendered
             this.chatHistory.scrollTop = this.chatHistory.scrollHeight
         })
@@ -46,10 +51,8 @@ class View {
         this.insertMessage(inputText.value)
         inputText.value = ''
 
-        // Get Chatbot response
-        var answer = this.controller.botAnswer(input).then((answer) => {
-            this.insertMessage(answer, 'bot')
-        })
+        // Let the bot answer
+        this.controller.botAnswer(input)
     }
 
     sendOnKeyPress(event) {

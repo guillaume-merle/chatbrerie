@@ -5,6 +5,9 @@ class Config {
     static chatbotViewPath = 'src/views/chatbot.html'
     static clientMessageViewPath = 'src/views/client-message.mustache.html'
     static botMessageViewPath = 'src/views/bot-message.mustache.html'
+    static imageViewPath = 'src/views/image.mustache.html'
+
+    static imageGoodbye = 'src/assets/images/bye.gif'
 }
 
 export { Config }

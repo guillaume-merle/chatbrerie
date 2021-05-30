@@ -172,3 +172,7 @@
 #chatbot-check {
     display: none !important
 }
+
+.chatbot-image-block {
+    border-radius: 8px
+}
