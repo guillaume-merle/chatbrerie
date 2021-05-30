@@ -9,6 +9,8 @@ class Config {
 
     static imageGoodbye = 'src/assets/images/bye.gif'
     static imageDontknow = 'src/assets/images/dontknow.gif'
+    static botAvatar = 'src/assets/images/bot-avatar.png'
+    static clientAvatar = 'src/assets/images/client-avatar.png'
 }
 
 export { Config }

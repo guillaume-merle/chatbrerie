@@ -35,6 +35,8 @@ class View {
 
     insertBlock(templatePath, dict) {
         loadFile(templatePath).then((template) => {
+            dict['botAvatar'] = chrome.runtime.getURL(Config.botAvatar)
+            dict['clientAvatar'] = chrome.runtime.getURL(Config.clientAvatar)
             var rendered = Mustache.render(template, dict)
             this.chatHistory.innerHTML += rendered
             this.chatHistory.scrollTop = this.chatHistory.scrollHeight
