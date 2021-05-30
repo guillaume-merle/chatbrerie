@@ -11,5 +11,13 @@
    }
   ],
   "permissions": ["storage", "unlimitedStorage"],
-  "web_accessible_resources": ["src/data/word-lists.txt", "src/data/output.json", "src/data/js-model/model.json", "src/data/js-model/group1-shard1of1.bin"]
+  "web_accessible_resources": [
+      "src/data/word-lists.txt",
+      "src/data/output.json",
+      "src/data/js-model/model.json",
+      "src/data/js-model/group1-shard1of1.bin",
+      "src/views/chatbot.html",
+      "src/views/client-message.mustache.html",
+      "src/views/bot-message.mustache.html"
+  ]
 }

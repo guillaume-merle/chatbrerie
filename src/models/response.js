@@ -3,7 +3,9 @@ import { Config } from '../config'
 
 class Response {
     constructor() {
-        this.data = JSON.parse(loadFile(Config.answersPath).toString())
+        loadFile(Config.answersPath).then((answers) => {
+            this.data = JSON.parse(answers)
+        });
     }
 
     getResponse(prediction) {
