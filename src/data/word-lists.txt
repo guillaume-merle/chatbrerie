@@ -1,6 +1,7 @@
 adieu
 afficher
 aide
+aller
 application
 apres
 astrazeneca
@@ -101,6 +102,7 @@ trouver
 vaccin
 vaccination
 vacciner
+vas
 veux
 video
 vista
