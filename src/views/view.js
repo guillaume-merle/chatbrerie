@@ -32,6 +32,7 @@ class View {
         loadFile(templatePath).then((template) => {
             var rendered = Mustache.render(template, {message: message})
             this.chatHistory.innerHTML += rendered
+            this.chatHistory.scrollTop = this.chatHistory.scrollHeight
         })
     }
 
@@ -48,7 +49,6 @@ class View {
         // Get Chatbot response
         var answer = this.controller.botAnswer(input).then((answer) => {
             this.insertMessage(answer, 'bot')
-            this.chatHistory.scrollTop = this.chatHistory.scrollHeight
         })
     }
 
