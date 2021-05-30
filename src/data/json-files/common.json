@@ -1,0 +1,47 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+
+            "patterns": ["Bonjour",
+                         "Bonsoir",
+                         "Hey",
+                         "Hola",
+                         "Hello",
+                         "Est-ce qu'il y a quelqu'un",
+                         "Salutation",
+                         "Salut",
+                         "Coucou"],
+
+            "responses": ["Bonjour",
+                          "Ravi de vous revoir !",
+                          "Bonjour, comment puis-je vous aider ?"]
+        },
+        {
+            "tag": "goodbye",
+
+            "patterns": ["Au revoir",
+                         "Bye",
+                         "Ciao", 
+                         "Hasta la vista",
+                         "Bonne journée",
+                         "Adieu"],
+
+            "responses": ["Au revoir",
+                          "À la prochaine fois !",
+                          "Au revoir, prenez-soin de vous"]
+        },
+        {
+            "tag": "thanks",
+
+            "patterns": ["Merci",
+                         "Merci beaucoup",
+                         "Mille mercis pour votre aide",
+                         "Je vous remercie"],
+
+            "responses": ["De rien",
+                          "Au plaisir !",
+                          "C'est un plaisir de vous aider"]
+        }
+    ]
+}

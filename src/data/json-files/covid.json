@@ -1,0 +1,33 @@
+{
+    "intents": [
+        {
+            "tag": "vaccine",
+
+            "patterns": ["Je veux me faire vacciner",
+                         "vaccin",
+                         "pfizer",
+                         "moderna",
+                         "astrazeneca",
+                         "johnson & johnson",
+                         "janssen",
+                         "Comment avoir ma dose",
+                         "Je veux ma deuxième injection",
+                         "Prendre un rendez-vous de vaccination",
+                         "Première injection",
+                         "Premier vaccin",
+                         "rdv vaccination"],
+
+            "responses": ["Pour prendre votre rendez-vous de vaccination, veuillez aller sur cette <a href=\"https://www.doctolib.fr/vaccination-covid-19\">page</a>.",
+                          "Pour prendre rendez-vous, veuillez vous rendre sur cette <a href=\"https://www.doctolib.fr/vaccination-covid-19\">page</a>."]
+        },
+        {
+            "tag": "side effects",
+
+            "patterns": ["Je ressens des effets secondaires, suite à l'injection contre la Covid-19, que dois-je faire ?",
+                         "Je ne me sens pas bien après la vaccination contre la covid-19."],
+
+            "responses": ["En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant."]
+        }
+    ]
+}
+ 
