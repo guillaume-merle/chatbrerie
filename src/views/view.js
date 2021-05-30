@@ -1,44 +1,28 @@
+import { loadFile } from '../utils/utils.js'
+import { Config } from '../config.js'
+
 class View {
     constructor(controller) {
         this.controller = controller
-        var chatbot = [
-            '<input type="checkbox" id="chatbot-check">',
-            '<label class="chat-btn" for="chatbot-check">',
-            '<i class="fa fa-commenting-o comment"></i>',
-            '<i class="fa fa-close close"></i>',
-            '</label>',
-            '<div class="chatbot-wrapper">',
-            '<div class="chatbot-main">',
-            '<div class="px-2 scroll" id="chat-history">',
-            '</div>',
-            '<nav class="navbar bg-white navbar-expand-sm d-flex justify-content-start">',
-            '<input type="text number" name="text" class="form-control" id="chatbot-input" placeholder="Écrivez un message...">',
-            '<div class="icondiv d-flex justify-content-end align-content-center text-center ml-2">',
-            '<button class="btn" id="chat-send-text">',
-            '<i class="fa fa-arrow-circle-right icon-send"></i>',
-            '</button>',
-            '</div>',
-            '</nav>',
-            '</div>',
-            '</div>'
-        ].join("\n")
-
-        window.onload = () => {
-            this.insertChatbot(chatbot)
-
-            document.getElementById("chat-send-text").onclick = this.sendText
-            document.getElementById("chatbot-input").onkeypress = (event) => this.sendOnKeyPress(event)
-        }
     }
 
     init() {
-        this.controller.botAnswer('Bonjour').then((message) => {
-            var chatBotMessage = this.createBotMessage(message)
-            var chatHistory = document.getElementById('chat-history')
-            chatHistory.appendChild(chatBotMessage)
+        window.onload = () => {
+            loadFile(Config.chatbotViewPath).then((chatbot) => {
+                this.insertChatbot(chatbot)
 
-            chatHistory.scrollTop = chatHistory.scrollHeight
-        })
+                document.getElementById("chat-send-text").onclick = this.sendText
+                document.getElementById("chatbot-input").onkeypress = (event) => this.sendOnKeyPress(event)
+
+                this.controller.botAnswer('Bonjour').then((message) => {
+                    var chatBotMessage = this.createBotMessage(message)
+                    var chatHistory = document.getElementById('chat-history')
+                    chatHistory.appendChild(chatBotMessage)
+
+                    chatHistory.scrollTop = chatHistory.scrollHeight
+                })
+            })
+        }
     }
 
     createClientMessage(text) {
