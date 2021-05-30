@@ -20,6 +20,7 @@
       "src/views/client-message.mustache.html",
       "src/views/bot-message.mustache.html",
       "src/views/image.mustache.html",
-      "src/assets/images/bye.gif"
+      "src/assets/images/bye.gif",
+      "src/assets/images/dontknow.gif"
   ]
 }

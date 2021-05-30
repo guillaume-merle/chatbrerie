@@ -28,6 +28,9 @@ class Controller {
         if (tag.localeCompare('goodbye') == 0) {
             this.view.insertImage(Config.imageGoodbye)
         }
+        else if (tag.localeCompare('unknown') == 0) {
+            this.view.insertImage(Config.imageDontknow)
+        }
     }
 }
 

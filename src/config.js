@@ -8,6 +8,7 @@ class Config {
     static imageViewPath = 'src/views/image.mustache.html'
 
     static imageGoodbye = 'src/assets/images/bye.gif'
+    static imageDontknow = 'src/assets/images/dontknow.gif'
 }
 
 export { Config }
