@@ -2,6 +2,7 @@ import { Lemmatizer } from './lemmatizer.js'
 import { Response } from '../models/response.js'
 import { Model } from '../models/model.js'
 import { View } from '../views/view.js'
+import { randomInt } from '../utils/utils.js'
 
 class Controller {
     constructor(){
@@ -16,7 +17,8 @@ class Controller {
         var preparedInput = await this.lemmatizer.prepareInput(input)
         var prediction = await this.model.predict(preparedInput)
 
-        return this.response.getResponse(prediction)
+        var responses = this.response.getResponse(prediction)["responses"]
+        return responses[randomInt(responses.length)]
     }
 }
 
