@@ -23,6 +23,7 @@
       "src/assets/images/bye.gif",
       "src/assets/images/dontknow.gif",
       "src/assets/images/client-avatar.png",
-      "src/assets/images/bot-avatar.png"
+      "src/assets/images/bot-avatar.png",
+      "src/data/vaccination_quiz.json"
   ]
 }

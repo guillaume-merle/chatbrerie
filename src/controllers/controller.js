@@ -31,6 +31,17 @@ class Controller {
         else if (tag.localeCompare('unknown') == 0) {
             this.view.insertImage(Config.imageDontknow)
         }
+        else if (tag.localeCompare('quiz') == 0) {
+            // TODO
+            this.quizEngine()
+        }
+    }
+
+    quizEngine() {
+        loadFile(Config.quizPath).then((quizJson) => {
+            quiz = JSON.parse(quizJson)
+            
+        })
     }
 }
 

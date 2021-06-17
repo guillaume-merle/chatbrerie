@@ -11,6 +11,8 @@ class Config {
     static imageDontknow = 'src/assets/images/dontknow.gif'
     static botAvatar = 'src/assets/images/bot-avatar.png'
     static clientAvatar = 'src/assets/images/client-avatar.png'
+
+    static quizPath = 'src/data/vaccination_quiz.json'
 }
 
 export { Config }
