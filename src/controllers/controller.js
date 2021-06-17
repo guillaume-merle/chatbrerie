@@ -31,13 +31,34 @@ class Controller {
         var tag = responseBlock['tag']
         if (tag.localeCompare('goodbye') == 0) {
             this.view.insertImage(Config.imageGoodbye)
-        }
-        else if (tag.localeCompare('unknown') == 0) {
+        } else if (tag.localeCompare('unknown') == 0) {
             this.view.insertImage(Config.imageDontknow)
-        }
-        else if (tag.localeCompare('quiz') == 0) {
+        } else if (tag.localeCompare('event') == 0) {
+            // User input
+
+            // Create config
+            this.view.insertMessage("Voici votre rappel de prise de médicaments : " + this.createDrugEvent())
+        } else if (tag.localeCompare('quiz') == 0) {
             new QuizController(this.view)
         }
+    }
+
+    createDrugEvent() {
+        const config = {
+            title: 'Happy Hour', // Drug name
+            location: '',
+            description: '',
+            start: new Date('2022-07-08T19:00:00'),
+            end: new Date('2022-07-08T23:30:00'),
+            // an event that recurs every two weeks:
+            recurrence: {
+                frequency: 'WEEKLY',
+                interval: 2
+            }
+        }
+
+        const googleCalendar = new GoogleCalendar(config)
+        return googleCalendar.render()
     }
 }
 
