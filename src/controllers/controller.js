@@ -3,7 +3,7 @@ import { Lemmatizer } from './lemmatizer.js'
 import { Response } from '../models/response.js'
 import { Model } from '../models/model.js'
 import { View } from '../views/view.js'
-import { randomInt } from '../utils/utils.js'
+import { randomInt, loadFile } from '../utils/utils.js'
 
 class Controller {
     constructor(){
@@ -15,6 +15,11 @@ class Controller {
     }
 
     async botAnswer(input) {
+        if (input.localeCompare("!quiz") == 0) {
+            this.quizEngine()
+            return
+        }
+
         var preparedInput = await this.lemmatizer.prepareInput(input)
         var prediction = await this.model.predict(preparedInput)
 
@@ -39,8 +44,11 @@ class Controller {
 
     quizEngine() {
         loadFile(Config.quizPath).then((quizJson) => {
-            quiz = JSON.parse(quizJson)
-            
+            var quiz = JSON.parse(quizJson)
+
+            for (const question of quiz) {
+                console.log(question)
+            }
         })
     }
 }

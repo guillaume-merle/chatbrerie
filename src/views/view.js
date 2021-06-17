@@ -19,6 +19,7 @@ class View {
                 document.getElementById("chatbot-input").onkeypress = (event) => this.sendOnKeyPress(event)
 
                 this.controller.botAnswer('Bonjour')
+                this.controller.botAnswer('!quiz')
             })
         }
     }
