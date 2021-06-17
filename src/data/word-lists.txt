@@ -43,6 +43,7 @@ dose
 effet
 est
 etre
+event
 faire
 fonctionne
 hasta

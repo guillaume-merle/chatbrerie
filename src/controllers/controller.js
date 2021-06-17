@@ -6,6 +6,8 @@ import { Model } from '../models/model.js'
 import { View } from '../views/view.js'
 import { randomInt, loadFile } from '../utils/utils.js'
 
+import { GoogleCalendar } from 'datebook'
+
 class Controller {
     constructor(){
         this.lemmatizer = new Lemmatizer()
@@ -37,7 +39,8 @@ class Controller {
             // User input
 
             // Create config
-            this.view.insertMessage("Voici votre rappel de prise de médicaments : " + this.createDrugEvent())
+            this.view.insertMessage("Voici votre rappel de<a href=\"" + this.createDrugEvent() +
+                "\" target=\"_blank\"> prise de médicaments</a>", 'bot')
         } else if (tag.localeCompare('quiz') == 0) {
             new QuizController(this.view)
         }
