@@ -1,0 +1,13 @@
+[
+    {
+        "question": "Alors le vaccin ?",
+        "responses": [
+            "truc1",
+            "truc2",
+            "truc3",
+            "truc4"
+        ],
+        "valid": 2,
+        "explanation": "Voila voila"
+    }
+]
