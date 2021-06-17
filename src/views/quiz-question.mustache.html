@@ -7,7 +7,7 @@
         <p class="chatbot-msg">{{ question }}</p>
         <div class="d-flex flex-column">
             {{#responses}}
-            <button class="btn chatbot-btn text-white">{{.}}</button>
+            <button class="btn chatbot-btn text-white" id="{{id}}">{{text}}</button>
             {{/responses}}
         </div>
     </div>

@@ -14,6 +14,9 @@ class Config {
     static clientAvatar = 'src/assets/images/client-avatar.png'
 
     static quizPath = 'src/data/vaccination-quiz.json'
+
+    static colorValid = '#54ccbe'
+    static colorWrong = '#ff493b'
 }
 
 export { Config }

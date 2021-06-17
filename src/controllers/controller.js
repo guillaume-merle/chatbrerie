@@ -1,5 +1,6 @@
 import { Config } from '../config.js'
 import { Lemmatizer } from './lemmatizer.js'
+import { QuizController } from './quiz-controller.js'
 import { Response } from '../models/response.js'
 import { Model } from '../models/model.js'
 import { View } from '../views/view.js'
@@ -16,7 +17,7 @@ class Controller {
 
     async botAnswer(input) {
         if (input.localeCompare("!quiz") == 0) {
-            this.quizEngine()
+            new QuizController(this.view)
             return
         }
 
@@ -37,20 +38,8 @@ class Controller {
             this.view.insertImage(Config.imageDontknow)
         }
         else if (tag.localeCompare('quiz') == 0) {
-            // TODO
-            this.quizEngine()
+            new QuizController()
         }
-    }
-
-    quizEngine() {
-        loadFile(Config.quizPath).then((quizJson) => {
-            var quiz = JSON.parse(quizJson)
-
-            for (const question of quiz) {
-                console.log(question)
-                this.view.insertQuizQuestion(question)
-            }
-        })
     }
 }
 

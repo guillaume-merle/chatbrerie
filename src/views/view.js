@@ -23,31 +23,33 @@ class View {
         }
     }
 
-    insertMessage(message, type = 'client') {
+    async insertMessage(message, type = 'client') {
         var templatePath = (type.localeCompare('client') == 0 ? Config.clientMessageViewPath : Config.botMessageViewPath)
-        this.insertBlock(templatePath, {message: message})
+        await this.insertBlock(templatePath, {message: message})
     }
 
-    insertQuizQuestion(question) {
-        this.insertBlock(Config.quizQuestionViewPath, {
+    async insertQuizQuestion(question, ids) {
+        await this.insertBlock(Config.quizQuestionViewPath, {
             question: question.question,
-            responses: question.responses
+            responses: question.responses,
+            ids: ids
         })
     }
 
-    insertImage(imagePath) {
+    async insertImage(imagePath) {
         const imageUrl = chrome.runtime.getURL(imagePath)
-        this.insertBlock(Config.imageViewPath, {imageUrl: imageUrl})
+        await this.insertBlock(Config.imageViewPath, {imageUrl: imageUrl})
     }
 
-    insertBlock(templatePath, dict) {
-        loadFile(templatePath).then((template) => {
-            dict['botAvatar'] = chrome.runtime.getURL(Config.botAvatar)
-            dict['clientAvatar'] = chrome.runtime.getURL(Config.clientAvatar)
-            var rendered = Mustache.render(template, dict)
-            this.chatHistory.innerHTML += rendered
-            this.chatHistory.scrollTop = this.chatHistory.scrollHeight
-        })
+    async insertBlock(templatePath, dict) {
+        var template = await loadFile(templatePath)
+
+        dict['botAvatar'] = chrome.runtime.getURL(Config.botAvatar)
+        dict['clientAvatar'] = chrome.runtime.getURL(Config.clientAvatar)
+
+        var rendered = Mustache.render(template, dict)
+        this.chatHistory.innerHTML += rendered
+        this.chatHistory.scrollTop = this.chatHistory.scrollHeight
     }
 
     sendText() {

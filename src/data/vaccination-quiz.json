@@ -2,10 +2,10 @@
     {
         "question": "Alors le vaccin ?",
         "responses": [
-            "But I must explain to you how",
-            "all this mistaken idea of denouncing",
-            "pleasure and praising pain was born",
-            "and I will give you a complete account of the system"
+            {"text": "But I must explain to you how"},
+            {"text": "all this mistaken idea of denouncing"},
+            {"text": "pleasure and praising pain was born"},
+            {"text": "and I will give you a complete account of the system"}
         ],
         "valid": 2,
         "explanation": "Voila voila"

@@ -29,13 +29,13 @@
     font-size: 1em
 }
 
-.chatbot-btn {
+.chatbot-wrapper .chatbot-btn {
     max-width: 20em;
-    white-space: normal !important;
-    font-size: 1.2em !important;
-    text-transform: none !important;
-    margin-bottom: 0.2em !important;
-    background-color: #41afe5 !important;
+    white-space: normal;
+    font-size: 1.2em;
+    text-transform: none;
+    margin-bottom: 0.2em;
+    background-color: #41afe5;
 }
 
 .chatbot-msg {
