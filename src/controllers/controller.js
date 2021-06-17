@@ -38,12 +38,28 @@ class Controller {
         } else if (tag.localeCompare('event') == 0) {
             // User input
             this.view.insertForm()
+
+            const form = document.getElementById('drug-form')
+            if (!form) {
+                console.log("Cannot load form")
+                return
+            }
+            form.addEventListener('submit', handleSubmit)
+
             // Create config
             this.view.insertMessage("Voici votre rappel de<a href=\"" + this.createDrugEvent() +
                 "\" target=\"_blank\"> prise de médicaments</a>", 'bot')
         } else if (tag.localeCompare('quiz') == 0) {
             new QuizController(this.view)
         }
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        const value = Object.fromEntries(data.entries());
+        // Create config
+        console.log({ value });
     }
 
     createDrugEvent() {
