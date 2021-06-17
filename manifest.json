@@ -16,14 +16,17 @@
       "src/data/output.json",
       "src/data/js-model/model.json",
       "src/data/js-model/group1-shard1of1.bin",
+      "src/data/vaccination-quiz.json",
+
       "src/views/chatbot.html",
       "src/views/client-message.mustache.html",
       "src/views/bot-message.mustache.html",
+      "src/views/quiz-question.mustache.html",
       "src/views/image.mustache.html",
+
       "src/assets/images/bye.gif",
       "src/assets/images/dontknow.gif",
       "src/assets/images/client-avatar.png",
-      "src/assets/images/bot-avatar.png",
-      "src/data/vaccination_quiz.json"
+      "src/assets/images/bot-avatar.png"
   ]
 }

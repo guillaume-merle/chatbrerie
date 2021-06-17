@@ -48,6 +48,7 @@ class Controller {
 
             for (const question of quiz) {
                 console.log(question)
+                this.view.insertQuizQuestion(question)
             }
         })
     }

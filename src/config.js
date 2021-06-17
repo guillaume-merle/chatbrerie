@@ -6,13 +6,14 @@ class Config {
     static clientMessageViewPath = 'src/views/client-message.mustache.html'
     static botMessageViewPath = 'src/views/bot-message.mustache.html'
     static imageViewPath = 'src/views/image.mustache.html'
+    static quizQuestionViewPath = 'src/views/quiz-question.mustache.html'
 
     static imageGoodbye = 'src/assets/images/bye.gif'
     static imageDontknow = 'src/assets/images/dontknow.gif'
     static botAvatar = 'src/assets/images/bot-avatar.png'
     static clientAvatar = 'src/assets/images/client-avatar.png'
 
-    static quizPath = 'src/data/vaccination_quiz.json'
+    static quizPath = 'src/data/vaccination-quiz.json'
 }
 
 export { Config }

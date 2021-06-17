@@ -19,7 +19,6 @@ class View {
                 document.getElementById("chatbot-input").onkeypress = (event) => this.sendOnKeyPress(event)
 
                 this.controller.botAnswer('Bonjour')
-                this.controller.botAnswer('!quiz')
             })
         }
     }
@@ -27,6 +26,13 @@ class View {
     insertMessage(message, type = 'client') {
         var templatePath = (type.localeCompare('client') == 0 ? Config.clientMessageViewPath : Config.botMessageViewPath)
         this.insertBlock(templatePath, {message: message})
+    }
+
+    insertQuizQuestion(question) {
+        this.insertBlock(Config.quizQuestionViewPath, {
+            question: question.question,
+            responses: question.responses
+        })
     }
 
     insertImage(imagePath) {
