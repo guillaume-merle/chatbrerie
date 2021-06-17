@@ -29,6 +29,15 @@
     font-size: 1em
 }
 
+.chatbot-btn {
+    max-width: 20em;
+    white-space: normal !important;
+    font-size: 1.2em !important;
+    text-transform: none !important;
+    margin-bottom: 0.2em !important;
+    background-color: #41afe5 !important;
+}
+
 .chatbot-msg {
     max-width: 20em;
     word-wrap: break-word;
