@@ -22,6 +22,7 @@
       "src/views/client-message.mustache.html",
       "src/views/bot-message.mustache.html",
       "src/views/quiz-question.mustache.html",
+      "src/views/form-message.mustache.html",
       "src/views/image.mustache.html",
       "src/views/quiz-nav.html",
       "src/views/bot-base.mustache.html",

@@ -52,6 +52,10 @@ class View {
         this.lastSender = ''
     }
 
+    async insertForm() {
+        await this.insertBlock(Config.formMessageViewPath, {})
+    }
+
     async insertImage(imagePath) {
         const imageUrl = chrome.runtime.getURL(imagePath)
         await this.insertBlock(Config.imageViewPath, {imageUrl: imageUrl})

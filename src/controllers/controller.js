@@ -37,7 +37,7 @@ class Controller {
             this.view.insertImage(Config.imageDontknow)
         } else if (tag.localeCompare('event') == 0) {
             // User input
-
+            this.view.insertForm()
             // Create config
             this.view.insertMessage("Voici votre rappel de<a href=\"" + this.createDrugEvent() +
                 "\" target=\"_blank\"> prise de médicaments</a>", 'bot')
