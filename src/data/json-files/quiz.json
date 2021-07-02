@@ -1,0 +1,11 @@
+{
+    "intents": [
+        {
+            "tag": "quiz",
+
+            "patterns": ["quiz sur la vaccination"],
+
+            "responses": []
+        }
+    ]
+}

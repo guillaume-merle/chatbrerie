@@ -80,6 +80,7 @@ prendre
 prix
 que
 quelqu
+quiz
 quoi
 rdv
 reinitialiser
@@ -95,6 +96,7 @@ sens
 souhaite
 souvien
 suite
+sur
 teleconsultation
 teleconsulter
 trouve
