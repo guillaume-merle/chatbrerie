@@ -28,7 +28,10 @@ class Controller {
 
         var responses = responseBlock['responses']
         var message = responses[randomInt(responses.length)]
-        this.view.insertMessage(message, 'bot')
+
+        if (message) {
+            this.view.insertMessage(message, 'bot')
+        }
 
         var tag = responseBlock['tag']
         if (tag.localeCompare('goodbye') == 0) {
@@ -38,7 +41,7 @@ class Controller {
             this.view.insertImage(Config.imageDontknow)
         }
         else if (tag.localeCompare('quiz') == 0) {
-            new QuizController()
+            new QuizController(this.view)
         }
     }
 }

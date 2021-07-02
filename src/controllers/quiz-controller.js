@@ -51,7 +51,6 @@ class QuizController {
     }
 
     #setCallbacks() {
-        console.log(this)
         // bind to retain context in callback
         this.callback = this.callback.bind(this)
 
