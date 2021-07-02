@@ -12,6 +12,8 @@ class QuizController {
             this.questionIt = this.quiz[Symbol.iterator]()
             this.currentQuestion = this.questionIt.next().value
 
+            this.view.setQuizMode(this)
+
             this.view.insertQuizQuestion(this.currentQuestion).then(() => this.#setCallbacks())
         })
     }
@@ -39,7 +41,13 @@ class QuizController {
             this.view.insertQuizQuestion(this.currentQuestion).then(() => this.#setCallbacks())
         } else {
             this.view.insertMessage('Le quiz est terminé, merci de votre participation !', 'bot')
+            this.view.unsetQuizMode()
         }
+    }
+
+    exit() {
+        this.#unsetCallbacks()
+        this.view.unsetQuizMode()
     }
 
     #generateResponseIds() {
@@ -51,11 +59,8 @@ class QuizController {
     }
 
     #setCallbacks() {
-        // bind to retain context in callback
-        this.callback = this.callback.bind(this)
-
         for (const response of this.currentQuestion.responses) {
-            document.getElementById(response.id).onclick = this.callback
+            document.getElementById(response.id).onclick = (event) => this.callback(event) // allows to retain instance context
         }
     }
 

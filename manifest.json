@@ -23,6 +23,7 @@
       "src/views/bot-message.mustache.html",
       "src/views/quiz-question.mustache.html",
       "src/views/image.mustache.html",
+      "src/views/quiz-nav.html",
 
       "src/assets/images/bye.gif",
       "src/assets/images/dontknow.gif",

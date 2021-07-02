@@ -16,11 +16,6 @@ class Controller {
     }
 
     async botAnswer(input) {
-        if (input.localeCompare("!quiz") == 0) {
-            new QuizController(this.view)
-            return
-        }
-
         var preparedInput = await this.lemmatizer.prepareInput(input)
         var prediction = await this.model.predict(preparedInput)
 

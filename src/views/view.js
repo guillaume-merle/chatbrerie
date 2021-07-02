@@ -15,8 +15,16 @@ class View {
                 this.insertChatbot(chatbot)
                 this.chatHistory = document.getElementById('chat-history')
 
-                document.getElementById("chat-send-text").onclick = this.sendText
-                document.getElementById("chatbot-input").onkeypress = (event) => this.sendOnKeyPress(event)
+                this.inputField = document.getElementById('chatbot-input')
+                this.inputPlaceholder = this.inputField.placeholder
+
+                this.sendButton = document.getElementById('chat-send-text')
+
+                this.chatbotNav = document.getElementById('chatbot-nav')
+                this.standardNav = this.chatbotNav.firstElementChild
+
+                this.sendButton.onclick = () => this.sendCallback()
+                this.inputField.onkeypress = (event) => this.sendOnKeyPressCallback(event)
 
                 this.controller.botAnswer('Bonjour')
             })
@@ -24,15 +32,15 @@ class View {
     }
 
     async insertMessage(message, type = 'client') {
-        var templatePath = (type.localeCompare('client') == 0 ? Config.clientMessageViewPath : Config.botMessageViewPath)
+        var templatePath =
+            (type.localeCompare('client') == 0 ? Config.clientMessageViewPath : Config.botMessageViewPath)
         await this.insertBlock(templatePath, {message: message})
     }
 
-    async insertQuizQuestion(question, ids) {
+    async insertQuizQuestion(question) {
         await this.insertBlock(Config.quizQuestionViewPath, {
             question: question.question,
-            responses: question.responses,
-            ids: ids
+            responses: question.responses
         })
     }
 
@@ -52,25 +60,40 @@ class View {
         this.chatHistory.scrollTop = this.chatHistory.scrollHeight
     }
 
-    sendText() {
-        var inputText = document.getElementById('chatbot-input')
-        if (inputText.value === '') {
+    setQuizMode(quizController) {
+        loadFile(Config.quizNavPath).then((nav) => {
+            this.chatbotNav.innerHTML = nav
+            document.getElementById('chat-exit').onclick = () => this.exitQuizCallback(quizController)
+        })
+    }
+
+    unsetQuizMode() {
+        this.chatbotNav.replaceChildren(this.standardNav)
+        this.sendButton.onclick = () => this.sendCallback()
+    }
+
+    sendCallback() {
+        if (this.inputField.value === '') {
             return
         }
 
-        var input = inputText.value
-        this.insertMessage(inputText.value)
-        inputText.value = ''
+        var input = this.inputField.value
+        this.insertMessage(input)
+        this.inputField.value = ''
 
         // Let the bot answer
         this.controller.botAnswer(input)
     }
 
-    sendOnKeyPress(event) {
+    sendOnKeyPressCallback(event) {
         if (event.keyCode === 13) {
             event.preventDefault()
-            this.sendText()
+            this.sendCallback()
         }
+    }
+
+    exitQuizCallback(quizController) {
+        quizController.exit()
     }
 
     insertChatbot(chatbot) {
