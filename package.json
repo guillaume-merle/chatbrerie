@@ -11,7 +11,8 @@
     "jquery": "^3.6.0",
     "mustache": "^4.2.0",
     "nlp-js-tools-french": "^1.0.9",
-    "string-similarity": "^4.0.4"
+    "string-similarity": "^4.0.4",
+    "uuid": "^8.3.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
