@@ -12,37 +12,29 @@ class DrugsFormController {
     }
 
     callback(event) {
-        const form = document.getElementById("drug-form-" + this.id)
-        console.log(form.childNodes)
-
         this.view.insertMessage("Voici votre rappel de<a href=\"" + this.#createDrugEvent() +
             "\" target=\"_blank\"> prise de médicaments</a>", 'bot')
     }
-
-
-    /*handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
-        const value = Object.fromEntries(data.entries());
-        // Create config
-        console.log({ value });
-    }*/
 
     #setCallback() {
         document.getElementById(this.id).onclick = (event) => this.callback(event)
     }
 
-    #createDrugEvent(form) {
+    #createDrugEvent() {
+        const start_date = new Date(document.getElementById("start_date-" + this.id).value + 'T'
+            + document.getElementById("time-" + this.id).value)
+
         const config = {
-            title: 'Happy Hour', // Drug name
+            title: document.getElementById("title-" + this.id).value,
             location: '',
             description: '',
-            start: new Date('2022-07-08T19:00:00'),
-            end: new Date('2022-07-08T23:30:00'),
+            start: start_date,
+            end: new Date(start_date.getTime() + 30 * 60000),
             // an event that recurs every two weeks:
             recurrence: {
-                frequency: 'WEEKLY',
-                interval: 2
+                frequency: document.getElementById("reccurrence-" + this.id).value,
+                interval: document.getElementById("rec_number-" + this.id).value,
+                end: new Date(document.getElementById("end_date-" + this.id).value)
             }
         }
 

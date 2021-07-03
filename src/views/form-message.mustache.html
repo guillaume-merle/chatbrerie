@@ -7,20 +7,23 @@
 
         <div id="drug-form-{{id}}">
             <label for="title">Titre du rappel :</label><br>
-            <input class="form-control" type="text" id="title" name="title" value=""><br>
+            <input class="form-control" type="text" id="title-{{id}}" name="title" value=""><br>
 
             <label for="start_date">Date de début :</label><br>
-            <input class="form-control" type="date" id="start-date" name="start-date" value=""><br>
+            <input class="form-control" type="date" id="start_date-{{id}}" name="start_date" value=""><br>
 
             <label for="end_date">Date de fin :</label><br>
-            <input class="form-control" type="date" id="end-date" name="end-date" value=""><br>
+            <input class="form-control" type="date" id="end_date-{{id}}" name="end_date" value=""><br>
+
+            <label for="time">Heure de prise du médicament :</label><br>
+            <input class="form-control" type="Time" id="time-{{id}}" name="time" value=""><br>
 
             <label for="reccurrence">Tous/Toutes les</label><br>
-            <input class="form-control" type="number" min="1" max="100" value="1" id="rec-number">
-            <select class="form-select" name="reccurrence" id="reccurrence">
-                <option value="day">jour(s)</option>
-                <option value="week">semaine(s)</option>
-                <option value="month">mois</option>
+            <input class="form-control" type="number" min="1" max="100" value="1" id="rec_number-{{id}}">
+            <select class="form-select" name="reccurrence" id="reccurrence-{{id}}">
+                <option value="DAILY">jour(s)</option>
+                <option value="WEEKLY">semaine(s)</option>
+                <option value="MONTHLY">mois</option>
             </select>
 
             <button class="btn chatbot-btn text-white" id="{{id}}">Valider</button>
