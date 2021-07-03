@@ -1,9 +1,10 @@
 import { Config } from '../config.js'
 import { Lemmatizer } from './lemmatizer.js'
+import { QuizController } from './quiz-controller.js'
 import { Response } from '../models/response.js'
 import { Model } from '../models/model.js'
 import { View } from '../views/view.js'
-import { randomInt } from '../utils/utils.js'
+import { randomInt, loadFile } from '../utils/utils.js'
 
 class Controller {
     constructor(){
@@ -22,7 +23,10 @@ class Controller {
 
         var responses = responseBlock['responses']
         var message = responses[randomInt(responses.length)]
-        this.view.insertMessage(message, 'bot')
+
+        if (message) {
+            this.view.insertMessage(message, 'bot')
+        }
 
         var tag = responseBlock['tag']
         if (tag.localeCompare('goodbye') == 0) {
@@ -30,6 +34,9 @@ class Controller {
         }
         else if (tag.localeCompare('unknown') == 0) {
             this.view.insertImage(Config.imageDontknow)
+        }
+        else if (tag.localeCompare('quiz') == 0) {
+            new QuizController(this.view)
         }
     }
 }

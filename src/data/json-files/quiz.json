@@ -1,0 +1,14 @@
+{
+    "intents": [
+        {
+            "tag": "quiz",
+
+            "patterns": ["quiz sur la vaccination"],
+
+            "responses": [
+                "C'est parti pour le quiz sur la vaccination !",
+                "3, 2, 1... c'est parti !"
+            ]
+        }
+    ]
+}
