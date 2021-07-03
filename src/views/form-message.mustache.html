@@ -5,26 +5,26 @@
     <div class="pr-2 pl-1">
         <span class="chatbot-name">Chatbrerie</span>
 
-        <form id="drug-form">
+        <div id="drug-form-{{id}}">
             <label for="title">Titre du rappel :</label><br>
             <input class="form-control" type="text" id="title" name="title" value=""><br>
 
             <label for="start_date">Date de début :</label><br>
-            <input class="form-control" type="date" id="sdate" name="sdate" value=""><br>
+            <input class="form-control" type="date" id="start-date" name="start-date" value=""><br>
 
             <label for="end_date">Date de fin :</label><br>
-            <input class="form-control" type="date" id="sdate" name="sdate" value=""><br>
+            <input class="form-control" type="date" id="end-date" name="end-date" value=""><br>
 
             <label for="reccurrence">Tous/Toutes les</label><br>
-            <input class="form-control" type="number" min="1" max="100" value="1">
+            <input class="form-control" type="number" min="1" max="100" value="1" id="rec-number">
             <select class="form-select" name="reccurrence" id="reccurrence">
                 <option value="day">jour(s)</option>
                 <option value="week">semaine(s)</option>
                 <option value="month">mois</option>
             </select>
 
-            <input class="form-control" type="submit" value="Valider">
-        </form>
+            <button class="btn chatbot-btn text-white" id="{{id}}">Valider</button>
+        </div>
 
     </div>
 </div>

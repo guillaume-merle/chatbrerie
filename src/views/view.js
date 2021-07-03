@@ -52,8 +52,10 @@ class View {
         this.lastSender = ''
     }
 
-    async insertForm() {
-        await this.insertBlock(Config.formMessageViewPath, {})
+    async insertForm(id) {
+        await this.insertBlock(Config.formMessageViewPath, {
+            id: id
+        })
     }
 
     async insertImage(imagePath) {

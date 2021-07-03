@@ -6,10 +6,15 @@ import { GoogleCalendar } from 'datebook'
 class DrugsFormController {
     constructor(view) {
         this.view = view
+        this.id = generateId()
 
-        this.view.insertForm()
+        this.view.insertForm(this.id).then(() => this.#setCallback())
+    }
 
-        // Create config
+    callback(event) {
+        const form = document.getElementById("drug-form-" + this.id)
+        console.log(form.childNodes)
+
         this.view.insertMessage("Voici votre rappel de<a href=\"" + this.#createDrugEvent() +
             "\" target=\"_blank\"> prise de médicaments</a>", 'bot')
     }
@@ -23,7 +28,11 @@ class DrugsFormController {
         console.log({ value });
     }*/
 
-    #createDrugEvent() {
+    #setCallback() {
+        document.getElementById(this.id).onclick = (event) => this.callback(event)
+    }
+
+    #createDrugEvent(form) {
         const config = {
             title: 'Happy Hour', // Drug name
             location: '',
