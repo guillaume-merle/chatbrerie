@@ -13,10 +13,16 @@ class DrugsFormController {
     callback(event) {
         this.view.insertMessage("Voici votre rappel de<a href=\"" + this.#createDrugEvent() +
             "\" target=\"_blank\"> prise de médicaments</a>", 'bot')
+
+        this.#unsetCallback()
     }
 
     #setCallback() {
         document.getElementById(this.id).onclick = (event) => this.callback(event)
+    }
+
+    #unsetCallback() {
+        document.getElementById(this.id).onclick = null
     }
 
     #createDrugEvent() {
