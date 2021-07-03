@@ -6,6 +6,13 @@
         <span class="chatbot-name">Chatbrerie</span>
 
         <div id="drug-form-{{id}}">
+            <select class="form-select" name="calendar" id="calendar-{{id}}">
+                <option value="google">Google Calendar</option>
+                <option value="outlook">Outlook Web Calendar</option>
+                <option value="apple">iCalendar</option>
+                <option value="yahoo">Yahoo! Calendar</option>
+            </select>
+
             <label for="title">Titre du rappel :</label><br>
             <input class="form-control" type="text" id="title-{{id}}" name="title" value=""><br>
 

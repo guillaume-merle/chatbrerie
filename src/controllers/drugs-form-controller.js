@@ -1,7 +1,6 @@
-import { loadFile, generateId } from '../utils/utils.js'
-import { Config } from '../config'
+import { generateId } from '../utils/utils.js'
 
-import { GoogleCalendar } from 'datebook'
+import { GoogleCalendar, OutlookCalendar, YahooCalendar, ICalendar } from 'datebook'
 
 class DrugsFormController {
     constructor(view) {
@@ -38,8 +37,21 @@ class DrugsFormController {
             }
         }
 
-        const googleCalendar = new GoogleCalendar(config)
-        return googleCalendar.render()
+        const calendarType = document.getElementById("calendar-" + this.id).value
+
+        if (calendarType.localeCompare('google') == 0) {
+            const googleCalendar = new GoogleCalendar(config)
+            return googleCalendar.render()
+        } else if (calendarType.localeCompare('outlook') == 0){
+            const outlookCalendar = new OutlookCalendar(config)
+            return outlookCalendar.render()
+        } else if (calendarType.localeCompare('yahoo') == 0){
+            const yahooCalendar = new YahooCalendar(config)
+            return yahooCalendar.render()
+        } else {
+            const iCalendar = new ICalendar(config)
+            return iCalendar.download('calendar.ics')
+        }
     }
 }
 
