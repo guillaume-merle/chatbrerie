@@ -1,3 +1,4 @@
+import tensorflow as tf
 import tensorflowjs as tfjs
 import numpy as np
 import random

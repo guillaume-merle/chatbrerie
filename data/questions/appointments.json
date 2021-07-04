@@ -5,12 +5,19 @@
 
             "patterns": ["Où sont rendez-vous ?",
                          "Afficher rendez-vous",
+                         "Afficher rdv",
                          "Où se trouvent rendez-vous ?",
+                         "Où se trouvent rdv ?",
                          "mes rendez-vous",
+                         "mes rdv",
                          "Voir rendez-vous",
-                         "Consulter rendez-vous",
+                         "Voir rdv",
                          "Montrez rendez-vous",
-                         "Visualiser rendez-vous"],
+                         "Montrez rdv",
+                         "prochain rendez-vous",
+                         "prochain rdv",
+                         "Visualiser rendez-vous",
+                         "Visualiser rdv"],
 
             "responses": ["Vos rendez-vous se trouvent <a href=\"https://www.doctolib.fr/account/appointments\">ici</a>"]
         },
@@ -18,7 +25,9 @@
             "tag": "take appointments",
 
             "patterns": ["Prendre rendez-vous",
+                         "prendre rdv",
                          "trouver rendez-vous chez médecin",
+                         "trouver rdv chez médecin",
                          "consulter docteur",
                          "réserver créneau consultation"],
 

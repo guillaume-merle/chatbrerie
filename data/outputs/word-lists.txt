@@ -80,6 +80,7 @@ premier
 prendre
 prise
 prix
+prochain
 que
 quiz
 quoi
