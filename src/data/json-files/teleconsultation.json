@@ -3,23 +3,23 @@
         {
             "tag": "How-to teleconsultation",
 
-            "patterns": ["Comment fonctionne la téléconsultation ?",
-                         "Comment se déroule la consultation vidéo ?",
-                         "Ai-je besoin d'une application mobile pour la consultation vidéo ?",
-                         "De quoi ai-je besoin pour téléconsulter ?",
-                         "Ça marche comment la consultation à distance ?",
-                         "Comment se passe la consultation en ligne"],
+            "patterns": ["Comment fonctionne téléconsultation ?",
+                         "Comment se déroule consultation vidéo ?",
+                         "besoin application mobile consultation vidéo ?",
+                         "De quoi besoin pour téléconsulter ?",
+                         "marche comment consultation distance ?",
+                         "Comment se passe consultation en ligne"],
 
             "responses": ["Vous avez besoin d'une caméra, d'un micro, d'une connexion internet stable et de suffisamment de batterie. Installez-vous dans un endroit calme et discret. Vous pouvez utiliser soit l'application mobile ou un navigateur internet). Vous pourrez rejoindre la consultation vidéo en cliquant simplement sur le lien reçu par SMS"]
         },
         {
             "tag": "Payment teleconsultation",
 
-            "patterns": ["Combien coûte une consultation vidéo ?",
-                         "Combien ça coûte la téléconsultation ?",
-                         "Commment je paye ma consultation vidéo ?",
-                         "Prix de la consultation vidéo ?",
-                         "Ça coûte cher la consultation en ligne ?"],
+            "patterns": ["Combien coûte consultation vidéo ?",
+                         "Combien coûte téléconsultation ?",
+                         "Commment paye consultation vidéo ?",
+                         "Prix consultation vidéo ?",
+                         "coûte cher consultation en ligne ?"],
 
             "responses": ["Le tarif d'une consultation vidéo est de 25€ pour les médecins généralistes de secteur 1. Avant de démarrer la consultation, vos informations bancaires vous seront demandées afin de réaliser une pré-autorisation de paiement d'un montant égal au tarif de la consultation vidéo. Aucun prélèvement ne sera effectué avant la fin de la consultation vidéo"]
         }
