@@ -1,49 +1,39 @@
-<div class="d-flex align-items-center">
-    <div class="text-left pr-1 align-self-start">
-        <img src="{{ botAvatar }}" class="img-chat">
+<div id="drug-form-{{id}}">
+    <label for="calendar">Type de calendrier</label><br>
+    <select class="form-control h-25" name="calendar" id="calendar-{{id}}">
+        <option value="google">Google Calendar</option>
+        <option value="outlook">Outlook Web Calendar</option>
+        <option value="apple">iCalendar</option>
+        <option value="yahoo">Yahoo! Calendar</option>
+        <option value="other">Autre</option>
+    </select> <br>
+
+    <label for="title">Titre du rappel :</label><br>
+    <input class="form-control h-25" type="text" id="title-{{id}}" name="title" value=""><br>
+
+    <div class="form-inline">
+        <input class="form-control h-25 col-8 mr-2" - type="date" id="start_date-{{id}}" name="start-date" value=""><br>
+        <label for="start-date">Date de début</label><br>
     </div>
-    <div class="pr-2 pl-1">
-        <span class="chatbot-name">Chatbrerie</span>
 
-        <div id="drug-form-{{id}}">
-            <label for="calendar">Type de calendrier</label><br>
-            <select class="form-control h-25" name="calendar" id="calendar-{{id}}">
-                <option value="google">Google Calendar</option>
-                <option value="outlook">Outlook Web Calendar</option>
-                <option value="apple">iCalendar</option>
-                <option value="yahoo">Yahoo! Calendar</option>
-                <option value="other">Autre</option>
-            </select> <br>
-
-            <label for="title">Titre du rappel :</label><br>
-            <input class="form-control h-25" type="text" id="title-{{id}}" name="title" value=""><br>
-
-            <div class="form-inline">
-                <input class="form-control h-25 col-8 mr-2"- type="date" id="start_date-{{id}}" name="start-date" value=""><br>
-                <label for="start-date">Date de début</label><br>
-            </div>
-
-            <div class="form-inline">
-                <input class="form-control h-25 col-8 mr-2" type="date" id="end_date-{{id}}" name="end-date" value=""><br>
-                <label for="end-date">Date de fin</label><br>
-            </div>
-
-            <br>
-
-            <label for="time">Heure de prise du médicament :</label><br>
-            <input class="form-control h-25" type="Time" id="time-{{id}}" name="time" value=""><br>
-
-            <label for="reccurrence">Tous/Toutes les</label><br>
-            <div class="form-inline">
-                <input class="form-control h-25" type="number" min="1" max="100" value="1" id="rec_number-{{id}}">
-                <select class="form-control h-25 mx-sm-2" name="reccurrence" id="reccurrence-{{id}}">
-                    <option value="DAILY">jour(s)</option>
-                    <option value="WEEKLY">semaine(s)</option>
-                    <option value="MONTHLY">mois</option>
-                </select> <br>
-            </div>
-            <button class="btn chatbot-form-button chatbot-btn text-white" id="{{id}}">Valider</button>
-        </div>
-
+    <div class="form-inline">
+        <input class="form-control h-25 col-8 mr-2" type="date" id="end_date-{{id}}" name="end-date" value=""><br>
+        <label for="end-date">Date de fin</label><br>
     </div>
+
+    <br>
+
+    <label for="time">Heure de prise du médicament :</label><br>
+    <input class="form-control h-25" type="Time" id="time-{{id}}" name="time" value=""><br>
+
+    <label for="reccurrence">Tous/Toutes les</label><br>
+    <div class="form-inline">
+        <input class="form-control h-25" type="number" min="1" max="100" value="1" id="rec_number-{{id}}">
+        <select class="form-control h-25 mx-sm-2" name="reccurrence" id="reccurrence-{{id}}">
+            <option value="DAILY">jour(s)</option>
+            <option value="WEEKLY">semaine(s)</option>
+            <option value="MONTHLY">mois</option>
+        </select> <br>
+    </div>
+    <button class="btn chatbot-form-button chatbot-btn text-white" id="{{id}}">Valider</button>
 </div>

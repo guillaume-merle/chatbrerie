@@ -34,7 +34,7 @@ class DrugsFormController {
         const config = {
             title: document.getElementById("title-" + this.id).value,
             location: '',
-            description: '',
+            description: "N'oubliez pas votre prescription !",
             start: start_date,
             end: new Date(start_date.getTime() + 30 * 60000),
             // an event that recurs every two weeks:
