@@ -13,6 +13,7 @@ bon
 bonjour
 bonsoir
 bye
+calendrier
 cela
 changer
 cher
@@ -43,6 +44,7 @@ dose
 effet
 est
 etre
+evenement
 faire
 fonctionne
 hasta
@@ -59,6 +61,7 @@ ligne
 marche
 mdp
 medecin
+medicament
 merci
 mercis
 mille
@@ -68,6 +71,7 @@ modifier
 mon
 montrez
 mot
+ordonnance
 pas
 passer
 payer
@@ -77,11 +81,15 @@ plus
 pour
 premier
 prendre
+prise
 prix
 que
 quelqu
 quiz
 quoi
+rappel
+rappeler
+rappelle
 rdv
 reinitialiser
 remerci
@@ -99,6 +107,7 @@ suite
 sur
 teleconsultation
 teleconsulter
+traitement
 trouve
 trouver
 vaccin

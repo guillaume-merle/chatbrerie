@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+
 async function loadFile(path) {
     const url = chrome.runtime.getURL(path)
     return await fetch(url).then(response => response.text())
@@ -26,7 +28,7 @@ function indexOfMax(arr) {
 }
 
 function generateId() {
-    return Math.random().toString(36).slice(2)
+    return uuidv4()
 }
 
 export { loadFile, randomInt, indexOfMax, generateId }

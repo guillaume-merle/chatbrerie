@@ -1,38 +1,5 @@
 [
     {
-        "tag": "How-to teleconsultation",
-        "responses": [
-            "Vous avez besoin d'une caméra, d'un micro, d'une connexion internet stable et de suffisamment de batterie. Installez-vous dans un endroit calme et discret. Vous pouvez utiliser soit l'application mobile ou un navigateur internet). Vous pourrez rejoindre la consultation vidéo en cliquant simplement sur le lien reçu par SMS"
-        ]
-    },
-    {
-        "tag": "Payment teleconsultation",
-        "responses": [
-            "Le tarif d'une consultation vidéo est de 25€ pour les médecins généralistes de secteur 1. Avant de démarrer la consultation, vos informations bancaires vous seront demandées afin de réaliser une pré-autorisation de paiement d'un montant égal au tarif de la consultation vidéo. Aucun prélèvement ne sera effectué avant la fin de la consultation vidéo"
-        ]
-    },
-    {
-        "tag": "vaccine",
-        "responses": [
-            "Pour prendre votre rendez-vous de vaccination, veuillez aller sur cette <a href=\"https://www.doctolib.fr/vaccination-covid-19\">page</a>",
-            "Pour prendre rendez-vous, veuillez vous rendre sur cette <a href=\"https://www.doctolib.fr/vaccination-covid-19\">page</a>"
-        ]
-    },
-    {
-        "tag": "side effects",
-        "responses": [
-            "En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"
-        ]
-    },
-    {
-        "tag": "unknown",
-        "responses": [
-            "Désolé, je n'ai pas compris votre question",
-            "Désolé, je n'ai pas compris",
-            "Je n'ai pas compris votre requête, pouvez-vous reformuler votre demande ?"
-        ]
-    },
-    {
         "tag": "my appointments",
         "responses": [
             "Vos rendez-vous se trouvent <a href=\"https://www.doctolib.fr/account/appointments\">ici</a>"
@@ -50,6 +17,26 @@
         "responses": [
             "C'est parti pour le quiz sur la vaccination !",
             "3, 2, 1... c'est parti !"
+        ]
+    },
+    {
+        "tag": "How-to teleconsultation",
+        "responses": [
+            "Vous avez besoin d'une caméra, d'un micro, d'une connexion internet stable et de suffisamment de batterie. Installez-vous dans un endroit calme et discret. Vous pouvez utiliser soit l'application mobile ou un navigateur internet). Vous pourrez rejoindre la consultation vidéo en cliquant simplement sur le lien reçu par SMS"
+        ]
+    },
+    {
+        "tag": "Payment teleconsultation",
+        "responses": [
+            "Le tarif d'une consultation vidéo est de 25€ pour les médecins généralistes de secteur 1. Avant de démarrer la consultation, vos informations bancaires vous seront demandées afin de réaliser une pré-autorisation de paiement d'un montant égal au tarif de la consultation vidéo. Aucun prélèvement ne sera effectué avant la fin de la consultation vidéo"
+        ]
+    },
+    {
+        "tag": "unknown",
+        "responses": [
+            "Désolé, je n'ai pas compris votre question",
+            "Désolé, je n'ai pas compris",
+            "Je n'ai pas compris votre requête, pouvez-vous reformuler votre demande ?"
         ]
     },
     {
@@ -84,6 +71,19 @@
         ]
     },
     {
+        "tag": "vaccine",
+        "responses": [
+            "Pour prendre votre rendez-vous de vaccination, veuillez aller sur cette <a href=\"https://www.doctolib.fr/vaccination-covid-19\">page</a>",
+            "Pour prendre rendez-vous, veuillez vous rendre sur cette <a href=\"https://www.doctolib.fr/vaccination-covid-19\">page</a>"
+        ]
+    },
+    {
+        "tag": "side effects",
+        "responses": [
+            "En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"
+        ]
+    },
+    {
         "tag": "password",
         "responses": [
             "Pour changer votre mot de passe, veuillez suivre ce <a href=\"https://www.doctolib.fr/account/passwords/new\">lien</a>",
@@ -95,6 +95,13 @@
         "responses": [
             "Pour créer un compte ou vous connecter, suivez ce <a href=\"https://www.doctolib.fr/sessions/new\">lien</a>",
             "La création de compte ou la connexion, c'est par <a href=\"https://www.doctolib.fr/sessions/new\">ici</a>"
+        ]
+    },
+    {
+        "tag": "event",
+        "responses": [
+            "Pour créer un rappel, je vous invite à remplir ce formulaire :",
+            "Remplissez ce formulaire pour avoir des rappels dans votre calendrier favori"
         ]
     }
 ]

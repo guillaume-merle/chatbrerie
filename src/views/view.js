@@ -52,6 +52,13 @@ class View {
         this.lastSender = ''
     }
 
+    async insertForm(id) {
+        await this.insertBlock(Config.formMessageViewPath, {
+            id: id
+        })
+        this.lastSender = ''
+    }
+
     async insertImage(imagePath) {
         const imageUrl = chrome.runtime.getURL(imagePath)
         await this.insertBlock(Config.imageViewPath, {imageUrl: imageUrl})
@@ -67,7 +74,11 @@ class View {
         this.lastSender = type
 
         var rendered = Mustache.render(baseTemplate, dict, {yield: template})
-        this.chatHistory.innerHTML += rendered
+
+        var el = document.createElement('div')
+        el.innerHTML = rendered
+        this.chatHistory.appendChild(el)
+
         this.chatHistory.scrollTop = this.chatHistory.scrollHeight
     }
 

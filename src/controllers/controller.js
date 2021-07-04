@@ -1,6 +1,7 @@
 import { Config } from '../config.js'
 import { Lemmatizer } from './lemmatizer.js'
 import { QuizController } from './quiz-controller.js'
+import { DrugsFormController } from './drugs-form-controller.js'
 import { Response } from '../models/response.js'
 import { Model } from '../models/model.js'
 import { View } from '../views/view.js'
@@ -31,11 +32,11 @@ class Controller {
         var tag = responseBlock['tag']
         if (tag.localeCompare('goodbye') == 0) {
             this.view.insertImage(Config.imageGoodbye)
-        }
-        else if (tag.localeCompare('unknown') == 0) {
+        } else if (tag.localeCompare('unknown') == 0) {
             this.view.insertImage(Config.imageDontknow)
-        }
-        else if (tag.localeCompare('quiz') == 0) {
+        } else if (tag.localeCompare('event') == 0) {
+            new DrugsFormController(this.view)
+        } else if (tag.localeCompare('quiz') == 0) {
             new QuizController(this.view)
         }
     }
