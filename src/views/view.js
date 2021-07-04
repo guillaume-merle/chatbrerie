@@ -1,4 +1,4 @@
-import { loadFile } from '../utils/utils.js'
+import { loadFile, createBlock } from '../utils/utils.js'
 import { Config } from '../config.js'
 
 var Mustache = require('mustache')
@@ -81,9 +81,7 @@ class View {
 
         var rendered = Mustache.render(baseTemplate, dict, {yield: template})
 
-        var el = document.createElement('div')
-        el.innerHTML = rendered
-        this.chatHistory.appendChild(el)
+        this.chatHistory.appendChild(createBlock(rendered))
 
         this.chatHistory.scrollTop = this.chatHistory.scrollHeight
     }
@@ -135,9 +133,8 @@ class View {
     }
 
     insertChatbot(chatbot) {
-        var el = document.createElement('div')
-        el.innerHTML = chatbot
-        document.body.appendChild(el)
+        var block = createBlock(chatbot)
+        document.body.appendChild(block)
     }
 }
 
