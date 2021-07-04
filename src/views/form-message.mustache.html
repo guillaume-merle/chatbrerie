@@ -18,10 +18,14 @@
             <label for="title">Titre du rappel :</label><br>
             <input class="form-control h-25" type="text" id="title-{{id}}" name="title" value=""><br>
 
-            <label for="dates">Date de début et de fin :</label><br>
             <div class="form-inline">
-                <input class="form-control h-25 col-7"- type="date" id="start_date-{{id}}" name="dates" value=""><br>
-                <input class="form-control h-25 col-7" type="date" id="end_date-{{id}}" name="dates" value=""><br>
+                <input class="form-control h-25 col-8 mr-2"- type="date" id="start_date-{{id}}" name="start-date" value=""><br>
+                <label for="start-date">Date de début</label><br>
+            </div>
+
+            <div class="form-inline">
+                <input class="form-control h-25 col-8 mr-2" type="date" id="end_date-{{id}}" name="end-date" value=""><br>
+                <label for="end-date">Date de fin</label><br>
             </div>
 
             <label for="time">Heure de prise du médicament :</label><br>
