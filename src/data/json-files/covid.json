@@ -3,7 +3,7 @@
         {
             "tag": "vaccine",
 
-            "patterns": ["Je veux me faire vacciner",
+            "patterns": ["faire vacciner",
                          "vaccin",
                          "pfizer",
                          "moderna",
@@ -11,8 +11,8 @@
                          "johnson & johnson",
                          "janssen",
                          "Comment avoir ma dose",
-                         "Je veux ma deuxième injection",
-                         "Prendre un rendez-vous de vaccination",
+                         "deuxième injection",
+                         "Prendre rendez-vous vaccination",
                          "Première injection",
                          "Premier vaccin",
                          "rdv vaccination"],
@@ -23,8 +23,8 @@
         {
             "tag": "side effects",
 
-            "patterns": ["Je ressens des effets secondaires, suite à l'injection contre la Covid-19, que dois-je faire ?",
-                         "Je ne me sens pas bien après la vaccination contre la covid-19"],
+            "patterns": ["ressens effets secondaires, suite injection contre Covid-19",
+                         "ne me sens pas bien après vaccination contre covid-19"],
 
             "responses": ["En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"]
         }

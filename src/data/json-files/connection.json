@@ -3,15 +3,15 @@
         {
             "tag": "password",
 
-            "patterns": ["J'ai perdu mon mot de passe",
-                         "Je ne trouve plus mon mdp",
-                         "Je souhaite réinitialiser mon mot de passe",
+            "patterns": ["perdu mot de passe",
+                         "trouve plus mdp",
+                         "souhaite réinitialiser mot de passe",
                          "Réinitialiser mot de passe",
-                         "À l'aide, je ne me souviens plus de mon mot de passe",
-                         "Je veux changer mon mot de passe",
-                         "Je veux modifier mon mot de passe",
+                         "ne me souviens plus mot de passe",
+                         "changer mot de passe",
+                         "modifier mot de passe",
                          "mdp",
-                         "J'ai perdu mes identifiants",
+                         "perdu identifiants",
                          "identifiant"],
 
             "responses": ["Pour changer votre mot de passe, veuillez suivre ce <a href=\"https://www.doctolib.fr/account/passwords/new\">lien</a>",
@@ -21,7 +21,7 @@
             "tag": "connection",
 
             "patterns": ["Comment créer un compte ?",
-                         "Je veux créer un compte Doctolib",
+                         "créer un compte Doctolib",
                          "Comment me connecter à mon compte",
                          "création de compte",
                          "connexion"],

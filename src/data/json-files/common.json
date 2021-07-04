@@ -8,7 +8,6 @@
                          "Hey",
                          "Hola",
                          "Hello",
-                         "Est-ce qu'il y a quelqu'un",
                          "Salutation",
                          "Salut",
                          "Coucou"],
@@ -22,7 +21,7 @@
 
             "patterns": ["Au revoir",
                          "Bye",
-                         "Ciao", 
+                         "Ciao",
                          "Hasta la vista",
                          "Bonne journée",
                          "Adieu"],
@@ -36,8 +35,8 @@
 
             "patterns": ["Merci",
                          "Merci beaucoup",
-                         "Mille mercis pour votre aide",
-                         "Je vous remercie"],
+                         "remercie",
+                         "remerciement"],
 
             "responses": ["De rien",
                           "Au plaisir !",

@@ -3,14 +3,14 @@
         {
             "tag": "my appointments",
 
-            "patterns": ["Où sont mes rendez-vous ?",
-                         "Afficher mes rendez-vous",
+            "patterns": ["Où sont rendez-vous ?",
+                         "Afficher rendez-vous",
+                         "Où se trouvent rendez-vous ?",
                          "mes rendez-vous",
-                         "Où se trouvent mes rendez-vous ?",
-                         "Voir mes rendez-vous",
-                         "Consulter mes rendez-vous",
-                         "Montrez mes rendez-vous",
-                         "Visualiser mes rendez-vous"],
+                         "Voir rendez-vous",
+                         "Consulter rendez-vous",
+                         "Montrez rendez-vous",
+                         "Visualiser rendez-vous"],
 
             "responses": ["Vos rendez-vous se trouvent <a href=\"https://www.doctolib.fr/account/appointments\">ici</a>"]
         },
@@ -18,9 +18,9 @@
             "tag": "take appointments",
 
             "patterns": ["Prendre rendez-vous",
-                         "Je veux trouver un rendez-vous chez le médecin",
-                         "Je veux consulter un docteur",
-                         "Je veux réserver un créneau de consultation"],
+                         "trouver rendez-vous chez médecin",
+                         "consulter docteur",
+                         "réserver créneau consultation"],
 
             "responses": ["Prenez rendez-vous <a href=\"https://www.doctolib.fr\">ici</a>",
                           "Pour réserver une consultation, rendez-vous sur cette <a href=\"https://www.doctolib.fr\">page</a>"]

@@ -1,6 +1,5 @@
 adieu
 afficher
-aide
 aller
 application
 apres
@@ -14,7 +13,6 @@ bonjour
 bonsoir
 bye
 calendrier
-cela
 changer
 cher
 chez
@@ -36,13 +34,11 @@ creer
 creneau
 deroule
 deuxieme
-devoir
 distance
 docteur
 doctolib
 dose
 effet
-est
 etre
 evenement
 faire
@@ -63,8 +59,6 @@ mdp
 medecin
 medicament
 merci
-mercis
-mille
 mobile
 moderna
 modifier
@@ -83,8 +77,6 @@ premier
 prendre
 prise
 prix
-que
-quelqu
 quiz
 quoi
 rappel
@@ -93,6 +85,7 @@ rappelle
 rdv
 reinitialiser
 remerci
+remerciemer
 rendre
 reserver
 ressen
@@ -114,7 +107,6 @@ vaccin
 vaccination
 vacciner
 vas
-veux
 video
 vista
 visualiser
