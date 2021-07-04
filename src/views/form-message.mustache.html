@@ -5,34 +5,37 @@
     <div class="pr-2 pl-1">
         <span class="chatbot-name">Chatbrerie</span>
 
-        <div id="drug-form-{{id}}">
-            <select class="form-select" name="calendar" id="calendar-{{id}}">
+        <div class="form-group" id="drug-form-{{id}}">
+            <label for="calendar">Type de calendrier</label><br>
+            <select class="form-control" name="calendar" id="calendar-{{id}}">
                 <option value="google">Google Calendar</option>
                 <option value="outlook">Outlook Web Calendar</option>
                 <option value="apple">iCalendar</option>
                 <option value="yahoo">Yahoo! Calendar</option>
                 <option value="other">Autre</option>
-            </select>
+            </select> <br>
 
             <label for="title">Titre du rappel :</label><br>
             <input class="form-control" type="text" id="title-{{id}}" name="title" value=""><br>
 
-            <label for="start_date">Date de début :</label><br>
-            <input class="form-control" type="date" id="start_date-{{id}}" name="start_date" value=""><br>
-
-            <label for="end_date">Date de fin :</label><br>
-            <input class="form-control" type="date" id="end_date-{{id}}" name="end_date" value=""><br>
+            <label for="dates">Date de début et de fin :</label><br>
+            <div class="form-inline">
+                <input class="form-control" type="date" id="start_date-{{id}}" name="dates" value=""><br>
+                <input class="form-control" type="date" id="end_date-{{id}}" name="dates" value=""><br>
+            </div>
 
             <label for="time">Heure de prise du médicament :</label><br>
             <input class="form-control" type="Time" id="time-{{id}}" name="time" value=""><br>
 
             <label for="reccurrence">Tous/Toutes les</label><br>
-            <input class="form-control" type="number" min="1" max="100" value="1" id="rec_number-{{id}}">
-            <select class="form-select" name="reccurrence" id="reccurrence-{{id}}">
-                <option value="DAILY">jour(s)</option>
-                <option value="WEEKLY">semaine(s)</option>
-                <option value="MONTHLY">mois</option>
-            </select>
+            <div class="form-inline">
+                <input class="form-control" type="number" min="1" max="100" value="1" id="rec_number-{{id}}">
+                <select class="form-control" name="reccurrence" id="reccurrence-{{id}}">
+                    <option value="DAILY">jour(s)</option>
+                    <option value="WEEKLY">semaine(s)</option>
+                    <option value="MONTHLY">mois</option>
+                </select> <br>
+            </div>
 
             <button class="btn chatbot-btn text-white" id="{{id}}">Valider</button>
         </div>
