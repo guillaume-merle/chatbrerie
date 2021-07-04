@@ -1,16 +1,1 @@
-<div class="d-flex align-items-center text-right justify-content-end">
-    <div class="pr-2">
-        {{^chain}}
-        <span class="chatbot-name">Vous</span>
-        {{/chain}}
-        <p class="chatbot-msg">{{ message }}</p>
-    </div>
-    <div class="align-self-start">
-        {{^chain}}
-        <img src="{{ clientAvatar }}" class="img-chat">
-        {{/chain}}
-        {{#chain}}
-        <div class="chatbot-chain-col-client"></div>
-        {{/chain}}
-    </div>
-</div>
+<p class="chatbot-msg">{{ message }}</p>

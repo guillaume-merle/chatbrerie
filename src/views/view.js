@@ -7,7 +7,14 @@ class View {
     constructor(controller) {
         this.controller = controller
         this.chatHistory = null
-        this.lastSender = 'bot'
+        this.lastSender = ''
+
+        loadFile(Config.botBaseViewPath).then((template) => {
+            this.botBaseTemplate = template
+        })
+        loadFile(Config.clientBaseViewPath).then((template) => {
+            this.clientBaseTemplate = template
+        })
     }
 
     init() {
@@ -33,8 +40,7 @@ class View {
     }
 
     async insertMessage(message, type = 'client') {
-        var templatePath =
-            (type.localeCompare('client') == 0 ? Config.clientMessageViewPath : Config.botMessageViewPath)
+        var templatePath = type === 'client' ? Config.clientMessageViewPath : Config.botMessageViewPath
         await this.insertBlock(templatePath, {message: message}, type)
     }
 
@@ -43,6 +49,7 @@ class View {
             question: question.question,
             responses: question.responses
         })
+        this.lastSender = ''
     }
 
     async insertImage(imagePath) {
@@ -51,6 +58,7 @@ class View {
     }
 
     async insertBlock(templatePath, dict, type = 'bot') {
+        var baseTemplate = type === 'bot' ? this.botBaseTemplate : this.clientBaseTemplate
         var template = await loadFile(templatePath)
 
         dict['botAvatar'] = chrome.runtime.getURL(Config.botAvatar)
@@ -58,13 +66,13 @@ class View {
         dict['chain'] = type === this.lastSender
         this.lastSender = type
 
-        var rendered = Mustache.render(template, dict)
+        var rendered = Mustache.render(baseTemplate, dict, {yield: template})
         this.chatHistory.innerHTML += rendered
         this.chatHistory.scrollTop = this.chatHistory.scrollHeight
     }
 
     setQuizMode(quizController) {
-        loadFile(Config.quizNavPath).then((nav) => {
+        loadFile(Config.quizNavViewPath).then((nav) => {
             this.chatbotNav.innerHTML = nav
             document.getElementById('chat-exit').onclick = () => this.exitQuizCallback(quizController)
         })

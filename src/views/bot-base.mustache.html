@@ -1,0 +1,16 @@
+<div class="d-flex align-items-center">
+    <div class="text-left pr-1 align-self-start">
+        {{^chain}}
+        <img src="{{ botAvatar }}" class="img-chat">
+        {{/chain}}
+        {{#chain}}
+        <div class="chatbot-chain-col-bot"></div>
+        {{/chain}}
+    </div>
+    <div class="pr-2">
+        {{^chain}}
+        <span class="chatbot-name">Chatbrerie</span>
+        {{/chain}}
+        {{> yield}}
+    </div>
+</div>
