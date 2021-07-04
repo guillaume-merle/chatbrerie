@@ -34,7 +34,9 @@ class View {
                 this.sendButton.onclick = () => this.sendCallback()
                 this.inputField.onkeypress = (event) => this.sendOnKeyPressCallback(event)
 
-                this.controller.botAnswer('Bonjour')
+                this.controller.start()
+
+                this.chatHistory.onclick = (event) => this.functionButtonCallback(event) // event delegation
             })
         }
     }
@@ -62,6 +64,10 @@ class View {
     async insertImage(imagePath) {
         const imageUrl = chrome.runtime.getURL(imagePath)
         await this.insertBlock(Config.imageViewPath, {imageUrl: imageUrl})
+    }
+
+    async insertFunctions(functions, message) {
+        await this.insertBlock(Config.functionsViewPath, {functions: functions, message: message})
     }
 
     async insertBlock(templatePath, dict, type = 'bot') {
@@ -112,6 +118,16 @@ class View {
             event.preventDefault()
             this.sendCallback()
         }
+    }
+
+    functionButtonCallback(event) {
+        if (!event.target.classList.contains('chatbot-btn-function')) {
+            return
+        }
+
+        var message = event.target.dataset.message
+        this.insertMessage(message, 'client')
+        this.controller.botAnswer(message)
     }
 
     exitQuizCallback(quizController) {

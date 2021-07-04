@@ -17,6 +17,7 @@
       "src/data/js-model/model.json",
       "src/data/js-model/group1-shard1of1.bin",
       "src/data/vaccination-quiz.json",
+      "src/data/functions.json",
 
       "src/views/chatbot.html",
       "src/views/client-message.mustache.html",
@@ -27,6 +28,7 @@
       "src/views/quiz-nav.html",
       "src/views/bot-base.mustache.html",
       "src/views/client-base.mustache.html",
+      "src/views/functions.mustache.html",
 
       "src/assets/images/bye.gif",
       "src/assets/images/dontknow.gif",

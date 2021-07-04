@@ -12,6 +12,7 @@ class Config {
     static quizNavViewPath = 'src/views/quiz-nav.html'
     static botBaseViewPath = 'src/views/bot-base.mustache.html'
     static clientBaseViewPath = 'src/views/client-base.mustache.html'
+    static functionsViewPath = 'src/views/functions.mustache.html'
 
     static imageGoodbye = 'src/assets/images/bye.gif'
     static imageDontknow = 'src/assets/images/dontknow.gif'
@@ -19,6 +20,7 @@ class Config {
     static clientAvatar = 'src/assets/images/client-avatar.png'
 
     static quizPath = 'src/data/vaccination-quiz.json'
+    static functionsPath = 'src/data/functions.json'
 
     static colorValid = '#54ccbe'
     static colorWrong = '#ff493b'

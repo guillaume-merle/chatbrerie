@@ -30,12 +30,21 @@
 }
 
 .chatbot-wrapper .chatbot-btn {
-    max-width: 20em;
     white-space: normal;
     font-size: 1.2em;
     text-transform: none;
+}
+
+.chatbot-wrapper .chatbot-btn-quiz {
+    max-width: 20em;
     margin-bottom: 0.2em;
     background-color: #41afe5;
+}
+
+.chatbot-wrapper .chatbot-btn-function {
+    border-radius: 35px;
+    background-color: #435f71;
+    margin: 0.1em;
 }
 
 .chatbot-msg {

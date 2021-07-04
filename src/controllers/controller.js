@@ -8,12 +8,23 @@ import { View } from '../views/view.js'
 import { randomInt, loadFile } from '../utils/utils.js'
 
 class Controller {
-    constructor(){
+    constructor() {
+        loadFile(Config.functionsPath).then((functionsJson) => {
+            this.functions = JSON.parse(functionsJson)
+        })
+
         this.lemmatizer = new Lemmatizer()
         this.model = new Model()
         this.response = new Response()
         this.view = new View(this)
         this.view.init()
+    }
+
+    start() {
+        this.botAnswer('Bonjour').then(() => {
+            this.view.insertFunctions(this.functions.recommandations,
+            'Voici quelques idées de choses que vous pouvez me demander et de sujets sur lesquels je peux vous éclairer :')
+        })
     }
 
     async botAnswer(input) {
