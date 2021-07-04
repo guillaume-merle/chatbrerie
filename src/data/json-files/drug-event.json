@@ -3,9 +3,11 @@
         {
             "tag": "event",
 
-            "patterns": ["!event"],
+            "patterns": ["créer rappel", "rappel prise de médicaments", "rappel de mon ordonnance",
+                         "rappeler prendre traitement", "créer évènement calendrier", "Rappelle prendre médicament"],
 
-            "responses": []
+            "responses": ["Pour créer un rappel, je vous invite à remplir ce formulaire :",
+                          "Remplissez ce formulaire pour avoir des rappels dans votre calendrier favori"]
         }
     ]
 }
