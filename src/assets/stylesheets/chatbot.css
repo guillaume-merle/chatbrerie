@@ -183,3 +183,11 @@
 .chatbot-image-block {
     border-radius: 8px
 }
+
+.chatbot-chain-col-bot {
+    margin-left: 4.5em;
+}
+
+.chatbot-chain-col-client {
+    margin-right: 4.5em;
+}

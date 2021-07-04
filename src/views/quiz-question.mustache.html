@@ -1,14 +1,6 @@
-<div class="d-flex align-items-center">
-    <div class="text-left pr-1 align-self-start">
-        <img src="{{ botAvatar }}" class="img-chat">
-    </div>
-    <div class="pr-2">
-        <span class="chatbot-name">Chatbrerie</span>
-        <p class="chatbot-msg">{{ question }}</p>
-        <div class="d-flex flex-column">
-            {{#responses}}
-            <button class="btn chatbot-btn text-white" id="{{id}}">{{text}}</button>
-            {{/responses}}
-        </div>
-    </div>
+<p class="chatbot-msg">{{ question }}</p>
+<div class="d-flex flex-column">
+    {{#responses}}
+    <button class="btn chatbot-btn text-white" id="{{id}}">{{text}}</button>
+    {{/responses}}
 </div>
