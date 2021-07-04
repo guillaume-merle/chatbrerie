@@ -3,7 +3,7 @@
         {
             "tag": "vaccine",
 
-            "patterns": ["me faire vacciner",
+            "patterns": ["faire vacciner",
                          "vaccin",
                          "pfizer",
                          "moderna",
@@ -11,7 +11,7 @@
                          "johnson & johnson",
                          "janssen",
                          "Comment avoir ma dose",
-                         "ma deuxième injection",
+                         "deuxième injection",
                          "Prendre rendez-vous vaccination",
                          "Première injection",
                          "Premier vaccin",
