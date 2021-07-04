@@ -11,8 +11,10 @@ class DrugsFormController {
     }
 
     callback(event) {
-        this.view.insertMessage("Voici votre rappel de<a href=\"" + this.#createDrugEvent() +
-            "\" target=\"_blank\"> prise de médicaments</a>", 'bot')
+        const config = this.#createCalendarConfig()
+        const calendarType = document.getElementById("calendar-" + this.id).value
+
+        this.view.insertMessage(this.#createEventMessage(config, calendarType), 'bot')
 
         this.#unsetCallback()
     }
@@ -25,7 +27,7 @@ class DrugsFormController {
         document.getElementById(this.id).onclick = null
     }
 
-    #createDrugEvent() {
+    #createCalendarConfig() {
         const start_date = new Date(document.getElementById("start_date-" + this.id).value + 'T'
             + document.getElementById("time-" + this.id).value)
 
@@ -43,21 +45,32 @@ class DrugsFormController {
             }
         }
 
-        const calendarType = document.getElementById("calendar-" + this.id).value
+        return config
+    }
+
+    #createEventMessage(config, calendarType) {
+        var message = "Voici votre rappel de"
 
         if (calendarType.localeCompare('google') == 0) {
             const googleCalendar = new GoogleCalendar(config)
-            return googleCalendar.render()
+            message += "<a href=\"" + googleCalendar.render() + "\""
         } else if (calendarType.localeCompare('outlook') == 0){
             const outlookCalendar = new OutlookCalendar(config)
-            return outlookCalendar.render()
+            message += "<a href=\"" + outlookCalendar.render() + "\""
         } else if (calendarType.localeCompare('yahoo') == 0){
             const yahooCalendar = new YahooCalendar(config)
-            return yahooCalendar.render()
+            message += "<a href=\"" + yahooCalendar.render() + "\""
         } else {
             const iCalendar = new ICalendar(config)
-            return iCalendar.download('calendar.ics')
+            const calendarFile = new File([iCalendar.render()], { type: 'text/plain' })
+
+            // return link to the file blob
+            message += "<a href=\"" + window.URL.createObjectURL(calendarFile) + "\" download=\"" + config.title
+                        + ".ics\""
         }
+
+        message += " target=\"_blank\"> prise de médicaments</a>"
+        return message
     }
 }
 
