@@ -3,7 +3,9 @@
         <img src="{{ botAvatar }}" class="img-chat">
     </div>
     <div class="pr-2">
+        {{^chain}}
         <span class="chatbot-name">Chatbrerie</span>
+        {{/chain}}
         <p class="chatbot-msg">{{{ message }}}</p>
     </div>
 </div>

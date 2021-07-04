@@ -7,6 +7,7 @@ class View {
     constructor(controller) {
         this.controller = controller
         this.chatHistory = null
+        this.lastSender = 'bot'
     }
 
     init() {
@@ -34,7 +35,7 @@ class View {
     async insertMessage(message, type = 'client') {
         var templatePath =
             (type.localeCompare('client') == 0 ? Config.clientMessageViewPath : Config.botMessageViewPath)
-        await this.insertBlock(templatePath, {message: message})
+        await this.insertBlock(templatePath, {message: message}, type)
     }
 
     async insertQuizQuestion(question) {
@@ -49,11 +50,13 @@ class View {
         await this.insertBlock(Config.imageViewPath, {imageUrl: imageUrl})
     }
 
-    async insertBlock(templatePath, dict) {
+    async insertBlock(templatePath, dict, type = 'bot') {
         var template = await loadFile(templatePath)
 
         dict['botAvatar'] = chrome.runtime.getURL(Config.botAvatar)
         dict['clientAvatar'] = chrome.runtime.getURL(Config.clientAvatar)
+        dict['chain'] = type === this.lastSender
+        this.lastSender = type
 
         var rendered = Mustache.render(template, dict)
         this.chatHistory.innerHTML += rendered
