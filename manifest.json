@@ -1,7 +1,8 @@
 {
-  "name": "Doctolib Chatbot",
+  "name": "Chatbrerie",
   "version": "1.0",
-  "description": "Chatbrerie",
+  "description": "A chatbot usable with Doctolib. He is able to answer questions from Doctolib users, schedule a reminder for your medication and even give you a little quiz on vaccination !",
+  "author": "Alexandre Deiss, Marc Demoustier, Lucien Martin-Gaffe, Guillaume Merle, Quoc-Duong Nguyen",
   "manifest_version": 2,
   "content_scripts": [
    {
@@ -15,5 +16,20 @@
       "data/*",
       "views/*.html",
       "assets/images/*"
-  ]
+  ],
+  "icons": {
+    "16": "assets/images/bot-avatar-16.png",
+    "32": "assets/images/bot-avatar-32.png",
+    "64": "assets/images/bot-avatar-64.png"
+  },
+  "browser_action": {
+    "default_popup": "views/popup.html",
+    "default_title": "Chatbrerie",
+    "default_icon": {
+        "16": "assets/images/bot-avatar-16.png",
+        "32": "assets/images/bot-avatar-32.png",
+        "64": "assets/images/bot-avatar-64.png"
+    }
+  }
 }
+
