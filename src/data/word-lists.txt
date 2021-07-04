@@ -42,6 +42,7 @@ effet
 etre
 evenement
 faire
+fonctionnaliter
 fonctionne
 hasta
 hello
@@ -54,6 +55,7 @@ janssen
 johnson
 journee
 ligne
+liste
 marche
 mdp
 medecin
@@ -73,10 +75,12 @@ perdre
 pfizer
 plus
 pour
+pouvoir
 premier
 prendre
 prise
 prix
+que
 quiz
 quoi
 rappel

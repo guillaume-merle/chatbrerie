@@ -22,8 +22,8 @@ class Controller {
 
     start() {
         this.botAnswer('Bonjour').then(() => {
-            this.view.insertFunctions(this.functions.recommandations,
-            'Voici quelques idées de choses que vous pouvez me demander et de sujets sur lesquels je peux vous éclairer :')
+            this.view.insertMessage('Voici quelques idées de choses que vous pouvez me demander et de sujets sur lesquels je peux vous éclairer :', 'bot')
+            this.view.insertFunctions(this.functions.recommandations)
         })
     }
 
@@ -41,7 +41,7 @@ class Controller {
         }
 
         var tag = responseBlock['tag']
-        if (tag.localeCompare('goodbye') == 0) {
+        if (tag === 'goodbye') {
             this.view.insertImage(Config.imageGoodbye)
         } else if (tag.localeCompare('unknown') == 0) {
             this.view.insertImage(Config.imageDontknow)
@@ -49,6 +49,8 @@ class Controller {
             new DrugsFormController(this.view)
         } else if (tag.localeCompare('quiz') == 0) {
             new QuizController(this.view)
+        } else if (tag === 'functions-list') {
+            this.view.insertFunctions(this.functions.all)
         }
     }
 }

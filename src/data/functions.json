@@ -5,5 +5,10 @@
         {"tag": "Quiz sur la vaccination", "message": "Je veux faire le quiz sur la vaccination"},
         {"tag": "Lister toutes les fonctionalités", "message": "Liste des fonctionalités"}
     ],
-    "functions": []
+    "all": [
+        {"tag": "Vaccination", "message": "Comment me faire vacciner ?"},
+        {"tag": "Mot de passe oublié", "message": "J'ai oublié mon mot de passe"},
+        {"tag": "Quiz sur la vaccination", "message": "Je veux faire le quiz sur la vaccination"},
+        {"tag": "Autre", "message": "aaaaaaaaaaaaaaaaaaaaaaaaa"}
+    ]
 }

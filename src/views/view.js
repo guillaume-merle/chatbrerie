@@ -41,7 +41,7 @@ class View {
         }
     }
 
-    async insertMessage(message, type = 'client') {
+    async insertMessage(message, type = 'bot') {
         var templatePath = type === 'client' ? Config.clientMessageViewPath : Config.botMessageViewPath
         await this.insertBlock(templatePath, {message: message}, type)
     }
@@ -66,8 +66,8 @@ class View {
         await this.insertBlock(Config.imageViewPath, {imageUrl: imageUrl})
     }
 
-    async insertFunctions(functions, message) {
-        await this.insertBlock(Config.functionsViewPath, {functions: functions, message: message})
+    async insertFunctions(functions) {
+        await this.insertBlock(Config.functionsViewPath, {functions: functions})
     }
 
     async insertBlock(templatePath, dict, type = 'bot') {
@@ -106,7 +106,7 @@ class View {
         }
 
         var input = this.inputField.value
-        this.insertMessage(input)
+        this.insertMessage(input, type = 'client')
         this.inputField.value = ''
 
         // Let the bot answer
