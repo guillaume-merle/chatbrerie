@@ -33,7 +33,6 @@ function generateId() {
 
 function createBlock(html) {
     var el = document.createElement('div')
-    el.classList.add('chatbot-block')
     el.innerHTML = html
     return el
 }

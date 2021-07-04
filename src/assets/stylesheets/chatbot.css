@@ -49,22 +49,22 @@
 
 .chatbot-wrapper .chatbot-btn-form {
     margin-top: 0.5em;
-    margin-bottom: 0.5em;
     background-color: #41afe5;
 }
 
 .chatbot-wrapper .chatbot-block {
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
-.chatbot-msg {
+.chatbot-block .chatbot-msg {
     max-width: 20em;
     word-wrap: break-word;
     text-align: left;
     background-color: #fff;
     font-size: 1.2em;
     padding: 0.5em;
+    margin-bottom: 0.2em;
     border-radius: 5px;
     font-weight: 500;
     color: #3e3c3c
