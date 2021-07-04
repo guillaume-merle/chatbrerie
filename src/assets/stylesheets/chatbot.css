@@ -47,6 +47,11 @@
     margin: 0.1em;
 }
 
+.chatbot-wrapper .chatbot-btn-form {
+    margin-top: 0.5em;
+    background-color: #41afe5;
+}
+
 .chatbot-msg {
     max-width: 20em;
     word-wrap: break-word;
@@ -199,8 +204,4 @@
 
 .chatbot-chain-col-client {
     margin-right: 4.5em;
-}
-
-.chatbot-form-button {
-    margin-top: 0.5em;
 }

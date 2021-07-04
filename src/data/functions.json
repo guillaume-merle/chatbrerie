@@ -3,6 +3,7 @@
         {"tag": "Vaccination", "message": "Comment me faire vacciner ?"},
         {"tag": "Mot de passe oublié", "message": "J'ai oublié mon mot de passe"},
         {"tag": "Quiz sur la vaccination", "message": "Je veux faire le quiz sur la vaccination"},
+        {"tag": "Rappel prise de médicament", "message": "Créer un rappel de prise de médicament"},
         {"tag": "Lister toutes les fonctionalités", "message": "Liste des fonctionalités"}
     ],
     "all": [
@@ -14,6 +15,7 @@
         {"tag": "Vaccination", "message": "Comment me faire vacciner ?"},
         {"tag": "Effets secondaires vaccination", "message": "Je ne me sens pas bien après la vaccination contre la covid-19"},
         {"tag": "Mot de passe oublié", "message": "J'ai oublié mon mot de passe"},
-        {"tag": "Quiz sur la vaccination", "message": "Je veux faire le quiz sur la vaccination"}
+        {"tag": "Quiz sur la vaccination", "message": "Je veux faire le quiz sur la vaccination"},
+        {"tag": "Rappel prise de médicament", "message": "Créer un rappel de prise de médicament"}
     ]
 }

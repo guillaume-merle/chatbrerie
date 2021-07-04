@@ -106,7 +106,7 @@ class View {
         }
 
         var input = this.inputField.value
-        this.insertMessage(input, type = 'client')
+        this.insertMessage(input, 'client')
         this.inputField.value = ''
 
         // Let the bot answer
