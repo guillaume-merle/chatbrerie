@@ -1,9 +1,11 @@
 <div class="d-flex align-items-center text-right justify-content-end">
-    <div class="pr-2">
+    <div class="pl-2">
         {{^chain}}
         <span class="chatbot-name">Vous</span>
         {{/chain}}
-        {{> yield}}
+        <div class="chatbot-block">
+            {{> yield}}
+        </div>
     </div>
     <div class="align-self-start">
         {{^chain}}

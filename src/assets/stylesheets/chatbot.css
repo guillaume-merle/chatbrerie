@@ -30,21 +30,41 @@
 }
 
 .chatbot-wrapper .chatbot-btn {
-    max-width: 20em;
     white-space: normal;
     font-size: 1.2em;
     text-transform: none;
+}
+
+.chatbot-wrapper .chatbot-btn-quiz {
+    max-width: 20em;
     margin-bottom: 0.2em;
     background-color: #41afe5;
 }
 
-.chatbot-msg {
+.chatbot-wrapper .chatbot-btn-function {
+    border-radius: 35px;
+    background-color: #435f71;
+    margin: 0.1em;
+}
+
+.chatbot-wrapper .chatbot-btn-form {
+    margin-top: 0.5em;
+    background-color: #41afe5;
+}
+
+.chatbot-wrapper .chatbot-block {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.chatbot-block .chatbot-msg {
     max-width: 20em;
     word-wrap: break-word;
     text-align: left;
     background-color: #fff;
     font-size: 1.2em;
     padding: 0.5em;
+    margin-bottom: 0.2em;
     border-radius: 5px;
     font-weight: 500;
     color: #3e3c3c
@@ -190,8 +210,4 @@
 
 .chatbot-chain-col-client {
     margin-right: 4.5em;
-}
-
-.chatbot-form-button {
-    margin-top: 0.5em;
 }

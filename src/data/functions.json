@@ -1,0 +1,21 @@
+{
+    "recommandations": [
+        {"tag": "Vaccination", "message": "Comment me faire vacciner ?"},
+        {"tag": "Mot de passe oublié", "message": "J'ai oublié mon mot de passe"},
+        {"tag": "Quiz sur la vaccination", "message": "Je veux faire le quiz sur la vaccination"},
+        {"tag": "Rappel prise de médicament", "message": "Créer un rappel de prise de médicament"},
+        {"tag": "Lister toutes les fonctionalités", "message": "Liste des fonctionalités"}
+    ],
+    "all": [
+        {"tag": "Téléconsultation", "message": "Comment marche la téléconsultation ?"},
+        {"tag": "Tarification téléconsultation", "message": "Combien coûte une consultation vidéo ?"},
+        {"tag": "Mes rendez-vous", "message": "Consulter mes rendez-vous"},
+        {"tag": "Prendre rendez-vous", "message": "Prendre rendez-vous"},
+        {"tag": "Compte Doctolib", "message": "Comment me connecter à mon compte ?"},
+        {"tag": "Vaccination", "message": "Comment me faire vacciner ?"},
+        {"tag": "Effets secondaires vaccination", "message": "Je ne me sens pas bien après la vaccination contre la covid-19"},
+        {"tag": "Mot de passe oublié", "message": "J'ai oublié mon mot de passe"},
+        {"tag": "Quiz sur la vaccination", "message": "Je veux faire le quiz sur la vaccination"},
+        {"tag": "Rappel prise de médicament", "message": "Créer un rappel de prise de médicament"}
+    ]
+}

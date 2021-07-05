@@ -1,0 +1,17 @@
+{
+    "intents": [
+        {
+            "tag": "functions-list",
+
+            "patterns": [
+                "Liste des fonctionnalités",
+                "Que peux tu faire ?"
+            ],
+
+            "responses": [
+                "Voici toutes mes fonctionnalités :",
+                "Voici tout ce que vous pouvez me demander et les sujets sur lesquels je peux vous éclairer :"
+            ]
+        }
+    ]
+}

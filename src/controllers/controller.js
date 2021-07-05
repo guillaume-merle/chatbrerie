@@ -8,12 +8,23 @@ import { View } from '../views/view.js'
 import { randomInt, loadFile } from '../utils/utils.js'
 
 class Controller {
-    constructor(){
+    constructor() {
+        loadFile(Config.functionsPath).then((functionsJson) => {
+            this.functions = JSON.parse(functionsJson)
+        })
+
         this.lemmatizer = new Lemmatizer()
         this.model = new Model()
         this.response = new Response()
         this.view = new View(this)
         this.view.init()
+    }
+
+    start() {
+        this.botAnswer('Bonjour').then(() => {
+            this.view.insertMessage('Voici quelques idées de choses que vous pouvez me demander et de sujets sur lesquels je peux vous éclairer :', 'bot')
+            this.view.insertFunctions(this.functions.recommandations)
+        })
     }
 
     async botAnswer(input) {
@@ -30,7 +41,7 @@ class Controller {
         }
 
         var tag = responseBlock['tag']
-        if (tag.localeCompare('goodbye') == 0) {
+        if (tag === 'goodbye') {
             this.view.insertImage(Config.imageGoodbye)
         } else if (tag.localeCompare('unknown') == 0) {
             this.view.insertImage(Config.imageDontknow)
@@ -38,6 +49,8 @@ class Controller {
             new DrugsFormController(this.view)
         } else if (tag.localeCompare('quiz') == 0) {
             new QuizController(this.view)
+        } else if (tag === 'functions-list') {
+            this.view.insertFunctions(this.functions.all)
         }
     }
 }

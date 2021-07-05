@@ -31,4 +31,10 @@ function generateId() {
     return uuidv4()
 }
 
-export { loadFile, randomInt, indexOfMax, generateId }
+function createBlock(html) {
+    var el = document.createElement('div')
+    el.innerHTML = html
+    return el
+}
+
+export { loadFile, randomInt, indexOfMax, generateId, createBlock }

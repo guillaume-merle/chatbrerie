@@ -1,4 +1,4 @@
-import { loadFile } from '../utils/utils.js'
+import { loadFile, createBlock } from '../utils/utils.js'
 import { Config } from '../config.js'
 
 var Mustache = require('mustache')
@@ -34,12 +34,14 @@ class View {
                 this.sendButton.onclick = () => this.sendCallback()
                 this.inputField.onkeypress = (event) => this.sendOnKeyPressCallback(event)
 
-                this.controller.botAnswer('Bonjour')
+                this.controller.start()
+
+                this.chatHistory.onclick = (event) => this.functionButtonCallback(event) // event delegation
             })
         }
     }
 
-    async insertMessage(message, type = 'client') {
+    async insertMessage(message, type = 'bot') {
         var templatePath = type === 'client' ? Config.clientMessageViewPath : Config.botMessageViewPath
         await this.insertBlock(templatePath, {message: message}, type)
     }
@@ -64,6 +66,10 @@ class View {
         await this.insertBlock(Config.imageViewPath, {imageUrl: imageUrl})
     }
 
+    async insertFunctions(functions) {
+        await this.insertBlock(Config.functionsViewPath, {functions: functions})
+    }
+
     async insertBlock(templatePath, dict, type = 'bot') {
         var baseTemplate = type === 'bot' ? this.botBaseTemplate : this.clientBaseTemplate
         var template = await loadFile(templatePath)
@@ -75,9 +81,7 @@ class View {
 
         var rendered = Mustache.render(baseTemplate, dict, {yield: template})
 
-        var el = document.createElement('div')
-        el.innerHTML = rendered
-        this.chatHistory.appendChild(el)
+        this.chatHistory.appendChild(createBlock(rendered))
 
         this.chatHistory.scrollTop = this.chatHistory.scrollHeight
     }
@@ -100,7 +104,7 @@ class View {
         }
 
         var input = this.inputField.value
-        this.insertMessage(input)
+        this.insertMessage(input, 'client')
         this.inputField.value = ''
 
         // Let the bot answer
@@ -114,14 +118,23 @@ class View {
         }
     }
 
+    functionButtonCallback(event) {
+        if (!event.target.classList.contains('chatbot-btn-function')) {
+            return
+        }
+
+        var message = event.target.dataset.message
+        this.insertMessage(message, 'client')
+        this.controller.botAnswer(message)
+    }
+
     exitQuizCallback(quizController) {
         quizController.exit()
     }
 
     insertChatbot(chatbot) {
-        var el = document.createElement('div')
-        el.innerHTML = chatbot
-        document.body.appendChild(el)
+        var block = createBlock(chatbot)
+        document.body.appendChild(block)
     }
 }
 
