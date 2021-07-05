@@ -3,9 +3,7 @@ import { Config } from '../config'
 
 class Lemmatizer {
     constructor() {
-        loadFile(Config.wordListPath).then((wordList) => {
-            this.wordList = wordList.split('\n')
-        })
+        this.wordList = null
     }
 
     async lemmatizeInput(input) {
@@ -36,6 +34,10 @@ class Lemmatizer {
     }
 
     async prepareInput(input) {
+        if (!this.wordList) {
+            this.wordList = (await loadFile(Config.wordListPath)).split('\n')
+        }
+
         var lemmatizeList = await this.lemmatizeInput(input);
         var preparedInput = new Array(this.wordList.length).fill(0);
 
