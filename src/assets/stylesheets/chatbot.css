@@ -67,7 +67,8 @@
     margin-bottom: 0.2em;
     border-radius: 5px;
     font-weight: 500;
-    color: #3e3c3c
+    color: #3e3c3c;
+    white-space: pre-line;
 }
 
 .between {
@@ -210,4 +211,8 @@
 
 .chatbot-chain-col-client {
     margin-right: 4.5em;
+}
+
+.chatbot-form-button {
+    margin-top: 0.5em;
 }

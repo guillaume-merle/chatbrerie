@@ -4,6 +4,7 @@ import { Config } from '../config'
 class QuizController {
     constructor(view) {
         this.view = view
+        this.score = 0
 
         loadFile(Config.quizPath).then((quizJson) => {
             this.quiz = JSON.parse(quizJson)
@@ -26,6 +27,7 @@ class QuizController {
         if (event.target.id == validResponse.id) {
             event.target.style.backgroundColor = Config.colorValid
             message = 'Bien joué ! '
+            this.score += 1
         } else {
             event.target.style.backgroundColor = Config.colorWrong
             document.getElementById(validResponse.id).style.backgroundColor = Config.colorValid
@@ -40,7 +42,8 @@ class QuizController {
         if (this.currentQuestion) {
             this.view.insertQuizQuestion(this.currentQuestion).then(() => this.#setCallbacks())
         } else {
-            this.view.insertMessage('Le quiz est terminé, merci de votre participation !', 'bot')
+            var finalScore = this.score / this.quiz.length * 100
+            this.view.insertMessage('Le quiz est terminé, votre score est de ' + finalScore + '%\nMerci de votre participation !', 'bot')
             this.view.unsetQuizMode()
         }
     }
