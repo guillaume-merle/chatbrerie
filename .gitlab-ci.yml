@@ -1,0 +1,22 @@
+stages:
+  - build
+  - test
+
+.js:
+  image: node
+  before_script:
+    - npm install
+
+build:
+  extends: .js
+  stage: build
+  script: npm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 30 min
+
+test:
+  extends: .js
+  stage: test
+  script: ls dist/
