@@ -6,33 +6,33 @@
   "content_scripts": [
    {
      "matches": ["https://www.doctolib.fr/*"],
-     "css": ["src/assets/stylesheets/chatbot.css", "node_modules/bootstrap/dist/css/bootstrap.min.css"],
-     "js": ["dist/bundle.js", "dist/524.bundle.js"]
+     "css": ["bootstrap.min.css"],
+     "js": ["bundle.js", "524.bundle.js"]
    }
   ],
   "permissions": ["storage", "unlimitedStorage"],
   "web_accessible_resources": [
-      "src/data/word-lists.txt",
-      "src/data/output.json",
-      "src/data/js-model/model.json",
-      "src/data/js-model/group1-shard1of1.bin",
-      "src/data/vaccination-quiz.json",
-      "src/data/functions.json",
+      "data/word-lists.txt",
+      "data/output.json",
+      "data/js-model/model.json",
+      "data/js-model/group1-shard1of1.bin",
+      "data/vaccination-quiz.json",
+      "data/functions.json",
 
-      "src/views/chatbot.html",
-      "src/views/client-message.mustache.html",
-      "src/views/bot-message.mustache.html",
-      "src/views/quiz-question.mustache.html",
-      "src/views/form-message.mustache.html",
-      "src/views/image.mustache.html",
-      "src/views/quiz-nav.html",
-      "src/views/bot-base.mustache.html",
-      "src/views/client-base.mustache.html",
-      "src/views/functions.mustache.html",
+      "views/chatbot.html",
+      "views/client-message.mustache.html",
+      "views/bot-message.mustache.html",
+      "views/quiz-question.mustache.html",
+      "views/form-message.mustache.html",
+      "views/image.mustache.html",
+      "views/quiz-nav.html",
+      "views/bot-base.mustache.html",
+      "views/client-base.mustache.html",
+      "views/functions.mustache.html",
 
-      "src/assets/images/bye.gif",
-      "src/assets/images/dontknow.gif",
-      "src/assets/images/client-avatar.png",
-      "src/assets/images/bot-avatar.png"
+      "assets/images/bye.gif",
+      "assets/images/dontknow.gif",
+      "assets/images/client-avatar.png",
+      "assets/images/bot-avatar.png"
   ]
 }
