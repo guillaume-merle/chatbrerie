@@ -5,196 +5,152 @@
             {"text": "Protéger mon entourage et moi-même."},
             {"text": "Me protéger."},
             {"text": "Pour être a la mode."},
-            {"text": "Aucune des réponses."}
+            {"text": "Aucune de ces réponses."}
         ],
         "valid": 0,
-        "explanation": "La vaccination ne sert pas seulement a vous protéger, elle sert aussi à protéger votre entourage, le collectif, les personnes non vaccinées ou qui ne peuvent être vaccinées pour des raisons médicales. Il est indispensable d'être immunisé contre certaines maladies afin de ne pas les trensmettres aux plus vulnérable."
+        "explanation": "La vaccination ne sert pas seulement à vous protéger, elle sert aussi à protéger votre entourage, le collectif, les personnes non-vaccinées ou qui ne peuvent pas être vaccinées pour des raisons médicales. Il est indispensable d'être immunisé contre certaines maladies afin de ne pas les transmettre aux plus vulnérables."
     },
     {
-        "question": "La vaccination permet elle de ralentir la propagation du virus ?",
+        "question": "La vaccination permet-elle de ralentir la propagation du virus ?",
         "responses": [
             {"text": "Oui, une fois vaccinée, le virus ne se propage plus."},
             {"text": "Non, cela nous protège juste des formes graves."},
             {"text": "Oui, la vaccination est un geste barrière."},
-            {"text": "Aucune des réponses."}
+            {"text": "Aucune de ces réponses."}
         ],
         "valid": 2,
-        "explanation": "Dans le cadre du covid 19, on estime que une personne atteinte contaminera 4 autres personnes. La vaccination parmet de freiner cette propagation a l'équivalent d'un geste barrière (moins d'une personne contaminé par personne malade). Attention cependant cela ne remplace aucunement les autres gestes barrières."
+        "explanation": "Dans le cadre de la Covid-19, on estime qu'une personne atteinte contaminera 4 autres personnes. La vaccination permet de freiner cette propagation à l'équivalent d'un geste barrière (moins d'une personne contaminée par personne malade). Attention, cependant cela ne remplace aucunement les autres gestes barrières."
     },
     {
-        "question": "La vaccination permet de se protéger des formes graves ?",
+        "question": "La vaccination permet-elle de se protéger des formes graves ?",
         "responses": [
-            {"text": "Oui, une fois vaccinée on ne risque plus rien."},
+            {"text": "Oui, une fois vacciné, on ne risque plus rien."},
             {"text": "Oui, dans la majorité des cas."},
             {"text": "Non, la vaccination ne sert a rien"},
-            {"text": "Aucune des réponses."}
+            {"text": "Aucune de ces réponses."}
         ],
         "valid": 1,
-        "explanation": "Une fois vacciné on augmente considérablement nos chance de ne pas dévelloper de forme grave. Cependant cela nous empeche pas de contracter la maladie ou meme dans certain cas, d'être gravement atteint (cas d'immunodéficience par example). Il faut resté prudent."
+        "explanation": "Une fois vacciné, on augmente considérablement nos chances de ne pas développer de formes graves. Cependant, cela ne nous empêche pas de contracter la maladie ou même dans certains cas, d'être gravement atteint (cas d'immunodéficience par exemple). Il faut rester prudent."
     },
     {
-        "question": "La vaccination permet au gouvernement de nous controller grace a la 5G ?",
+        "question": "La vaccination permet au gouvernement de nous contrôler grâce à la 5G ?",
         "responses": [
-            {"text": "Oui, beaucoup de gens en parle sur internet."},
-            {"text": "Oui, c'est d'ailleur un virus créer par le gouvernement pour nous pousser a la vaccination."},
-            {"text": "Non, le vaccin a été créer pour protégé du virus."},
-            {"text": "Aucune des réponses."}
+            {"text": "Oui, beaucoup de gens en parlent sur Internet."},
+            {"text": "Oui, c'est d'ailleurs un virus créé par le gouvernement pour nous pousser à la vaccination."},
+            {"text": "Non, le vaccin a été créé pour protéger du virus."},
+            {"text": "Aucune de ces réponses."}
         ],
         "valid": 2,
-        "explanation": "En effet il ne faut pas croire tous ce qu'il se raconte sur internet. Les vaccins ont été developpés pour aider le corps humain a se défendre contre le virus. Les vaccins sont soumis a des critéres de validation très stritctes afin de garantir la sécurité de tous."
+        "explanation": "En effet, il ne faut pas croire tout ce qu'il se raconte sur Internet. Les vaccins ont été développés pour aider le corps humain à se défendre contre le virus. Les vaccins sont soumis à des critères de validation stricts afin de garantir la sécurité de tous."
     },
     {
-        "question": "Il est risqué de se faire vacciner ?",
+        "question": "Est-il risqué de se faire vacciner ?",
         "responses": [
-            {"text": "Oui, il a des cas de décès de personnes vaccinés."},
-            {"text": "Non, il n'y que peu d'effets secondaires."},
+            {"text": "Oui très, il y a plus de décès de personnes vaccinées."},
+            {"text": "Le risque zéro n'existe pas. Cependant, il n'y a que peu d'effets secondaires."},
             {"text": "On ne sait pas."},
-            {"text": "Aucune des réponses."}
+            {"text": "Aucune de ces réponses."}
         ],
         "valid": 1,
-        "explanation": "Si le vaccin présentait de reelle risque pour l'être humain, il n'aurais pas été valider. Il y a quelques rares cas de complication mais cela reste des exceptions très rare. Le vaccin reste bénéfique, ne pas se faire vacciné présente des risque bien plus grands. Consulter votre médecin pour connaitre son avis pour votre vaccination. Le vaccin AstraZeneca est interdit moins de 50 ans car il peu préenté des complications."
+        "explanation": "Il y a quelques rares cas de complication mais cela reste des exceptions rares. Le vaccin reste bénéfique, ne pas se faire vacciner nous expose des risques bien plus grands. Consultez votre médecin pour plus de renseignements."
     },
     {
         "question": "Comment fonctionne un vaccin préventif ?",
         "responses": [
-            {"text": "Les vaccins sont composées du virus, ce qui est dangereux."},
-            {"text": "Les vaccins sont composées de forme atténuée ou inactivée du virus pour déclancher une réaction immunitaire."},
-            {"text": "Les vaccins sont composées de produit toxic pour renforcer le corps humain."},
-            {"text": "Aucune des réponses."}
+            {"text": "Les vaccins sont composés du virus, ce qui est dangereux."},
+            {"text": "Les vaccins sont composés d'une forme atténuée ou inactivée du virus pour déclencher une réaction immunitaire."},
+            {"text": "Les vaccins sont composés de produits toxiques pour renforcer le corps humain."},
+            {"text": "Aucune de ces réponses."}
         ],
         "valid": 1,
         "explanation": "Une vaccination préventive consiste à administrer à un individu en bonne santé une forme atténuée ou inactivée d’un agent infectieux (ou certains de ses composants). L’objectif est de déclencher une réaction immunitaire permettant d’éviter une contamination ultérieure."
     },
     {
-        "question": "Le vaccin du covid 19 a été créer en un temps record parce que:",
+        "question": "Le vaccin de la Covid-19 a été créé en un temps record parce que :",
         "responses": [
             {"text": "Il a été baclé."},
-            {"text": "Le gouvernement a créer le virus, il avait deja préparé le vaccin."},
-            {"text": "L'aspect mondial de cette pendémie a débloqué des fons privées et publiques colossaux. Les industries ont colaboré ensemble."},
-            {"text": "Aucune des réponses."}
+            {"text": "Le gouvernement a créé le virus, le vaccin était déjà prêt."},
+            {"text": "L'aspect mondial de cette pandémie a débloqué des fonds privés et publiques colossaux. Les industries ont travaillé ensemble."},
+            {"text": "Aucune de ces réponses."}
         ],
         "valid": 2,
-        "explanation": "Si les scientifiques ont été aussi rapides, c'est parce qu'ils étaient très nombreux et très bien financés par les laboratoires privés et les institutions publiques. Pour la première fois, il y a eu une coopération entre divers industriels qui a permis d'avancer vite. La phase de recherche et de production ont, en outre, été menées simultanément pour plusieurs vaccins, ce qui n'arrive jamais."
+        "explanation": "Pour la première fois, il y a eu une coopération entre divers industriels qui a permis d'avancer vite. La phase de recherche et de production ont, en outre, été menées simultanément pour plusieurs vaccins."
     },
     {
-        "question": "Le vaccin risque de nous nuir dans quelques années ?",
+        "question": "La vaccination est, à l'heure actuelle, la meilleure solution pour reprendre une vie normale ?",
         "responses": [
-            {"text": "Oui, des j'ai lu ca sur facebook."},
-            {"text": "Les effets des vaccins sont surveillé de très près, les authorités sont très prudentes."},
-            {"text": "Non, le vaccin est sur a 100%."},
-            {"text": "Aucune des réponses."}
-        ],
-        "valid": 1,
-        "explanation": "Comme tout produit de santé, les différents vaccins contre la Covid-19 sont suivis par les instances médicales qui vont surveiller la survenue d’éventuels effets indésirables afin de les contrer."
-    },
-    {
-        "question": "La vaccination est, a nos jours, la seul solution viable pour reprendre une vie normale ?",
-        "responses": [
-            {"text": "Non, les gestes barrieres suffise."},
-            {"text": "Non, si tous le monde contracte le covid, vaccination est inutile."},
-            {"text": "Oui, le vaccin prévient de la maladie et evite de nombreuse perte humaine et les mutations du virus."},
-            {"text": "Aucune des réponses."}
+            {"text": "Non, les gestes barrières suffisent."},
+            {"text": "Non, si tout le monde contracte la Covid, la vaccination est inutile."},
+            {"text": "Oui, le vaccin prévient de la maladie et évite des décès et les mutations du virus."},
+            {"text": "Aucune de ces réponses."}
         ],
         "valid": 2,
-        "explanation": "Il y a plusieurs problèmes qui se posent. La perte de vie humaine, les mutations du virus, l'economie du pays... Il faut arreter le virus le plus vite possible et eviter le developpement de nouvelle mutations sinon il y aura des pertes humaine, economique et d'autre retombé sur la santé (santé mental, dépistage d'autres maladies tardif...)."
+        "explanation": "Il y a plusieurs problèmes qui se posent. La perte de vie humaine, les mutations du virus, l'économie du pays... Il faut arrêter le virus le plus vite possible et éviter le développement de nouvelles mutations. Ceci permet d'éviter les pertes humaines, économiques et d'autres retombées sur la santé."
     },
     {
-        "question": "J'ai entre 20 et 50 ans, quels vaccins sont préconisés ?",
+        "question": "J'ai entre 18 et 54 ans, quels vaccins sont préconisés ?",
         "responses": [
             {"text": "Moderna et Pfizer."},
-            {"text": "AstraSeneca, Moderna et Pfizer."},
+            {"text": "AstraZeneca, Moderna et Pfizer."},
             {"text": "Tous les vaccins font l'affaire."},
-            {"text": "Aucune des réponses."}
+            {"text": "Janssen et AstraZeneca."}
         ],
         "valid": 0,
-        "explanation": "Pour cette tranche d'age, il est fortement conseillé en de prendre Moderna et Pfizer. AstraSeneca peu présenté des complications. N'hesité pas a consulté votre médecin traitant."
+        "explanation": "Pour cette tranche d'âge, il est obligatoire de se faire vacciner avec Moderna ou Pfizer. Plus d'information sur <a href=\"https://www.sante.fr/la-vaccination-covid-19-pour-le-grand-public\">ce site</a>. N'hesitez pas à consulter votre médecin traitant."
     },
     {
-        "question": "Les vaccins sont fabriqué par des entreprises, on ne peux pas leurs faire confiance ?",
+        "question": "Je peux prendre mon rendez-vous de vaccination sur le site Doctolib ?",
         "responses": [
-            {"text": "Le seul but des entreprises est le profit, il faut vendre a vaccin meme si celui-ci est dangereux ou inefficace."},
-            {"text": "Les entreprises developpent les médicaments, mais les médicaments sont des produits très controlé avec un protocole tres stricte."},
-            {"text": "Ont peut faire confiance aveuglement aux entreprises, se sont des professionels."},
-            {"text": "Aucune des réponses."}
-        ],
-        "valid": 1,
-        "explanation": "Il ne faut pas faire confiance a n'imorte quel entreprise pour les produits c'est vraie. Cependant les produits de santé sont extremement controlé et l'entreprise ne pourra pas vendre si le vaccins n'est pas sur et efficace."
-    },
-    {
-        "question": "Je peux prendre mon rendez vous de vaccination sur le site doctolib ?",
-        "responses": [
-            {"text": "Oui, beaucoup de créneau sont disponible."},
+            {"text": "Oui, beaucoup de créneaux sont disponible."},
             {"text": "Oui, mais il est difficile d'en obtenir un."},
-            {"text": "Non, imposible"},
-            {"text": "Aucune des réponses."}
+            {"text": "Non, impossible."},
+            {"text": "Oui, seulement le vendredi après 22h."}
         ],
         "valid": 0,
-        "explanation": "Doctolib permet de prendre votre rendez et de nombreux crénaux sont disponible partout en France. Alors n'hesitez plus !"
+        "explanation": "Doctolib permet de prendre votre rendez-vous et de nombreux créneaux sont disponibles partout en France."
     },
     {
-        "question": "Qu'est que la vaccination altruiste ?",
+        "question": "Qu'est-ce que la vaccination altruiste ?",
         "responses": [
-            {"text": "Un mot a la mode pour pousser les gens a se faire vacciner."},
+            {"text": "Un mot à la mode pour pousser les gens à se faire vacciner."},
             {"text": "La vaccination gratuite."},
-            {"text": "Le faire de se faire vacciner meme si l'on est pas a risque pour protéger le collectif."},
-            {"text": "Aucune des réponses."}
+            {"text": "Le fait de se faire vacciner même si l'on n'est pas à risque, pour protéger autrui."},
+            {"text": "Se faire vacciner par tous les vaccins en même temps."}
         ],
         "valid": 2,
-        "explanation": "La vaccination altruiste reviens a la notion d'immunité collective. Si tout le monde est vacciné on protège les plus faibles et on evite de nouveau variant. La propagation du virus sera stoppé."
+        "explanation": "La vaccination altruiste revient à la notion d'immunité collective. Si tout le monde est vacciné, on casse la chaîne de transmission."
     },
     {
         "question": "Comment fonctionnent les vaccins à ARN messager ?",
         "responses": [
-            {"text": "Ceux sont des vaccins qui modifie notre ADN."},
-            {"text": "C'est un bout de code génétique qui produit une proteine qui permet au corp de dévéloppé des anticorps."},
-            {"text": "Ceux sont de faux vaccins."},
-            {"text": "Aucune des réponses."}
+            {"text": "Ce sont des vaccins qui modifient notre ADN."},
+            {"text": "C'est un bout de code génétique qui produit une protéine qui permet au corps de dévélopper des anticorps."},
+            {"text": "Ce sont de faux vaccins."},
+            {"text": "La réponse D."}
         ],
         "valid": 1,
-        "explanation": "Les vaccins à ARN messager contiennent le code génétique (ARNm) de fragments du virus contre lesquelles notre système immunitaire va réagir. Cet ARNm est contenu dans des particules lipidiques pour atteindre plus facilement les cellules du corps. Les particules lipidiques sont non toxiques ou non nocives. Notre corps fabrique lui-même les protéines virales à partir de l'ARNm. Notre système immunitaire va réagir contre ces protéines. En cas d’infection, le corps se souviendra de ces protéines. Il fabriquera les bons anticorps et activera les bonnes cellules pour détruire le virus afin de nous protéger contre la maladie."
+        "explanation": "Pour plus d'informations, veuillez-vous rendre sur <a href=\"https://www.gouvernement.fr/le-fonctionnement-d-un-vaccin-a-arn-messager\">ce site</a>."
     },
     {
-        "question": "Les vaccins à ARN messager sont-il sûrs ?",
+        "question": "Comment savoir avec certitude si les vaccins Covid-19 sont efficaces ?",
         "responses": [
-            {"text": "Non, cela permet au gouvernement de nous controller."},
-            {"text": "Non, c'est une nouvelle technologie qui n'a jamais été utilisé avant."},
-            {"text": "Oui, sinon il n'aurait pas été commercialisé."},
-            {"text": "Aucune des réponses."}
+            {"text": "On ne peut pas être sûr."},
+            {"text": "Mon voisin me l'a dit."},
+            {"text": "Des tests cliniques ont été réalisés."},
+            {"text": "Ils ne le sont pas."}
         ],
         "valid": 2,
-        "explanation": "La sécurité des vaccins est une des conditions à l’autorisation de mise sur le marché (AMM) d’un vaccin. Un avis favorable pour l'AMM n'est donné que lorsqu'il existe des preuves suffisantes concernant la sécurité du vaccin. Les vaccins contre la COVID-19 doivent répondre aux mêmes exigences strictes que tous les autres vaccins. Les experts de l'EMA (Agence européenne des médicaments) et de l’AFMPS examinent de près toutes les données relatives aux vaccins contre la COVID-19."
+        "explanation": "Afin de déterminer si les vaccins sont efficaces, des essais cliniques, appelés essais de phase 3, sont réalisés sur de nombreux sujets. Les vaccins contre la Covid-19 impliquent des dizaines de milliers de sujets, ce qui est plus que d'habitude. Certains groupes à risque comme les personnes âgées ou les personnes souffrant de maladies spécifiques (problèmes cardiaques ou pulmonaires, diabète, obésité, etc.) sont représentés dans ces essais cliniques."
     },
     {
-        "question": "Comment savoir avec certitude si les vaccins COVID-19 sont efficaces ?",
-        "responses": [
-            {"text": "On ne peut pas être sur."},
-            {"text": "Le gouvernement nous l'assure."},
-            {"text": "Des testes cliniques ont été réalisé."},
-            {"text": "Aucune des réponses."}
-        ],
-        "valid": 2,
-        "explanation": "Afin de déterminer si les vaccins sont efficaces, des essais cliniques, appelés essais de phase 3, sont réalisés sur de nombreux sujets. Les vaccins contre la COVID-19 impliquent des dizaines de milliers de sujets, ce qui est plus que d'habitude. Certains groupes à risque comme les personnes âgées ou les personnes souffrant de maladies spécifiques (problèmes cardiaques ou pulmonaires, diabète, obésité, etc.) sont représentés dans ces essais cliniques."
-    },
-    {
-        "question": "Combien de doses de vaccin seront nécessaires ?",
-        "responses": [
-            {"text": "2"},
-            {"text": "4"},
-            {"text": "1"},
-            {"text": "3"}
-        ],
-        "valid": 0,
-        "explanation": "Pour les vaccins contre le covid 19, un rappel est nécessaire après la primo-vaccination. Soit 2 doses."
-    },
-    {
-        "question": "Les vaccins contre la COVID-19 sont-ils moins sûrs en raison de leur développement et de leur évaluation accélérés rapides ?",
+        "question": "Les vaccins contre la Covid-19 sont-ils moins sûrs en raison de leur développement et de leur évaluation accélérés ?",
         "responses": [
             {"text": "Oui, il ont été developpé trop vite."},
-            {"text": "Non, ces vaccins repondent au même evaluation que n'importe quel vaccin."},
-            {"text": "Oui, ce vaccin es facitce."},
-            {"text": "Aucune des réponses."}
+            {"text": "Non, ces vaccins répondent au même évaluation que n'importe quel vaccin."},
+            {"text": "Oui, ce vaccin est factice."},
+            {"text": "Non parce qu'on fait confiance aux laboratoires."}
         ],
         "valid": 1,
-        "explanation": "Les vaccins contre la COVID-19 répondent aux mêmes exigences strictes que tous les autres vaccins. Une autorisation de mise sur le marché n'est accordée que lorsqu'il existe des preuves suffisantes que le vaccin est de bonne qualité, efficace et sûr. "
+        "explanation": "Les vaccins contre la Covid-19 répondent aux mêmes exigences strictes que tous les autres vaccins. Une autorisation de mise sur le marché n'est accordée que lorsqu'il existe des preuves suffisantes que le vaccin est de bonne qualité, efficace et sûr. "
     }
 ]
