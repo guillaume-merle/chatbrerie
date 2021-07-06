@@ -96,7 +96,7 @@
             {"text": "Janssen et AstraZeneca."}
         ],
         "valid": 0,
-        "explanation": "Pour cette tranche d'âge, il est obligatoire de se faire vacciner avec Moderna ou Pfizer. Plus d'information sur <a href=\"https://www.sante.fr/la-vaccination-covid-19-pour-le-grand-public\">ce site</a>. N'hesitez pas à consulter votre médecin traitant."
+        "explanation": "Pour cette tranche d'âge, il est obligatoire de se faire vacciner avec Moderna ou Pfizer. Plus d'information sur <a href=\"https://www.sante.fr/la-vaccination-covid-19-pour-le-grand-public\" target=\"_blank\">ce site</a>. N'hesitez pas à consulter votre médecin traitant."
     },
     {
         "question": "Je peux prendre mon rendez-vous de vaccination sur le site Doctolib ?",
@@ -129,7 +129,7 @@
             {"text": "La réponse D."}
         ],
         "valid": 1,
-        "explanation": "Pour plus d'informations, veuillez-vous rendre sur <a href=\"https://www.gouvernement.fr/le-fonctionnement-d-un-vaccin-a-arn-messager\">ce site</a>."
+        "explanation": "Pour plus d'informations, veuillez-vous rendre sur <a href=\"https://www.gouvernement.fr/le-fonctionnement-d-un-vaccin-a-arn-messager\" target=\"_blank\">ce site</a>."
     },
     {
         "question": "Comment savoir avec certitude si les vaccins Covid-19 sont efficaces ?",
