@@ -20,7 +20,9 @@ class QuizController {
     }
 
     async callback(event) {
+        // unset callbacks to not let the user clicks on the buttons again
         this.#unsetCallbacks()
+
         var validResponse = this.currentQuestion.responses[this.currentQuestion.valid]
 
         var message = null
@@ -46,8 +48,8 @@ class QuizController {
         if (this.currentQuestion) {
             this.view.insertQuizQuestion(this.currentQuestion).then(() => this.#setCallbacks())
         } else {
-            var finalScore = this.score / this.quiz.length * 100
-            this.view.insertMessage('Le quiz est terminé, votre score est de ' + finalScore + '%\nMerci de votre participation !', 'bot')
+            var finalScore = Math.round(this.score / this.quiz.length * 100)
+            this.view.insertMessage('Le quiz est terminé, votre score est de ' + finalScore + '%.\nMerci de votre participation !', 'bot')
             this.view.unsetQuizMode()
         }
     }
