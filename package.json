@@ -22,7 +22,7 @@
   "scripts": {
     "test": "webpack --entry ./all-test.js --output-path ./testBundle.js; webpack --config webpack-test.config.js",
     "dev": "./build.sh",
-    "build": "webpack && cp manifest.json dist/ && cp -rf src/{assets,views} data dist/ && cp -f node_modules/bootstrap/dist/css/bootstrap.min.css dist/",
+    "build": "webpack && cp manifest.json dist/ && cp -rf src/assets src/views data dist/ && cp -f node_modules/bootstrap/dist/css/bootstrap.min.css dist/",
     "learn": "python src/python-model/model.py",
     "package": "zip -r extension.zip dist/"
   },
