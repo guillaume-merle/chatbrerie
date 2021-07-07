@@ -25,7 +25,9 @@ test:
 package:
   extends: .js
   stage: package
-  script: npm run package
+  script:
+    - apt-get install zip
+    - npm run package
   artifacts:
     paths:
       - extension.zip
