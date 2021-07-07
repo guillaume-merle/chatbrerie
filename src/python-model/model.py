@@ -2,6 +2,7 @@ import tensorflowjs as tfjs
 import numpy as np
 import random
 
+from pathlib import Path
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout
 from keras.optimizers import SGD
@@ -34,10 +35,11 @@ def train_model(train_x, train_y, epochs):
 
 
 def save_model_js(model):
-    tfjs.converters.save_keras_model(model, "data/js-model")
+    tfjs.converters.save_keras_model(model, "data/outputs/js-model")
 
 
 def prepare_training(folder):
+    Path('data/outputs').mkdir(exist_ok=True)
     documents, classes, words = parse_json(folder)
 
     # initializing training data
@@ -77,4 +79,4 @@ def train(folder, epochs=200):
     save_model_js(model)
 
 if __name__ == "__main__":
-    train("data/json-files")
+    train("data/questions")

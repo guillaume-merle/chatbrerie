@@ -19,7 +19,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./build.sh",
-    "build": "./build.sh"
+    "build": "./build.sh",
+    "learn": "python src/python-model/model.py"
   },
   "repository": {
     "type": "git",
