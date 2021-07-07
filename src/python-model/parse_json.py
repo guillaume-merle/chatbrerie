@@ -27,7 +27,7 @@ def init_lemmatizer():
 
 
 def save_words_list(words):
-    f = open('data/word-lists.txt', 'w')
+    f = open('data/outputs/word-lists.txt', 'w')
     f.write('\n'.join(words))
 
 
@@ -78,7 +78,7 @@ def parse_json(folder):
 
         print (len(words), 'unique lemmatized words', words)
 
-    with open('data/output.json', 'w', encoding='utf8') as outfile:
+    with open('data/outputs/output.json', 'w', encoding='utf8') as outfile:
         json.dump(output_json, outfile, ensure_ascii=False, indent=4)
 
     return documents, classes, words

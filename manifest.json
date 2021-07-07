@@ -12,10 +12,10 @@
   ],
   "permissions": ["storage", "unlimitedStorage"],
   "web_accessible_resources": [
-      "data/word-lists.txt",
-      "data/output.json",
-      "data/js-model/model.json",
-      "data/js-model/group1-shard1of1.bin",
+      "data/outputs/word-lists.txt",
+      "data/outputs/output.json",
+      "data/outputs/js-model/model.json",
+      "data/outputs/js-model/group1-shard1of1.bin",
       "data/vaccination-quiz.json",
       "data/functions.json",
 

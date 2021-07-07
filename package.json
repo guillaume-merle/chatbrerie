@@ -21,7 +21,8 @@
   "scripts": {
     "test": "webpack --entry ./all-test.js --output-path ./testBundle.js; webpack --config webpack-test.config.js",
     "dev": "./build.sh",
-    "build": "./build.sh"
+    "build": "./build.sh",
+    "learn": "python src/python-model/model.py"
   },
   "repository": {
     "type": "git",
