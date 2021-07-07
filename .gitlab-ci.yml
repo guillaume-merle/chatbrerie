@@ -1,0 +1,33 @@
+stages:
+  - build
+  - test
+  - package
+
+.js:
+  image: node
+  before_script:
+    - npm install
+
+build:
+  extends: .js
+  stage: build
+  script: npm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 30 min
+
+test:
+  extends: .js
+  stage: test
+  script: npm run test
+
+package:
+  extends: .js
+  stage: package
+  script: npm run package
+  artifacts:
+    paths:
+      - extension.zip
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
