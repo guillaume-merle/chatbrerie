@@ -1,7 +1,7 @@
 class Config {
-    static wordListPath = 'data/word-lists.txt'
-    static modelPath = 'data/js-model/model.json'
-    static answersPath = 'data/output.json'
+    static wordListPath = 'data/outputs/word-lists.txt'
+    static modelPath = 'data/outputs/js-model/model.json'
+    static answersPath = 'data/outputs/output.json'
 
     static chatbotViewPath = 'views/chatbot.html'
     static clientMessageViewPath = 'views/client-message.mustache.html'
