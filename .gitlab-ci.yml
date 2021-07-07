@@ -19,4 +19,4 @@ build:
 test:
   extends: .js
   stage: test
-  script: ls dist/
+  script: npm run test
