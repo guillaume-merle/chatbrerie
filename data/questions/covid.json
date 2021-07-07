@@ -15,7 +15,15 @@
                          "Prendre rendez-vous vaccination",
                          "Première injection",
                          "Premier vaccin",
-                         "rdv vaccination"],
+                         "rdv vaccination",
+                         "injection sérum",
+                         "planifier vaccination",
+                         "centre de vaccination",
+                         "inoculation",
+                         "piqure",
+                         "avoir piqûre",
+                         "première piqûre",
+                         "deuxième piqûre"],
 
             "responses": ["Pour prendre votre rendez-vous de vaccination, veuillez aller sur cette <a href=\"https://www.doctolib.fr/vaccination-covid-19\">page</a>",
                           "Pour prendre rendez-vous, veuillez vous rendre sur cette <a href=\"https://www.doctolib.fr/vaccination-covid-19\">page</a>"]
@@ -28,7 +36,14 @@
                          "vaccin dangereux",
                          "fièvre vaccin",
                          "danger vaccination",
-                         "effet secondaire vaccination"],
+                         "effet secondaire vaccination",
+                         "mauvaise réaction vaccin",
+                         "effets indésirables vaccin",
+                         "problème vaccin",
+                         "douleurs vaccin",
+                         "symptomes suite vaccination",
+                         "symptôme vaccin",
+                         "malade après vaccination"],
 
             "responses": ["Les vaccins contre la Covid-19 présentent très peu d'effets secondaires. En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"]
         }
