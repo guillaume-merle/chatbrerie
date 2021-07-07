@@ -26,7 +26,8 @@ package:
   extends: .js
   stage: package
   script:
-    - apt-get install zip
+    - apt-get update
+    - apt-get -y install zip unzip
     - npm run package
   artifacts:
     paths:
