@@ -1,4 +1,4 @@
-import { loadFile, generateId } from '../utils/utils.js'
+import { loadFile, generateId, sleep } from '../utils/utils.js'
 import { Config } from '../config'
 
 class QuizController {
@@ -19,7 +19,10 @@ class QuizController {
         })
     }
 
-    callback(event) {
+    async callback(event) {
+        // unset callbacks to not let the user clicks on the buttons again
+        this.#unsetCallbacks()
+
         var validResponse = this.currentQuestion.responses[this.currentQuestion.valid]
 
         var message = null
@@ -34,16 +37,19 @@ class QuizController {
             message = 'Dommage ! '
         }
 
+        await sleep(1000)
+
         this.view.insertMessage(message + this.currentQuestion.explanation, 'bot')
 
-        this.#unsetCallbacks()
         this.currentQuestion = this.questionIt.next().value
+
+        await sleep(3000)
 
         if (this.currentQuestion) {
             this.view.insertQuizQuestion(this.currentQuestion).then(() => this.#setCallbacks())
         } else {
-            var finalScore = this.score / this.quiz.length * 100
-            this.view.insertMessage('Le quiz est terminé, votre score est de ' + finalScore + '%\nMerci de votre participation !', 'bot')
+            var finalScore = Math.round(this.score / this.quiz.length * 100)
+            this.view.insertMessage('Le quiz est terminé, votre score est de ' + finalScore + '%.\nMerci de votre participation !', 'bot')
             this.view.unsetQuizMode()
         }
     }
