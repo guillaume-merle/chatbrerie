@@ -6,7 +6,7 @@
   "content_scripts": [
    {
      "matches": ["https://www.doctolib.fr/*"],
-     "css": ["bootstrap.min.css"],
+     "css": ["assets/stylesheets/chatbot.css", "bootstrap.min.css"],
      "js": ["bundle.js", "524.bundle.js"]
    }
   ],
@@ -30,9 +30,6 @@
       "views/client-base.mustache.html",
       "views/functions.mustache.html",
 
-      "assets/images/bye.gif",
-      "assets/images/dontknow.gif",
-      "assets/images/client-avatar.png",
-      "assets/images/bot-avatar.png"
+      "assets/images/*"
   ]
 }
