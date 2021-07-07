@@ -17,7 +17,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
-    "test": "webpack --entry ./all-test.js --output-path ./testBundle.js; webpack --config webpack-test.config.js",
+    "test": "rm -rf ./test/testBundle; webpack --entry ./test/all-test.js --output-path ./test/testBundle; webpack --config webpack-test.config.js",
     "dev": "./build.sh",
     "build:nopack": "cp -rf manifest.json src/assets src/views data dist/ && cp -f node_modules/bootstrap/dist/css/bootstrap.min.css dist/",
     "build": "webpack && cp -rf manifest.json src/assets src/views data dist/ && cp -f node_modules/bootstrap/dist/css/bootstrap.min.css dist/",

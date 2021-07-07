@@ -6,6 +6,8 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
+        globalObject: 'this',
+        publicPath: './test/testBundle'
     },
     optimization: {
         minimize: true
@@ -13,9 +15,8 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /tests\.js$/,
-                use: 'mocha-loader',
-                exclude: '/node_modules/'
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
             },
         ],
     },

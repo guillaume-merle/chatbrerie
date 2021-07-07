@@ -3,40 +3,49 @@ import { indexOfMax, randomInt } from '../../src/utils/utils.js'
 
 const expect = chai.expect;
 
-// indexOfMax tests:
-//
-/*test('indexOfMax: simple array 1', () => {
-  expect(utils.indexOfMax([1, 2, 3])).toBe(2);
-});
+describe('utils tests:', function () {
 
-test('indexOfMax: simple array 2', () => {
-  expect(utils.indexOfMax([1, 9, -2])).toBe(1);
-});
+  describe('indexOfMax:', function () {
 
-// randomInt tests:
-//
-test('randomInt: simple test 1', () => {
-  expect(utils.randomInt(10)).not.toBe(utils.randomInt(10000));
-});
-
-test('randomInt: simple test 2', () => {
-  expect(utils.randomInt(10)).toBeDefined();
-});*/
-
-describe('utils tests:', function() {
-
-  context('indexOfMax: simple array 1', function() {
-    it('should return 2', function(done) {
-      expect(indexOfMax([1, 2, 3])).to.equal(2);
-      done();
+    context('simple array 1', function () {
+      it('should return 2', function (done) {
+        expect(indexOfMax([1, 2, 3])).to.equal(2);
+        done();
+      })
     })
+
+    context('simple array 2', function () {
+      it('should return 1', function (done) {
+        expect(indexOfMax([1, 9, -2])).to.equal(1);
+        done();
+      })
+    })
+
+    context('empty array', function () {
+      it('should return -1', function (done) {
+        expect(indexOfMax([])).to.equal(-1);
+        done();
+      })
+    })
+
   })
 
-  context('indexOfMax: simple array 2', function() {
-    it('should return 2', function(done) {
-      expect(indexOfMax([1, 9, -2])).to.equal(1);
-      done();
+  describe('randomInt:', function () {
+
+    context('simple test 1', function () {
+      it('should generate two different numbers', function (done) {
+        expect(randomInt(10)).not.to.be.equal(randomInt(10000))
+        done();
+      })
     })
+
+    context('simple test 2', function () {
+      it('should be defined', function (done) {
+        expect(randomInt(10)).to.be.a('number');
+        done();
+      })
+    })
+
   })
 
 })

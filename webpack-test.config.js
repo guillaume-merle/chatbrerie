@@ -4,15 +4,12 @@ var WebpackShellPlugin = require('webpack-shell-plugin-next');
 
 var config = {
  mode: "development",
- entry: './all-test',
- output: {
-   filename: './testBundle.js'
-},
+ entry: './test/all-test',
  target: 'node',
  externals: [nodeExternals()],
  plugins: [
    new WebpackShellPlugin({
-     onBuildExit: "mocha ./testBundle.js --exit"
+     onBuildExit: "mocha ./test/testBundle --exit"
    })
  ]
 };
