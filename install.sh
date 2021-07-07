@@ -1,5 +1,8 @@
 #!/bin/sh
 
 npm install
-pip install -r requirements.txt
-python -m spacy download fr
+
+if [ "$1" == "--dev" ]; then
+    pip install -r requirements.txt
+    python -m spacy download fr
+fi
