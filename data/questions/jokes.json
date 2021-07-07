@@ -1,0 +1,25 @@
+{
+    "intents": [
+        {
+            "tag": "jokes",
+
+            "patterns": ["blague",
+                         "raconte blague",
+                         "dis blague",
+                         "fais blague"],
+
+            "responses": ["Comment s'appelle un chat tombé dans un pot de peinture le jour de Noël? Un chat peint de Noël",
+                          "Docteur, j’ai des trous de mémoire, que dois-je faire ? Me payer d’avance, madame !",
+                          "Il parait qu’à Dijon, ils sont tous célibataires... Car l’amour tarde",
+                          "Que se passe t’il quand deux poissons s’énervent ? Le thon monte"]
+        },
+        {
+            "tag": "WhiteSnow",
+
+            "patterns": ["Miroir mon beau miroir, dis-moi qui est la plus belle ?"],
+
+            "responses": ["Si votre ramage se rapporte à votre habillage, vous êtes le phénix des hôtes de Doctolib",
+                          "Il y a une seule personne qui est la plus belle du royaume, et cette personne c'est Chatbrerie"]
+        }
+    ]
+}
