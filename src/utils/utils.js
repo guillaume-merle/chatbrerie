@@ -37,4 +37,8 @@ function createBlock(html) {
     return el
 }
 
-export { loadFile, randomInt, indexOfMax, generateId, createBlock }
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+export { loadFile, randomInt, indexOfMax, generateId, createBlock, sleep }
