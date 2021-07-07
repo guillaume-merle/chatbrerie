@@ -1,4 +1,5 @@
 tensorflowjs
+tensorflow
 keras
 numpy
 spacy_lefff

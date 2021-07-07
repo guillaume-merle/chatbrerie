@@ -1,11 +1,12 @@
 import tensorflowjs as tfjs
+import tensorflow as tf
 import numpy as np
 import random
 
-from pathlib import Path
-from keras.models import Sequential
-from keras.layers import Dense, Activation, Dropout
-from keras.optimizers import SGD
+from tensorflow import keras
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation, Dropout
+from tensorflow.keras.optimizers import SGD
 from parse_json import parse_json
 
 
