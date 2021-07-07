@@ -21,6 +21,12 @@ class View {
         window.onload = () => {
             loadFile(Config.chatbotViewPath).then((chatbot) => {
                 this.insertChatbot(chatbot)
+
+                this.popup = document.getElementById('chatbrerie-popup')
+                this.popup.onclick = this.disablePopup
+                this.chatbotButton = document.getElementById('chat-btn')
+                this.chatbotButton.onclick = this.disablePopup
+
                 this.chatHistory = document.getElementById('chat-history')
 
                 this.inputField = document.getElementById('chatbot-input')
@@ -135,6 +141,11 @@ class View {
     insertChatbot(chatbot) {
         var block = createBlock(chatbot)
         document.body.appendChild(block)
+    }
+
+    disablePopup() {
+        var popup = document.getElementById("chatbrerie-popup");
+        popup.style.display = "none";
     }
 }
 
