@@ -9,7 +9,7 @@ class QuizController {
         this.quizPath = path.join(Config.quizBasePath, quizTag + '.json')
         this.score = 0
 
-        loadFile(Config.quizBasePath).then((quizJson) => {
+        loadFile(this.quizPath).then((quizJson) => {
             this.quiz = JSON.parse(quizJson)
             this.#generateResponseIds()
 
