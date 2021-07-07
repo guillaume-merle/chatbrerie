@@ -38,3 +38,4 @@ function createBlock(html) {
 }
 
 export { loadFile, randomInt, indexOfMax, generateId, createBlock }
+// module.exports = true
