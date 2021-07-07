@@ -2,7 +2,6 @@ adieu
 afficher
 aller
 application
-apres
 astrazeneca
 avoir
 beaucoup
@@ -25,13 +24,14 @@ connecter
 connexion
 consultation
 consulter
-contre
 coucou
 coute
 covid
 creation
 creer
 creneau
+danger
+dangereux
 deroule
 deuxieme
 distance
@@ -42,6 +42,7 @@ effet
 etre
 evenement
 faire
+fievre
 fonctionnaliter
 fonctionne
 hasta
@@ -98,10 +99,8 @@ revoir
 salut
 salutation
 secondaire
-sens
 souhaite
 souvien
-suite
 sur
 teleconsultation
 teleconsulter

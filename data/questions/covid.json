@@ -23,10 +23,14 @@
         {
             "tag": "side effects",
 
-            "patterns": ["ressens effets secondaires, suite injection contre Covid-19",
-                         "ne me sens pas bien après vaccination contre covid-19"],
+            "patterns": ["ressens effets secondaires injection Covid-19",
+                         "pas bien vaccination covid-19",
+                         "vaccin dangereux",
+                         "fièvre vaccin",
+                         "danger vaccination",
+                         "effet secondaire vaccination"],
 
-            "responses": ["En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"]
+            "responses": ["Les vaccins contre la Covid-19 présentent très peu d'effets secondaires. En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"]
         }
     ]
 }
