@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+   <head>
+      <title>Chatbrerie</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+   </head>
+   <style type="text/css">
+      body {
+        width: 200px;
+        font-family: 'Roboto', sans-serif;
+        display: grid;
+        row-gap: 7px;
+        background: #17344f;
+      }
+
+      a {
+         text-decoration: none;
+         cursor: pointer;
+      }
+
+      article {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        align-items: center;
+        padding: 10px 30px 10px 10px;
+        border-radius: 0.5rem;
+        background: rgba(255,255,255,.06);
+        text-align: center;
+      }
+
+      article:hover {
+        background-color: rgba(4,100,177, .25);
+      }
+
+      article img {
+        width: 28px;
+        height: 28px;
+        filter: drop-shadow( 1px 1px 1px rgba(0, 0, 0, .5));
+      }
+
+      article span {
+        color: rgba(255,255,255,0.9);
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.64px;
+        margin-left: 12px;
+      }
+
+      article.doctolib {
+        background: linear-gradient(-35deg, rgb(16,122,202) 0%, rgb(16,171,221) 100%);
+      }
+   </style>
+
+   <body>
+        <a href="https://www.doctolib.fr/", target="_blank">
+          <article class="doctolib">
+            <img src="../assets/images/doctolib.png">
+            <span>Ouvrir Doctolib</span>
+          </article>
+        </a>
+
+        <a href="https://gitlab.com/guillaume.merle-epita/chatbrerie" target="_blank">
+          <article>
+            <img src="../assets/images/gitlab.png">
+            <span>Voir le projet sur Gitlab</span>
+          </article>
+        </a>
+   </body>
+</html>
