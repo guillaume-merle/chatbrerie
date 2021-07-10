@@ -4,8 +4,14 @@
             "tag": "functions-list",
 
             "patterns": [
-                "Liste des fonctionnalités",
-                "Que peux tu faire ?"
+                "Liste fonctionnalités",
+                "Que peux tu faire ?",
+                "Que sait tu faire ?",
+                "Peux tu aider",
+                "Aide",
+                "fonctionnalités",
+                "possible faire",
+                "que propose tu"
             ],
 
             "responses": [
