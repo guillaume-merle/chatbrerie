@@ -12,30 +12,34 @@
         font-family: 'Roboto', sans-serif;
         display: grid;
         row-gap: 7px;
-        background: #202124;
+        background: #17344f;
       }
+
       a {
          text-decoration: none;
          cursor: pointer;
       }
+
       article {
         display: grid;
         grid-template-columns: 1fr 4fr;
         align-items: center;
         padding: 10px 30px 10px 10px;
         border-radius: 0.5rem;
-        transition: transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
         background: rgba(255,255,255,.06);
+        text-align: center;
       }
+
       article:hover {
-        transform: scale(1.06);
-        background-color: rgba(255,255,255,.12);
+        background-color: rgba(4,100,177, .25);
       }
+
       article img {
         width: 28px;
         height: 28px;
         filter: drop-shadow( 1px 1px 1px rgba(0, 0, 0, .5));
       }
+
       article span {
         color: rgba(255,255,255,0.9);
         font-size: 0.8rem;
@@ -43,20 +47,24 @@
         letter-spacing: 0.64px;
         margin-left: 12px;
       }
+
+      article.doctolib {
+        background: linear-gradient(-35deg, rgb(16,122,202) 0%, rgb(16,171,221) 100%);
+      }
    </style>
 
    <body>
         <a href="https://www.doctolib.fr/", target="_blank">
-          <article>
-            <img src="/src/assets/images/doctolib_logo.png">
-            <span>Open Doctolib</span>
+          <article class="doctolib">
+            <img src="../assets/images/doctolib.png">
+            <span>Ouvrir Doctolib</span>
           </article>
         </a>
 
         <a href="https://gitlab.com/guillaume.merle-epita/chatbrerie" target="_blank">
           <article>
-            <img src="/src/assets/images/gitlab.png">
-            <span>Open GitLab</span>
+            <img src="../assets/images/gitlab.png">
+            <span>Voir le projet sur Gitlab</span>
           </article>
         </a>
    </body>
