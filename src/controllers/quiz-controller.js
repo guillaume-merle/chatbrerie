@@ -1,15 +1,15 @@
 import { loadFile, generateId, sleep } from '../utils/utils.js'
 import { Config } from '../config'
-import * as path from 'path'
 
 
 class QuizController {
     constructor(view, quizTag) {
         this.view = view
-        this.quizPath = path.join(Config.quizBasePath, quizTag + '.json')
+        this.quizPath = [Config.quizBasePath, quizTag + '.json'].join('/')
         this.score = 0
+        this.stop = false
 
-        loadFile(Config.quizBasePath).then((quizJson) => {
+        loadFile(this.quizPath).then((quizJson) => {
             this.quiz = JSON.parse(quizJson)
             this.#generateResponseIds()
 
@@ -27,7 +27,6 @@ class QuizController {
         this.#unsetCallbacks()
 
         var validResponse = this.currentQuestion.responses[this.currentQuestion.valid]
-
         var message = null
 
         if (event.target.id == validResponse.id) {
@@ -41,13 +40,18 @@ class QuizController {
         }
 
         await sleep(1000)
-
         this.view.insertMessage(message + this.currentQuestion.explanation, 'bot')
-
-        this.currentQuestion = this.questionIt.next().value
+        if (this.stop){
+            return
+        }
 
         await sleep(3000)
+        if (this.stop)
+        {
+            return
+        }
 
+        this.currentQuestion = this.questionIt.next().value
         if (this.currentQuestion) {
             this.view.insertQuizQuestion(this.currentQuestion).then(() => this.#setCallbacks())
         } else {
@@ -58,6 +62,7 @@ class QuizController {
     }
 
     exit() {
+        this.stop = true
         this.#unsetCallbacks()
         this.view.unsetQuizMode()
     }

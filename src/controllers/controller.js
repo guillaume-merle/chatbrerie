@@ -47,8 +47,8 @@ class Controller {
             this.view.insertImage(Config.imageDontknow)
         } else if (tag.localeCompare('event') == 0) {
             new DrugsFormController(this.view)
-        } else if (tag.localeCompare('quiz') == 0) {
-            new QuizController(this.view)
+        } else if (/quiz-.*$/.test(tag)) {
+            new QuizController(this.view, tag)
         } else if (tag === 'functions-list') {
             this.view.insertFunctions(this.functions.all)
         }

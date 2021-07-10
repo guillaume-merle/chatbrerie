@@ -19,7 +19,7 @@ class Config {
     static botAvatar = 'assets/images/bot-avatar.png'
     static clientAvatar = 'assets/images/client-avatar.png'
 
-    static quizBasePath = 'data/quiz/'
+    static quizBasePath = 'data/quizzes'
     static functionsPath = 'data/functions.json'
 
     static colorValid = '#54ccbe'

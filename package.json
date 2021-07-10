@@ -8,21 +8,18 @@
     "@tensorflow/tfjs": "^3.6.0",
     "bootstrap": "^4.6.0",
     "chai": "^4.3.4",
-    "css-loader": "^5.2.6",
     "datebook": "^6.5.5",
     "jquery": "^3.6.0",
     "mustache": "^4.2.0",
     "nlp-js-tools-french": "^1.0.9",
-    "path": "^0.12.7",
     "string-similarity": "^4.0.4",
-    "style-loader": "^3.0.0",
     "uuid": "^8.3.2",
     "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
     "test": "webpack --entry ./all-test.js --output-path ./testBundle.js; webpack --config webpack-test.config.js",
     "dev": "./build.sh",
-    "build": "webpack && cp manifest.json dist/ && cp -rf src/assets src/views data dist/ && cp -f node_modules/bootstrap/dist/css/bootstrap.min.css dist/",
+    "build": "webpack && cp -rf manifest.json src/assets src/views data dist/ && cp -f node_modules/bootstrap/dist/css/bootstrap.min.css dist/",
     "learn": "python src/python-model/model.py",
     "package": "zip -r extension.zip dist/"
   },
