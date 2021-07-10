@@ -1,7 +1,7 @@
 {
     "intents": [
         {
-            "tag": "quiz",
+            "tag": "quiz-vaccination",
 
             "patterns": ["quiz sur la vaccination"],
 

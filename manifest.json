@@ -12,24 +12,8 @@
   ],
   "permissions": ["storage", "unlimitedStorage"],
   "web_accessible_resources": [
-      "data/outputs/word-lists.txt",
-      "data/outputs/output.json",
-      "data/outputs/js-model/model.json",
-      "data/outputs/js-model/group1-shard1of1.bin",
-      "data/vaccination-quiz.json",
-      "data/functions.json",
-
-      "views/chatbot.html",
-      "views/client-message.mustache.html",
-      "views/bot-message.mustache.html",
-      "views/quiz-question.mustache.html",
-      "views/form-message.mustache.html",
-      "views/image.mustache.html",
-      "views/quiz-nav.html",
-      "views/bot-base.mustache.html",
-      "views/client-base.mustache.html",
-      "views/functions.mustache.html",
-
+      "data/*",
+      "views/*.html",
       "assets/images/*"
   ]
 }

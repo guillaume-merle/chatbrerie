@@ -1,12 +1,11 @@
 import { loadFile, generateId, sleep } from '../utils/utils.js'
 import { Config } from '../config'
-import * as path from 'path'
 
 
 class QuizController {
     constructor(view, quizTag) {
         this.view = view
-        this.quizPath = path.join(Config.quizBasePath, quizTag + '.json')
+        this.quizPath = [Config.quizBasePath, quizTag + '.json'].join('/')
         this.score = 0
 
         loadFile(this.quizPath).then((quizJson) => {
