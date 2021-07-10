@@ -23,9 +23,9 @@ class View {
                 this.insertChatbot(chatbot)
 
                 this.popup = document.getElementById('chatbrerie-popup')
-                this.popup.onclick = this.disablePopup
-                this.chatbotButton = document.getElementById('chat-btn')
-                this.chatbotButton.onclick = this.disablePopup
+                this.popup.onclick = () => this.disablePopup()
+                document.getElementById('chat-btn').onclick = () => this.disablePopup()
+                setTimeout(() => this.disablePopup(), 5000)
 
                 this.chatHistory = document.getElementById('chat-history')
 
@@ -144,8 +144,7 @@ class View {
     }
 
     disablePopup() {
-        var popup = document.getElementById("chatbrerie-popup");
-        popup.style.display = "none";
+        this.popup.style.display = 'none'
     }
 }
 
