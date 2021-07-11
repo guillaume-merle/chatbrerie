@@ -8,8 +8,8 @@
                          "Afficher rdv",
                          "Où se trouvent rendez-vous ?",
                          "Où se trouvent rdv ?",
-                         "mes rendez-vous",
-                         "mes rdv",
+                         "rendez-vous",
+                         "rdv",
                          "Voir rendez-vous",
                          "Voir rdv",
                          "Montrez rendez-vous",
@@ -26,10 +26,13 @@
 
             "patterns": ["Prendre rendez-vous",
                          "prendre rdv",
-                         "trouver rendez-vous chez médecin",
-                         "trouver rdv chez médecin",
+                         "trouver rendez-vous médecin",
+                         "trouver rdv médecin",
                          "consulter docteur",
-                         "réserver créneau consultation"],
+                         "réserver rendez-vous",
+                         "réserver créneau horaire médecin",
+                         "avoir rdv",
+                         "obtenir rendez-vous"],
 
             "responses": ["Prenez rendez-vous <a href=\"https://www.doctolib.fr\">ici</a>",
                           "Pour réserver une consultation, rendez-vous sur cette <a href=\"https://www.doctolib.fr\">page</a>"]
