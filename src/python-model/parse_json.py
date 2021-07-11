@@ -6,6 +6,7 @@ import glob
 
 from spacy_lefff import LefffLemmatizer, POSTagger
 from spacy.language import Language
+from tqdm import tqdm
 
 
 @Language.factory('french_lemmatizer')
@@ -33,14 +34,14 @@ def save_words_list(words):
 
 def parse_json(folder):
     files = glob.glob('{}/*.json'.format(folder))
-    print(files)
 
     words, classes, documents = [], [], []
     output_json = []
 
     nlp = init_lemmatizer()
 
-    for path in files:
+    print('Parsing Json files...')
+    for path in tqdm(files):
         data_file = open(path).read()
         intents = json.loads(data_file)
 
@@ -62,7 +63,6 @@ def parse_json(folder):
                     if len(lemma) != 0 and len(lemma[0].lemma_) > 2:
                         lemmatize_words.append(unidecode.unidecode(lemma[0].lemma_.lower()))
 
-                print(lemmatize_words)
                 words.extend(lemmatize_words)
                 # adding documents
                 documents.append((lemmatize_words, intent['tag']))
@@ -71,12 +71,6 @@ def parse_json(folder):
 
         words = sorted(list(set(words)))
         save_words_list(words)
-
-        print (len(documents), 'documents')
-
-        print (len(classes), 'classes', classes)
-
-        print (len(words), 'unique lemmatized words', words)
 
     with open('data/outputs/output.json', 'w', encoding='utf8') as outfile:
         json.dump(output_json, outfile, ensure_ascii=False, indent=4)

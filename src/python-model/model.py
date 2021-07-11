@@ -1,3 +1,6 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 import tensorflowjs as tfjs
 import tensorflow as tf
 import numpy as np
@@ -8,6 +11,9 @@ from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Activation, Dropout
 from tensorflow.keras.optimizers import SGD
+from tqdm import tqdm
+from tqdm.keras import TqdmCallback
+
 from parse_json import parse_json
 
 
@@ -30,8 +36,11 @@ def create_model(train_x, train_y):
 
 
 def train_model(train_x, train_y, epochs):
+    print('Learning...')
+
     model = create_model(train_x, train_y)
-    hist = model.fit(np.array(train_x), np.array(train_y), epochs=epochs, batch_size=5, verbose=1)
+    hist = model.fit(np.array(train_x), np.array(train_y), epochs=epochs, batch_size=5, verbose=0,
+                        callbacks=[TqdmCallback(verbose=1)])
 
     return model
 
@@ -48,12 +57,15 @@ def prepare_training(folder):
     training = []
     output_empty = [0] * len(classes)
 
-    for doc in documents:
+    print('Creating training data...')
+
+    for doc in tqdm(documents):
         # initializing bag of words
         bag = []
         # list of tokenized words for the pattern
         pattern_words = doc[0]
-        # create our bag of words array with 1, if word match found in current pattern
+        # creat:w
+        # e our bag of words array with 1, if word match found in current pattern
         for w in words:
             bag.append(1) if w in pattern_words else bag.append(0)
 
@@ -65,11 +77,10 @@ def prepare_training(folder):
 
     # shuffle our features and turn into np.array
     random.shuffle(training)
-    training = np.array(training)
+    training = np.array(training, dtype=object)
     # create train and test lists. X - patterns, Y - intents
     train_x = list(training[:,0])
     train_y = list(training[:,1])
-    print("Training data created")
 
     return train_x, train_y
 
