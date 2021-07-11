@@ -37,13 +37,14 @@
 
 .chatbot-wrapper .chatbot-btn-quiz {
     max-width: 20em;
+    border-radius: 8px;
     margin-bottom: 0.2em;
     background-color: #41afe5;
 }
 
 .chatbot-wrapper .chatbot-btn-function {
     border-radius: 35px;
-    background-color: #435f71;
+    background-color: #20405e;
     margin: 0.1em;
 }
 
@@ -158,10 +159,15 @@
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    background-color: #f59503;
+    background: linear-gradient(180deg, #ffc164 0%, #f59300 46.12%, #f59300 97.02%);
     color: #fff;
     font-size: 22px;
-    border: none
+    border: none;
+    transition: transform 350ms;
+}
+
+.chat-btn:hover {
+    background: #e98d03 !important;
 }
 
 .chatbot-main {
