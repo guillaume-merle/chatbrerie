@@ -37,13 +37,14 @@
 
 .chatbot-wrapper .chatbot-btn-quiz {
     max-width: 20em;
+    border-radius: 8px;
     margin-bottom: 0.2em;
     background-color: #41afe5;
 }
 
 .chatbot-wrapper .chatbot-btn-function {
     border-radius: 35px;
-    background-color: #435f71;
+    background-color: #20405e;
     margin: 0.1em;
 }
 
