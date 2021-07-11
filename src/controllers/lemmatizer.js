@@ -44,9 +44,8 @@ class Lemmatizer {
         var stringSimilarity = require("string-similarity");
 
         for (var i = 0; i < lemmatizeList.length; i++) {
-            var matches = stringSimilarity.findBestMatch(lemmatizeList[i], this.wordList)
-            console.log(lemmatizeList[i])
-            console.log(matches)
+            var matches = stringSimilarity.findBestMatch(lemmatizeList[i].normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, ""), this.wordList)
             if (matches.bestMatch.rating > 0.80) {
                 preparedInput[matches.bestMatchIndex] = 1;
             }
