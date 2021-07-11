@@ -45,7 +45,9 @@ class Lemmatizer {
 
         for (var i = 0; i < lemmatizeList.length; i++) {
             var matches = stringSimilarity.findBestMatch(lemmatizeList[i], this.wordList)
-            if (matches.bestMatch.rating > 0.65) {
+            console.log(lemmatizeList[i])
+            console.log(matches)
+            if (matches.bestMatch.rating > 0.80) {
                 preparedInput[matches.bestMatchIndex] = 1;
             }
         }

@@ -10,12 +10,20 @@
                          "astrazeneca",
                          "johnson & johnson",
                          "janssen",
-                         "Comment avoir ma dose",
+                         "Comment avoir dose",
                          "deuxième injection",
                          "Prendre rendez-vous vaccination",
                          "Première injection",
                          "Premier vaccin",
-                         "rdv vaccination"],
+                         "rdv vaccination",
+                         "injection sérum",
+                         "planifier vaccination",
+                         "centre de vaccination",
+                         "inoculation",
+                         "piqure",
+                         "avoir piqûre",
+                         "première piqûre",
+                         "deuxième piqûre"],
 
             "responses": ["Pour prendre votre rendez-vous de vaccination, veuillez aller sur cette <a href=\"https://www.doctolib.fr/vaccination-covid-19\">page</a>",
                           "Pour prendre rendez-vous, veuillez vous rendre sur cette <a href=\"https://www.doctolib.fr/vaccination-covid-19\">page</a>"]
@@ -23,10 +31,21 @@
         {
             "tag": "side effects",
 
-            "patterns": ["ressens effets secondaires, suite injection contre Covid-19",
-                         "ne me sens pas bien après vaccination contre covid-19"],
+            "patterns": ["ressens effets secondaires injection Covid-19",
+                         "pas bien vaccination covid-19",
+                         "vaccin dangereux",
+                         "fièvre vaccin",
+                         "danger vaccination",
+                         "effet secondaire vaccination",
+                         "mauvaise réaction vaccin",
+                         "effets indésirables vaccin",
+                         "problème vaccin",
+                         "douleurs vaccin",
+                         "symptomes suite vaccination",
+                         "symptôme vaccin",
+                         "malade après vaccination"],
 
-            "responses": ["En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"]
+            "responses": ["Vous pouvez ressentir des effets secondaires (fièvre, fatigue…) suite à la vaccination, mais vous n’êtes ni malade, ni contagieux. En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"]
         }
     ]
 }

@@ -1,5 +1,21 @@
 [
     {
+        "tag": "jokes",
+        "responses": [
+            "Comment s'appelle un chat tombé dans un pot de peinture le jour de Noël? Un chat peint de Noël",
+            "Docteur, j’ai des trous de mémoire, que dois-je faire ? Me payer d’avance, madame !",
+            "Il parait qu’à Dijon, ils sont tous célibataires... Car l’amour tarde",
+            "Que se passe t’il quand deux poissons s’énervent ? Le thon monte"
+        ]
+    },
+    {
+        "tag": "WhiteSnow",
+        "responses": [
+            "Si votre ramage se rapporte à votre habillage, vous êtes le phénix des hôtes de Doctolib",
+            "Il y a une seule personne qui est la plus belle du royaume, et cette personne c'est Chatbrerie"
+        ]
+    },
+    {
         "tag": "How-to teleconsultation",
         "responses": [
             "Vous avez besoin d'une caméra, d'un micro, d'une connexion internet stable et de suffisamment de batterie. Installez-vous dans un endroit calme et discret. Vous pouvez utiliser soit l'application mobile ou un navigateur internet). Vous pourrez rejoindre la consultation vidéo en cliquant simplement sur le lien reçu par SMS"
@@ -21,7 +37,7 @@
     {
         "tag": "side effects",
         "responses": [
-            "En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"
+            "Vous pouvez ressentir des effets secondaires (fièvre, fatigue…) suite à la vaccination, mais vous n’êtes ni malade, ni contagieux. En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"
         ]
     },
     {

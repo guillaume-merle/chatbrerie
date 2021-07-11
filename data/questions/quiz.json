@@ -3,7 +3,11 @@
         {
             "tag": "quiz-vaccination",
 
-            "patterns": ["quiz sur la vaccination"],
+            "patterns": ["quiz sur la vaccination",
+                         "questionnaire vaccination",
+                         "jeu vaccination",
+                         "lancer jeu vaccination",
+                         "démarrer quiz vaccination"],
 
             "responses": [
                 "C'est parti pour le quiz sur la vaccination !",
