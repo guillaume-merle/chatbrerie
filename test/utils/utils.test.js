@@ -21,6 +21,13 @@ describe('utils tests:', function () {
       })
     })
 
+    context('simple array 3', function () {
+      it('should return 2', function (done) {
+        expect(indexOfMax([-4, -6, -2, -8, -2])).to.equal(2);
+        done();
+      })
+    })
+
     context('empty array', function () {
       it('should return -1', function (done) {
         expect(indexOfMax([])).to.equal(-1);
