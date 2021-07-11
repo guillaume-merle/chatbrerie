@@ -8,6 +8,12 @@ var config = {
  mode: "development",
  entry: './test/all-test',
  target: 'node',
+ output: {
+  filename: 'bundle.js',
+  path: path.resolve(__dirname, 'dist'),
+  globalObject: 'this',
+  publicPath: './test/testBundle'
+  },
  externals: [nodeExternals()],
  plugins: [
    new WebpackShellPlugin({
@@ -19,9 +25,23 @@ var config = {
     {
         test: /\.(js)$/,
         exclude: /node_modules/
+    },
+    {
+      test: /\.(js)$/,
+      exclude: /node_modules/,
+      use: [
+          {
+              loader: 'transform-loader?'+path.resolve('brfs.js')
+          },
+      ]
     }
   ]
- }
+ },
+ target: "node",
+    externals:{
+        fs:    "commonjs fs",
+        path:  "commonjs path"
+    }
 };
 
 module.exports = config;
