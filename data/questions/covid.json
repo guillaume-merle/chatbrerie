@@ -45,7 +45,7 @@
                          "symptôme vaccin",
                          "malade après vaccination"],
 
-            "responses": ["Les vaccins contre la Covid-19 présentent très peu d'effets secondaires. En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"]
+            "responses": ["Vous pouvez ressentir des effets secondaires (fièvre, fatigue…) suite à la vaccination, mais vous n’êtes ni malade, ni contagieux. En cas d’urgence contactez le 15 (Samu). Sinon, contactez votre médecin traitant"]
         }
     ]
 }
