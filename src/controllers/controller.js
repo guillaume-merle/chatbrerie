@@ -45,6 +45,7 @@ class Controller {
         var responseBlock = this.response.getResponse(prediction)
 
         var responses = responseBlock['responses']
+        // get one of the possible answers
         var message = responses[randomInt(responses.length)]
 
         if (message) {
