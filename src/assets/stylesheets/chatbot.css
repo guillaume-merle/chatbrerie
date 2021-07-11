@@ -158,10 +158,15 @@
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    background-color: #f59503;
+    background: linear-gradient(180deg, #ffc164 0%, #f59300 46.12%, #f59300 97.02%);
     color: #fff;
     font-size: 22px;
-    border: none
+    border: none;
+    transition: transform 350ms;
+}
+
+.chat-btn:hover {
+    background: #e98d03 !important;
 }
 
 .chatbot-main {
