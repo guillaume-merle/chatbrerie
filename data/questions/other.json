@@ -5,13 +5,13 @@
 
             "patterns": [
                 "Liste fonctionnalités",
-                "Que peux tu faire ?",
-                "Que sait tu faire ?",
-                "Peux tu aider",
+                "peux faire ?",
+                "sait faire ?",
+                "Peux aider",
                 "Aide",
                 "fonctionnalités",
                 "possible faire",
-                "que propose tu"
+                "propose"
             ],
 
             "responses": [
