@@ -10,20 +10,12 @@ module.exports = {
         publicPath: './test/testBundle'
     },
     resolve: {
-        fallback: { 
+        fallback: {
             "console": require.resolve("console-browserify"),
             "assert": require.resolve("assert/")
         }
     },
     optimization: {
         minimize: true
-    },
-    module: {
-        rules: [
-            {
-                test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
-            },
-        ],
-    },
+    }
 };
