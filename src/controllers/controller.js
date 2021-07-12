@@ -7,7 +7,11 @@ import { Model } from '../models/model.js'
 import { View } from '../views/view.js'
 import { randomInt, loadFile } from '../utils/utils.js'
 
+/** Class representing the main chatbot controller. Get the user input and respond through the model prediction */
 class Controller {
+    /**
+     * Load the json file and init the lemmatizer, the model, the response class and the view
+     */
     constructor() {
         loadFile(Config.functionsPath).then((functionsJson) => {
             this.functions = JSON.parse(functionsJson)
@@ -20,6 +24,9 @@ class Controller {
         this.view.init()
     }
 
+    /**
+     * Insert the first bot message when the page load. Say hello and show some functionalities
+     */
     start() {
         this.botAnswer('Bonjour').then(() => {
             this.view.insertMessage('Voici quelques idées de choses que vous pouvez me demander et de sujets sur lesquels je peux vous éclairer :', 'bot')
@@ -27,6 +34,10 @@ class Controller {
         })
     }
 
+    /**
+     * Get the user input and give an answer to him. Also add gif if needed or launch the quizz/form controller
+     * @param {string} input - the user entry
+     */
     async botAnswer(input) {
         var preparedInput = await this.lemmatizer.prepareInput(input)
         var prediction = await this.model.predict(preparedInput)
@@ -34,6 +45,7 @@ class Controller {
         var responseBlock = this.response.getResponse(prediction)
 
         var responses = responseBlock['responses']
+        // get one of the possible answers
         var message = responses[randomInt(responses.length)]
 
         if (message) {

@@ -1,4 +1,5 @@
 import os
+# Remove all tensorflow warnings if you have no GPU
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 import tensorflowjs as tfjs
@@ -19,7 +20,14 @@ from parse_json import parse_json
 
 def create_model(train_x, train_y):
     """
-    Create model and return it
+    Create keras model and return it
+
+        Parameters:
+            train_x (array): The input array for the learning
+            train_y (array): The output array for the learning
+
+        Returns:
+            model (keras model): The model created with keras
     """
     model = Sequential()
     model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
@@ -36,6 +44,17 @@ def create_model(train_x, train_y):
 
 
 def train_model(train_x, train_y, epochs):
+    """
+    Train the keras model and return it
+
+        Parameters:
+            train_x (array): The input array for the learning
+            train_y (array): The output array for the learning
+            epochs (int): The number of epochs for the learning
+
+        Returns:
+            Return the trained model
+    """
     print('Learning...')
 
     model = create_model(train_x, train_y)
@@ -46,10 +65,26 @@ def train_model(train_x, train_y, epochs):
 
 
 def save_model_js(model):
+    """
+    Convert and save the model in tensorflowjs format
+
+        Parameters:
+            model(keras model): The trained model
+    """
     tfjs.converters.save_keras_model(model, "data/outputs/js-model")
 
 
 def prepare_training(folder):
+    """
+    Create the input and output arrays for the learning
+
+        Parameters:
+            folder (string): path to the folder containing all the json files
+
+        Returns:
+            train_x (array): The input array for the learning
+            train_y (array): The output array for the learning
+    """
     Path('data/outputs').mkdir(exist_ok=True)
     documents, classes, words = parse_json(folder)
 
@@ -64,8 +99,7 @@ def prepare_training(folder):
         bag = []
         # list of tokenized words for the pattern
         pattern_words = doc[0]
-        # creat:w
-        # e our bag of words array with 1, if word match found in current pattern
+        # create our bag of words array with 1, if word match found in current pattern
         for w in words:
             bag.append(1) if w in pattern_words else bag.append(0)
 
@@ -78,7 +112,8 @@ def prepare_training(folder):
     # shuffle our features and turn into np.array
     random.shuffle(training)
     training = np.array(training, dtype=object)
-    # create train and test lists. X - patterns, Y - intents
+
+    # create train input and output lists
     train_x = list(training[:,0])
     train_y = list(training[:,1])
 
@@ -86,6 +121,13 @@ def prepare_training(folder):
 
 
 def train(folder, epochs=200):
+    """
+    Prepare the inputs and outputs for the training, create and train the model, then save it with tensorflowjs
+
+        Parameters:
+            folder (string): path to the folder containing all the json files
+            epochs (int): The number of epochs for the learning (default: 200)
+    """
     train_x, train_y = prepare_training(folder)
     model = train_model(train_x, train_y, epochs)
 
