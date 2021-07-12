@@ -99,10 +99,11 @@ def parse_json(folder):
             output_json.append({'tag': intent['tag'], 'responses': intent['responses']})
 
         words = sorted(list(set(words)))
-        save_words_list(words)
 
     # save output.json, a json file with all the tags link to their answers (we use it in the js part)
     with open('data/outputs/output.json', 'w', encoding='utf8') as outfile:
         json.dump(output_json, outfile, ensure_ascii=False, indent=4)
+
+    save_words_list(words)
 
     return documents, classes, words
