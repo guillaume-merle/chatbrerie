@@ -13,7 +13,7 @@
     "console-browserify": "^1.2.0",
     "css-loader": "^5.2.6",
     "datebook": "^6.5.5",
-    "file-system": "^2.2.2",
+    "file-system": "^1.2.2",
     "fs": "0.0.1-security",
     "jquery": "^3.6.0",
     "mustache": "^4.2.0",
