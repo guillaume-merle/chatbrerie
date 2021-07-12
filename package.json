@@ -6,6 +6,7 @@
   "dependencies": {
     "@babel/core": "^7.14.0",
     "@tensorflow/tfjs": "^3.6.0",
+    "@tensorflow/tfjs-node": "^3.7.0",
     "assert": "^2.0.0",
     "bootstrap": "^4.6.0",
     "brfs": "^2.0.2",

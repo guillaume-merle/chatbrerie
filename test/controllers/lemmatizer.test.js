@@ -3,6 +3,8 @@ import chai from 'chai';
 import console from 'console';
 
 import { Lemmatizer } from '../../src/controllers/lemmatizer.js'
+import { Response } from '../../src/models/response.js'
+import { Model } from '../../src/models/model.js'
 
 const expect = chai.expect;
 
@@ -10,12 +12,24 @@ describe('lemmatizer tests:', function () {
 
     describe('lemmatizer:', function () {
         beforeEach(function() {
+            global.model = new Model()
+            global.answer = new Response()
+
             global.chrome = { 
                 runtime: { 
                     getURL: function(path) { 
-                        return "src/" + path;
+                        return path;
                     }
                 }
+            }
+
+            global.fetch = function(path) {
+                var promise = new Promise((resolve, reject) => {
+                    var data = fs.readFileSync(path, function(err,data) { return data });
+                    data.text = data.toString;
+                    resolve(data);
+                });
+                return promise
             }
 
             global.fetch = function(path) {
@@ -33,63 +47,6 @@ describe('lemmatizer tests:', function () {
                 var lemmatizer = new Lemmatizer();
                 expect(lemmatizer).to.be.a('object');
                 done();
-            })
-        })
-
-        context('prepareInput 1:', function () {
-            it('should prepare input string', async function () {
-                var lemmatizer = new Lemmatizer();
-                var bagword = await lemmatizer.prepareInput("Comment se faire vacciner ?")
-                expect(bagword).to.eql([
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0
-                ]);
-            })
-        })
-
-        context('prepareInput 2:', function () {
-            it('should prepare input string', async function () {
-                var lemmatizer = new Lemmatizer();
-                var bagword = await lemmatizer.prepareInput("J'ai oublier mon mot de passe.")
-                expect(bagword).to.eql([
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-                ]);
-            })
-        })
-
-        context('prepareInput 3:', function () {
-            it('should prepare input string', async function () {
-                var lemmatizer = new Lemmatizer();
-                var bagword = await lemmatizer.prepareInput("Quizz pour la vaccination.")
-                expect(bagword).to.eql([
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0
-                ]);
             })
         })
 
@@ -170,6 +127,22 @@ describe('lemmatizer tests:', function () {
                 var lemmatizer = new Lemmatizer();
                 var lem = await lemmatizer.lemmatizeInput("Comment puis-je prendre un rendez vous avec mon médecin ?")
                 expect(lem).to.eql(["comment", "puis", "prendre", "rendre", "vous", "avec", "mon", "médecin"]);
+            })
+        })
+
+        context('lemmatizeInput 11:', function () {
+            it('should lemmatize the input string', async function () {
+                var lemmatizer = new Lemmatizer();
+                var lem = await lemmatizer.lemmatizeInput("Quels sont les horaire ?")
+                expect(lem).to.eql(["quels", "être", "les", "horaire"]);
+            })
+        })
+
+        context('lemmatizeInput 12:', function () {
+            it('should lemmatize the input string', async function () {
+                var lemmatizer = new Lemmatizer();
+                var lem = await lemmatizer.lemmatizeInput("Il me faut des dates dans mon calendrier.")
+                expect(lem).to.eql(["falloir", "des", "date", "dans", "mon", "calendrier"]);
             })
         })
     })
