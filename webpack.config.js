@@ -6,17 +6,16 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
+        globalObject: 'this',
+        publicPath: './test/testBundle'
+    },
+    resolve: {
+        fallback: {
+            "console": require.resolve("console-browserify"),
+            "assert": require.resolve("assert/")
+        }
     },
     optimization: {
         minimize: true
-    },
-    module: {
-        rules: [
-            {
-                test: /tests\.js$/,
-                use: 'mocha-loader',
-                exclude: '/node_modules/'
-            },
-        ],
-    },
+    }
 };
